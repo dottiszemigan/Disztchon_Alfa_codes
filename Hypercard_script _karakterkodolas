@@ -1,0 +1,82 @@
+import re
+from pathlib import Path
+
+# IDE írd a stack fájl pontos nevét:
+INPUT_FILE = "DISZTICHON_ALFA"
+
+MIN_RUN = 20
+
+def is_text_byte(b):
+    return b in (9, 10, 13) or 32 <= b <= 126 or 128 <= b <= 255
+
+def extract_runs(data):
+    runs = []
+    start = None
+    for i, b in enumerate(data):
+        if is_text_byte(b):
+            if start is None:
+                start = i
+        else:
+            if start is not None and i - start >= MIN_RUN:
+                runs.append(data[start:i])
+            start = None
+    if start is not None and len(data) - start >= MIN_RUN:
+        runs.append(data[start:])
+    return runs
+
+def normalize_newlines(s):
+    return s.replace("\r\n", "\n").replace("\r", "\n")
+
+def save_decoded(runs, encoding_name, outname):
+    parts = []
+    for i, chunk in enumerate(runs, start=1):
+        try:
+            txt = chunk.decode(encoding_name, errors="replace")
+        except LookupError:
+            return None
+        txt = normalize_newlines(txt)
+        parts.append(f"\n===== STRING {i:04d} =====\n{txt}\n")
+    Path(outname).write_text("".join(parts), encoding="utf-8")
+    return "".join(parts)
+
+def extract_handlers(text, outdir):
+    Path(outdir).mkdir(exist_ok=True)
+    pattern = re.compile(
+        r'(?ims)^\s*on\s+([A-Za-z_][A-Za-z0-9_]*)\b.*?^\s*end\s+\1\b'
+    )
+    matches = list(pattern.finditer(text))
+    index_lines = []
+    for i, m in enumerate(matches, start=1):
+        name = m.group(1)
+        body = m.group(0).strip() + "\n"
+        fname = f"{i:03d}_{name}.txt"
+        Path(outdir, fname).write_text(body, encoding="utf-8")
+        index_lines.append(fname)
+    Path(outdir, "handlers_index.txt").write_text("\n".join(index_lines), encoding="utf-8")
+    return len(matches)
+
+def main():
+    data = Path(INPUT_FILE).read_bytes()
+    runs = extract_runs(data)
+
+    Path("out").mkdir(exist_ok=True)
+
+    text_latin2 = save_decoded(runs, "mac_latin2", "out/all_mac_latin2.txt")
+    text_roman = save_decoded(runs, "mac_roman", "out/all_mac_roman.txt")
+    text_latin1 = save_decoded(runs, "latin1", "out/all_latin1.txt")
+
+    count = 0
+    if text_latin2 is not None:
+        count = extract_handlers(text_latin2, "out/scripts_mac_latin2")
+
+    print("Kész.")
+    print("Nyisd meg ezeket sorban:")
+    print("  out/all_mac_latin2.txt")
+    print("  out/all_mac_roman.txt")
+    print("  out/all_latin1.txt")
+    print("A legjobb eséllyel ez lesz jó magyarul: out/all_mac_latin2.txt")
+    print(f"Külön kinyert handlerek száma: {count}")
+    print("Handler mappa: out/scripts_mac_latin2")
+
+if __name__ == "__main__":
+    main()
