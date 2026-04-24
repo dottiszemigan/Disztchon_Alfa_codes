@@ -1,0 +1,9228 @@
+
+===== STRING 0001 =====
+àà""àà""à™"™à™"™Ã™3™Ã™3™Ó™ª™Ó™ª™ÓªªÓÓªªÓˇªˇÓˇªˇÓˇªˇˇˇªˇˇÄ
+
+===== STRING 0002 =====
+à"U"à"U"àU"UàU"Uw›w›w›w›Ä
+
+===== STRING 0003 =====
+m†}ˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇ
+
+===== STRING 0004 =====
+on openStack
+
+hide menuBar
+go card id 2968
+set cursor to none
+
+visual effect iris open very slowly
+choose browse tool
+click at item 1 to 2 of the rect of cd field "EgyK01" of cd id 2968
+type "PAPP Tibor"
+click at item 1 to 2 of the rect of cd field "EgyK02" of cd id 2968
+type "DISZTICHON ALFA"
+click at item 1 to 2 of the rect of cd field "KettoK01" of cd id 3607
+
+
+wait 2 second
+
+click at item 1 to 2 of the rect of cd field "EgyK03" of cd id 2968
+type "Ezermillió enyhén abszurd vagy pornográf disztichon"
+click at item 1 to 2 of the rect of cd field "KettoK01" of cd id 3607
+
+
+wait 2 second
+
+click at item 1 to 2 of the rect of cd field "EgyK04" of cd id 2968
+type "Elsø magyar automatikus versgenerátor 1993"
+
+click at item 1 to 2 of the rect of cd field "KettoK01" of cd id 3607
+
+wait 4 second
+set cursor to hand
+visual effect dissolve slowly
+go card id 4360
+
+
+put empty into cd field 1 of cd id 2968
+put empty into cd field 2 of cd id 2968
+put empty into cd field 3 of cd id 2968
+put empty into cd field 4 of cd id 2968
+
+send "mouseUp" to button "GOtK01" of card id 4360
+--go to next cd
+--show menuBar
+
+end openStack
+
+
+===== STRING 0005 =====
+on mouseUp
+show menuBar
+
+end mouseUp
+
+===== STRING 0006 =====
+on mouseUp
+
+
+put line (1) of card field "KettoK02" of cd id 3607 into tobb
+
+
+put (tobb + 1) into line (1) of card field "KettoK02" of cd id 3607
+
+if tobb > 59 then
+
+put 59 into line (1) of card field "KettoK02" of cd id 3607
+
+end if
+
+
+end mouseUp
+
+===== STRING 0007 =====
+on mouseUp
+
+
+put line (1) of card field "KettoK02" of cd id 3607 into kevesebb
+
+
+put (kevesebb - 1) into line (1) of card field "KettoK02" of cd id 3607
+
+if kevesebb < 2 then
+
+put 1 into line (1) of card field "KettoK02" of cd id 3607
+
+end if
+
+
+end mouseUp
+
+===== STRING 0008 =====
+on mouseUp
+
+visual effect dissolve
+go to cd id 4360
+send mouseUp to button "GOtK01" of cd id 4360
+
+
+end mouseUp
+
+===== STRING 0009 =====
+on mouseUp
+
+
+go to home
+
+
+
+end mouseUp
+
+===== STRING 0010 =====
+=Ha az olvasási idøt rövidíteni óhajtja, 
+nyomja le  a helyørrel (kézzel) a „–” gombot
+
+===== STRING 0011 =====
+=Ha az olvasási idøt hosszabbítani óhajtja, 
+nyomja le a helyørrel (kézzel) a „+” gombot
+
+===== STRING 0012 =====
+=Ha nem, akkor nyomja le a „@ ” gombot
+
+===== STRING 0013 =====
+Ha újra akarja indítani a programot, a 
+helyørrel (kézzel)  nyomja le a „# ” gombot
+
+===== STRING 0014 =====
+on mouseUp
+
+hide menuBar
+
+global r
+global lassito
+
+
+put empty into cd field "NegyK04" of card id 4162
+
+put lineFeed after last char of card field "NegyK04" of card id 4162
+repeat with i=1 to 24
+put i into sorsz
+put (sorsz) after the last line of cd field "NegyK04" of card id 4162
+put return after last char of card field "NegyK04" of card id 4162
+put lineFeed after last char of card field "NegyK04" of card id 4162
+end repeat
+
+put empty into cd field "NegyK05" of card id 4162
+
+repeat with h=1 to 24
+put (25-h) into veletlen
+get random (veletlen)
+put it into ezsor
+put line (ezsor) of cd field "NegyK04" of cd id 4162 after the last char of cd field "NegyK05" of card id 4162
+put return after last char of card field "NegyK05" of card id 4162
+delete line (ezsor) of cd field "NegyK04" of card id 4162
+end repeat
+
+put empty into r
+
+
+repeat forever
+
+put empty into card field "OtK03" of card id 4360
+
+put empty into card field "OtK02" of card id 4360
+put empty into card field "OtK01" of card id 4360
+
+put line (1) of card field "NegyK02" of card id 4162 into hanyadik
+put (hanyadik + 1) into kiirszam
+put empty into card field "NegyK02" of card id 4162
+put kiirszam into card field "NegyK02" of card id 4162
+put kiirszam into cd field "OtK01" of card id 4360
+put ". DISZTICHON" after last char of card field "OtK01" of card id 4360
+
+put (r+1) into r
+
+put line (r) of card field "NegyK05" of card id 4162 into szam01
+
+put empty into card field "OtK03" of card id 4360
+put (r) after last line of card field "OtK03" of card id 4360
+put szam01 after last line of card field "OtK03" of card id 4360
+
+
+
+if szam01 = "
+1" then send mouseUp to card button "GHatK01" of card id 4812
+if szam01 = "
+2" then send mouseUp to card button "GHetK01" of card id 5092
+if szam01 = "
+3" then send mouseUp to card button "GNyolcK01" of card id 5252
+if szam01 = "
+4" then send mouseUp to card button "GKilencK01" of card id 5436
+if szam01 = "
+5" then send mouseUp to card button "GTizK01" of card id 5806
+if szam01 = "
+6" then send mouseUp to card button "GTizenegyK01" of card id 5921
+if szam01 = "
+7" then send mouseUp to card button "GTizenkettoK01" of card id 6318
+if szam01 = "
+8" then send mouseUp to card button "GTizenharomK01" of card id 6543
+if szam01 = "
+9" then send mouseUp to card button "GTizennegyK01" of card id 6749
+if szam01 = "
+10" then send mouseUp to card button "GTizenotK01" of card id 6975
+if szam01 = "
+11" then send mouseUp to card button "GTizenhatK01" of card id 7215
+if szam01 = "
+12" then send mouseUp to card button "GTizenhetK01" of card id 7426
+if szam01 = "
+13" then send mouseUp to card button "GTizennyolcK01" of card id 7789
+if szam01 = "
+14" then send mouseUp to card button "GTizenkilencK01" of card id 8035
+if szam01 = "
+15" then send mouseUp to card button "GHuszK01" of card id 8318
+if szam01 = "
+16" then send mouseUp to card button "GHuszonegyK01" of card id 8701
+if szam01 = "
+17" then send mouseUp to card button "GHuszonkettoK01" of card id 8952
+if szam01 = "
+18" then send mouseUp to card button "GKilencK01" of card id 5436        --"GHuszonharomK01" of card id 9069
+if szam01 = "
+19" then send mouseUp to card button "GHuszonnegyK01" of card id 9223
+if szam01 = "
+20" then send mouseUp to card button "GHuszonotK01" of card id 9591
+if szam01 = "
+21" then send mouseUp to card button "GHuszonhatK01" of card id 9912
+if szam01 = "
+22" then send mouseUp to card button "GHuszonhetK01" of card id 10156
+if szam01 = "
+23" then send mouseUp to card button "GHuszonnyolcK01" of card id 10486
+if szam01 = "
+24" then send mouseUp to card button "GHuszonkilencK01" of card id 10632
+
+put line (1) of card field "KettoK02" of cd id 3607 into lassito
+
+
+wait lassito second
+
+if the mouse is down then exit repeat
+
+
+
+
+if r=24 then put empty into r
+
+end repeat
+put empty into cd field 1
+put empty into card field "OtK02" of card id 4360
+
+
+visual effect dissolve
+go card id 3607
+
+
+
+
+end mouseUp
+
+===== STRING 0015 =====
+on mouseUp
+
+go card id 3607
+end mouseUp
+
+===== STRING 0016 =====
+$Ha meg akarja állítani a programot, 
+a helyørrel (kézzel) nyomja le a „• gombot”ˇ˙
+
+===== STRING 0017 =====
+on mouseUp
+
+
+
+
+global vari0601
+global vari0602
+global vari0603
+global vari0604
+global vari0605
+global vari0606
+
+put line (1) of card field "HatK10" of card id 4812 into vari0601
+repeat forever
+get random (8)
+if it <> vari0601 then exit repeat
+end repeat
+put it into vari0601
+put vari0601 into line (1) of card field "HatK10" of cd id 4812
+put line (vari0601) of card field "HatK01" of card id 4812 after last char of card field "OtK02" of card id 4360
+
+put line (2) of card field "HatK10" of card id 4812 into vari0602
+repeat forever
+get random (13)
+if it <> vari0602 then exit repeat
+end repeat
+put it into vari0602
+put vari0602 into line (2) of card field "HatK10" of cd id 4812
+
+if vari0601 < 7 then
+put it into vari0602
+put line (vari0602) of card field "HatK02" of card id 4812 after last char of card field "OtK02" of card id 4360
+
+else
+get random (5)
+put it into vari0603
+put line (vari0603) of card field "HatK02" of card id 4812 after last char of card field "OtK02" of card id 4360
+
+end if
+
+
+put line (1) of cd field "HatK12" of card id 4812 into specszam
+repeat forever
+get random (4)
+if it <> specszam then exit repeat
+end repeat
+put it into cd field "HatK12" of card id 4812
+put it into specszam
+if specszam = 1 or specszam = 3 then
+
+if vari0601 < 7 then
+
+put line (vari0602) of card field "HatK04" of card id 4812 after last char of card field "OtK02" of card id 4360
+end if
+
+if vari0601 > 6 then
+put line (vari0603) of card field "HatK04" of card id 4812 after last char of card field "OtK02" of card id 4360
+end if
+
+put line (5) of card field "HatK10" of card id 4812 into vari0605
+repeat forever
+get random (12)
+if it is not vari0605 then exit repeat
+end repeat
+
+put it into vari0605
+put line (vari0605) of card field "HatK05" of card id 4812 after last char of card field "OtK02" of card id 4360
+put it into line (5) of card field "HatK10" of card id 4812
+
+
+end if
+
+if specszam = 2 or specszam = 4 then
+put line (6) of card field "HatK10" of card id 4812 into vari0606
+repeat forever
+get random (14)
+if it is not vari0606 then exit repeat
+end repeat
+put it into vari0606
+put vari0606 into line (6) of card field "HatK10" of cd id 4812
+
+put line (vari0606) of card field "HatK03" of card id 4812 after last char of card field "OtK02" of card id 4360
+
+else
+
+end if
+
+
+put return after last char of card field "OtK02" of card id 4360
+put lineFeed after last char of card field "OtK02" of card id 4360
+delete last char of card field "OtK02" of card id 4360
+
+put line (7) of card field "HatK10" of card id 4812 into vari0607
+repeat forever
+get random (16)
+if it is not vari0607 then exit repeat
+end repeat
+put it into vari0607
+put vari0607 into line (7) of card field "HatK10" of cd id 4812
+
+put line (vari0607) of card field "HatK06" of card id 4812 after last char of card field "OtK02" of card id 4360
+
+put line (8) of card field "HatK10" of card id 4812 into vari0608
+
+
+if vari07 > 12 then
+repeat forever
+get random (10)
+if it is not vari0608 then exit repeat
+end repeat
+end if
+
+if vari07 < 13 then
+repeat forever
+get random (15)
+if it is not vari0608 then exit repeat
+end repeat
+
+end if
+
+put it into vari0608
+put vari0608 into line (8) of card field "HatK10" of cd id 4812
+
+put line (vari0608) of card field "HatK07" of card id 4812 after last char of card field "OtK02" of card id 4360
+
+
+put line (9) of card field "HatK10" of card id 4812 into vari0609
+repeat forever
+get random (45)
+if it <> vari0609 then exit repeat
+end repeat
+put it into vari0609
+put vari0609 into line (9) of card field "HatK10" of cd id 4812
+
+put line (vari0609) of card field "HatK08" of card id 4812 after last char of card field "OtK02" of card id 4360
+
+
+
+end mouseUp
+
+
+
+
+===== STRING 0018 =====
+BÔ soha
+Ô, aki
+Ô ugye
+Ô, noha
+Ô már
+Ô még
+Ô ide
+Ô odaˇ˙
+
+===== STRING 0019 =====
+BIndulatos
+Zsemleszemû
+Körtecsöcsû
+Bámulatos
+Elhanyagolt
+Elmebajos
+Ópiumos
+„Az” kígyó
+Rapszodikus
+Hipnotikus
+Egzotikus
+Fókavadász
+Önkéntes
+Csókálló
+Fényûzø
+Vérajakú
+
+Hitvalló
+Lábravaló
+Cirkalmas
+Asztalvég
+Századvég
+Isten! vak
+Elvben vak
+Ejnye, a kis
+Másodikos
+Harmadikos
+Jóalakú
+Haldokló
+Államügyész
+
+
+===== STRING 0020 =====
+B nem vár senkit,
+ nem hív senkit,
+ nem vár senkit,
+ nem vár semmit,
+ nem vár semmit,
+ nem tûr senkit,
+ nem lát senkit,
+ nem tûr semmit,
+ nem lát semmit,
+ nem tûr senkit,
+ nem félt senkit,
+ nem tûr semmit,
+ nem félt semmit,ˇ˝
+
+===== STRING 0021 =====
+B a házat tûz nyalogatja.
+ elég aratásra a bánat.
+ erôszakos állat az angyal.
+ felkészült a magányra.
+ fittyet hány a magányra.
+ bánata puskagolyóbis.
+ szempillája legördül.
+ bajt aratott eleget már.
+ késø már kalapozni.
+ egy angyal az ágyon elég lesz.
+ egy angol az ágyban elég lesz.
+ felbosszantja az Istent,
+ az árvíz elfedi lelkét.
+ lelkét vágy nyalogatja.
+
+===== STRING 0022 =====
+B nem vár,
+ nem hív,
+ nem vár,
+ nem vár,
+ nem vár,
+ nem tûr,
+ nem lát,
+ nem tûr,
+ nem lát,
+ nem tûr,
+ nem félt,
+ nem tûr,
+ nem félt,
+ˇ˚
+
+===== STRING 0023 =====
+B bár haza vágyik.
+ úgyis a tûz gyøz.
+ jöjjön a tûzvész.
+ jöjjön az árvíz.
+ mert citerázik,
+ bár bicebóca,
+ úgyse szeretné.
+ mert vak az Isten!
+ jöjjön akárki?!
+ izzad a vágytól,
+ szenved a vágytól,
+ enged a vágynak,
+
+===== STRING 0024 =====
+B szobalány
+ hajadon
+ bajadér
+ szûzlány
+ csacsikánk
+ delnø
+ tündér
+ grófnø
+ kéjnø
+ Marylin
+ buja csaj
+ buja nø
+ buta nø
+ buta csaj
+ bacilus
+
+ Pirikénk
+ vasaló
+ csataló
+ pakoló
+ vakoló
+ magoló
+ falevél
+ˇ¯
+
+===== STRING 0025 =====
+B, combtól lombosodik.
+ fékezi meg Szodomát.
+ meztelenül lovagol.
+! álmában csapodár.
+ álmában lefetyel.
+ állva elélvez, ûvölt!
+, esténként berosál.
+ lenne a bálnavadász?!
+ kérdezi fel Szodomát.
+, fönt hintázik a fán.
+ csengeti föl Szodomát?
+, Lóték lánya talán?
+, hoppszaszadista zenész!
+, mandarinogva mozog.
+, mandarinogva kefél.
+, mandarinogva baszik.
+, mandarinogva lazsál.
+, ø, a pucér szakadár.
+ sír valahol. Fejen áll?
+! Lába között a pokol!
+! Combja tövén a pokol!
+! Kurva-soron vegetál.
+, sírva az ágyra hajol.
+, sírva a kádba merül.
+ sírva a székre esik.
+ húzza le most bugyiját.
+ fogja le most a kezét!
+ sírva kefél a padon.
+ sírva baszik valahol.
+, sír, nekiment a kanász.
+ sír, hogy a ház kiürült.
+, sír, elesett a füvön.
+, sír, elesett a jegen.
+, sír, elesett a havon.
+, sír, megesett Szegeden.
+, sír, megesett, anya lesz.
+, vetkøzø szerelem.
+ sírva kefél a havon.
+ sírva baszik. Bepiált!
+ meztelenül borozik.
+ szopja le ösztönösen.
+ szopja le meztelenül.
+ szopja le mágikusan.
+ szopja le mesterien.
+ szopja le bükkfa pöcsét.
+ˇˆ
+
+===== STRING 0026 =====
+on mouseUp
+
+global vari71
+global vari72
+global vari73
+global vari74
+global vari75
+global vari76
+
+put line (1) of card field "HetK10" of card id 5092 into vari71
+repeat forever
+get random (32)
+if it is not vari71 then exit repeat
+end repeat
+
+put it into vari71
+put vari71 into line (1) of card field "HetK10" of cd id 5092
+put line (vari71) of card field "HetK01" of card id 5092 after last char of card field "OtK02" of card id 4360
+
+get random (24)
+if it < 21 then
+
+
+put line (2) of card field "HetK10" of card id 5092 into vari72
+repeat forever
+get random (13)
+if it is not vari72 then exit repeat
+end repeat
+
+put it into vari72
+put vari72 into line (2) of card field "HetK10" of cd id 5092
+put line (vari72) of card field "HetK02" of card id 5092 after last char of card field "OtK02" of card id 4360
+
+
+put line (3) of card field "HetK10" of card id 5092 into vari73
+repeat forever
+get random (10)
+if it is not vari73 then exit repeat
+end repeat
+
+put it into vari73
+put vari73 into line (3) of card field "HetK10" of cd id 5092
+put line (vari73) of card field "HetK03" of card id 5092 after last char of card field "OtK02" of card id 4360
+
+put return after last char of card field "OtK02" of card id 4360
+put lineFeed after last char of card field "OtK02" of card id 4360
+delete last char of card field "OtK02" of card id 4360
+else
+put line (4) of card field "HetK10" of card id 5092 into vari74
+repeat forever
+get random (12)
+if it is not vari74 then exit repeat
+end repeat
+
+put it into vari74
+put vari74 into line (4) of card field "HetK10" of cd id 5092
+put line (vari74) of card field "HetK07" of card id 5092 after last char of card field "OtK02" of card id 4360
+
+
+put line (5) of card field "HetK10" of card id 5092 into vari75
+repeat forever
+get random (2)
+if it is not vari75 then exit repeat
+end repeat
+
+put it into vari75
+put vari75 into line (5) of card field "HetK10" of cd id 5092
+put line (vari75) of card field "HetK08" of card id 5092 after last char of card field "OtK02" of card id 4360
+
+put return after last char of card field "OtK02" of card id 4360
+put lineFeed after last char of card field "OtK02" of card id 4360
+delete last char of card field "OtK02" of card id 4360
+end if
+
+put line (6) of card field "HetK10" of card id 5092 into vari77
+repeat forever
+get random (15)
+if it is not vari76 then exit repeat
+end repeat
+
+put it into vari76
+put vari76 into line (6) of card field "HetK10" of cd id 5092
+put line (vari76) of card field "HetK04" of card id 5092 after last char of card field "OtK02" of card id 4360
+
+put line (7) of card field "HetK10" of card id 5092 into vari77
+repeat forever
+get random (12)
+if it is not vari77 then exit repeat
+end repeat
+
+put it into vari77
+put vari77 into line (7) of card field "HetK10" of cd id 5092
+put line (vari77) of card field "HetK05" of card id 5092 after last char of card field "OtK02" of card id 4360
+
+put line (8) of card field "HetK10" of card id 5092 into vari78
+repeat forever
+get random (10)
+if it is not vari78 then exit repeat
+end repeat
+
+put it into vari78
+put vari78 into line (8) of card field "HetK10" of cd id 5092
+put line (vari78) of card field "HetK06" of card id 5092 after last char of card field "OtK02" of card id 4360
+
+
+end mouseUp
+
+===== STRING 0027 =====
+=Ájtatos
+Illatos
+Kellemes
+Mámoros
+Bánatos
+Bágyatag
+Hírhedt
+Élveteg
+Esztelen
+Fesztelen
+Termetes
+Lángvörös
+Langymeleg
+Békés
+Régies
+Vérbajos
+Fegyveres
+Férfias
+Nøies
+Álmatag
+Párás
+Búskomor
+Bárgyú
+Disznó
+Hályogos
+Szent és
+Szédült
+Szektás
+Szôrmók
+Roggyant
+Rákvörös
+Petyhüdt
+
+
+
+
+
+
+
+ˇı
+
+===== STRING 0028 =====
+= alkancellár
+ éjjeli kurvafi,
+ østörténeti
+ øszibaracksajt,
+, állatimádó
+ ørgróf mellett
+ ámort ûzø
+ asszony-igézø
+ étvágyreklám,
+ iskolamester az
+ udvari náci az
+ árnyékmedve az
+ elvált ember az
+
+===== STRING 0029 =====
+= angyal, az  angyali költø.
+ ørgróf. Északi fenség.
+ Isten az iskolapéldánk.
+ ørvezetø apukája.
+ újságárus, a Marci.
+ újságárus akárki.
+ újságárus. Az  anyját!
+ ártatlan bakafaszfej.
+ esti király, fakabátos.
+ esti király. Igaz ember?
+
+===== STRING 0030 =====
+=Északi
+Rozsdás
+Párás
+Békés
+Fésült
+Feldúlt
+Feltúrt
+Trójai
+Ápolt
+Felhøs
+Golyvás
+Gyûrött
+Hajnali
+Csángó
+Szálkás
+
+
+
+
+
+ˇÚ
+
+===== STRING 0031 =====
+= aknamezøn
+ búzamezøn
+ tintamezøn
+ jéglegeløn
+ nyeglegeløn
+ bér-legeløn
+ jégfövenyen
+ hókupacon
+ ráchomokon
+ irkalapon
+ kottalapon
+ kéjfövenyen
+ tarkalapon
+ˇÒ
+
+===== STRING 0032 =====
+= pentameter viszi át.
+ dallama-lombja a szél.
+ tengerigó fütyörész.
+ indul a szentek elé.
+ sár maradéka virít.
+ képzeli el Szodomát.
+ ugródeszkalapál.
+ félvér-kém csepürág.
+ Dzsingisz kán pityereg.
+ Bartók úr kicsapong.
+
+
+ˇ
+
+===== STRING 0033 =====
+= alkancellár
+ éjjeli kurvafi,
+ østörténeti
+ øszibaracksajt,
+, állatimádó
+ ørgróf mellett
+ ámort ûzø
+ asszony-igézø
+ étvágyreklám,
+ iskolamester,
+ udvari náci,
+ elvált ember,
+
+
+
+ árnyékmedve,
+
+
+===== STRING 0034 =====
+= percemberke. A rendør.
+ bunkó, bandita bunkó.
+
+
+===== STRING 0035 =====
+A32  13  10  14   15  13  10
+113 568 000
+
+===== STRING 0036 =====
+on mouseUp
+
+put line (1) of card field "NyolcK10" of card id 5252 into vari81
+repeat forever
+get random (24)
+if it is not vari81 then exit repeat
+end repeat
+
+put it into vari81
+put vari81 into line (1) of card field "NyolcK10" of cd id 5252
+put line (vari81) of card field "NyolcK01" of card id 5252 after last char of card field "OtK02" of card id 4360
+
+put line (2) of card field "NyolcK10" of card id 5252 into vari82
+repeat forever
+get random (15)
+if it is not vari82 then exit repeat
+end repeat
+
+put it into vari82
+put vari82 into line (2) of card field "NyolcK10" of cd id 5252
+put line (vari82) of card field "NyolcK02" of card id 5252 after last char of card field "OtK02" of card id 4360
+
+put line (3) of card field "NyolcK10" of card id 5252 into vari83
+repeat forever
+get random (13)
+if it is not vari83 then exit repeat
+end repeat
+
+put it into vari83
+put vari83 into line (3) of card field "NyolcK10" of cd id 5252
+put line (vari83) of card field "NyolcK03" of card id 5252 after last char of card field "OtK02" of card id 4360
+
+put line (4) of card field "NyolcK10" of card id 5252 into vari84
+repeat forever
+get random (30)
+if it is not vari84 then exit repeat
+end repeat
+
+put it into vari84
+put vari84 into line (4) of card field "NyolcK10" of cd id 5252
+put line (vari84) of card field "NyolcK04" of card id 5252 after last char of card field "OtK02" of card id 4360
+
+put return after last char of card field "OtK02" of card id 4360
+put lineFeed after last char of card field "OtK02" of card id 4360
+delete last char of card field "OtK02" of card id 4360
+
+put line (5) of card field "NyolcK10" of card id 5252 into vari85
+repeat forever
+get random (33)
+if it is not vari85 then exit repeat
+end repeat
+
+put it into vari85
+put vari85 into line (5) of card field "NyolcK10" of cd id 5252
+put line (vari85) of card field "NyolcK05" of card id 5252 after last char of card field "OtK02" of card id 4360
+
+put line (6) of card field "NyolcK10" of card id 5252 into vari86
+repeat forever
+get random (36)
+if it is not vari86 then exit repeat
+end repeat
+
+put it into vari86
+put vari86 into line (6) of card field "NyolcK10" of cd id 5252
+put line (vari86) of card field "NyolcK06" of card id 5252 after last char of card field "OtK02" of card id 4360
+
+
+
+
+
+
+end mouseUp
+
+===== STRING 0037 =====
+=Farkával-vel a
+Réztollával a
+Tíz ujjával a
+Nyelvével-val a
+Orrmányával a
+Kiskésével a
+Bicskájával a
+Vesszøjével a
+Tûzbotjával a
+Tíz körmével a
+Puszta kezével a
+Ujjabegyével a
+Farka hegyével a
+Álló fasszal a
+Nyelve hegyével a
+Szálka faszával a
+Szárnya hegyével a
+Puszta pöcsével a
+Fél tenyerével a
+Csorba pöcsével a
+Pálcájával a
+Puskájával a
+Kardja hegyével a
+Két ujjával a
+
+
+===== STRING 0038 =====
+= szørtulipán
+ szextulipán
+ puncivirág
+ lánykikerics
+ táskavirág
+ kis pina-lyuk
+ nedves szex
+ szør-korsó
+ punci-gödör
+z asszony-kút
+ szørös csø
+ szûz lábköz
+ vén banya-segg
+ szûzlány-segg
+z asszony-völgy
+ szûzlány-völgy
+
+
+ szûzlány-szex
+ nedves edény
+
+  szørös ülep
+ szent picsa kút
+
+===== STRING 0039 =====
+= peremén
+ szélén
+ kelyhén
+ mélyén
+ töviben
+ partján
+ résén
+ selymén
+ fövenyén
+ fûjén
+ ereszén
+ mezején
+ táján
+ 
+
+
+ talaján
+ parazsán
+
+ 
+ papucsán
+ sóján
+ szájánˇ˚
+
+===== STRING 0040 =====
+= bicebóklász.
+ pamacsol-csal. 
+ araszolgat. 
+ pepecselgáncs. 
+ haszonélvez. 
+ hazaárul. 
+ kaszinózik. 
+ karikázik. 
+ libikózik.  
+ muzsikálgat.  
+ ha világít, 
+ kifogásol.
+ hadirokkant.
+ vizet áraszt.
+ leukoplaszt.
+ ametisztel.
+ neveløtiszt.
+ repüløtiszt.
+ pereputtyol.
+ mire vágyik?
+ mire számít?
+ paradoxként.
+ panamázik.
+ sose táncolt.
+ panamázik.
+ magyaráz-ráz.
+ vala. Ámen.
+ megalázván.
+ keseregvén.
+ vezekel még.
+
+ gurigázik.
+ panamázik.
+ lakomázik.
+  citerázik.
+  pepecsel-csal..
+ ekeszarvaz.
+ kivilágít. 
+ beleállít.
+ hazaszállít.
+ lekopogtat.
+ bevilágít. 
+ taligázik.
+ köszörülget.ˇ˙
+
+===== STRING 0041 =====
+=Pálmák szárnya alatt
+Múzsák szárnya alatt
+Fecskék szárnya alatt
+Mária szárnya alatt
+Erzsike szárnya alatt
+Múzsák szárnya alatt
+Bokrok szárnya alatt
+Fészer szárnya alatt
+Múzsák talpa alatt
+Mária ágya alatt
+Erzsike ágya alatt
+Múzsák ágya alatt
+Angyalok ágya alatt
+Angyalok árnya alatt
+Pálmák árnya alatt
+Csillagok árnya alatt
+Múzsák árnya alatt
+Fecskék árnya alatt
+Mária kútja eløtt
+Erzsike kútja eløtt
+Mária háza eløtt
+Erzsike háza eløtt
+Mária kútja mögött
+Mária háza mögött
+Erzsike kútja mögött
+Erzsike háza mögött
+Elmebetenger alatt
+Pentameterpeszben
+Rágalomandulafán
+Rácegerespusztán
+Római strandfürdøn
+Párducbør-heverøn
+Tøzsdei árfolyamon
+
+===== STRING 0042 =====
+= vágyik a szoknya alá.
+ táncol a, táncol a tûz.
+ sör folyik øseibøl.
+ sör folyik érveibøl.
+ sör folyik álmaiból.
+ vér folyik øseibøl.
+ vér folyik érveibøl.
+ vér folyik álmaiból.
+ tûz folyik øseibøl.
+ tûz folyik érveibøl.
+ tûz folyik álmaiból.
+ nyál folyik øseibøl.
+ nyál folyik érveibøl.
+ nyál folyik álmaiból.
+, ó, homorú nyomoronc!
+ tátika, mályva, pipacs.
+ füstöl a kottapapír.
+ füstöl a petrezselyem.
+ füstöl a jogtudomány. 
+ vágyik az inge alá.
+ vágyik a lába közé.
+ vágyik a térde közé.
+ nyílik a rózsabokor.
+ hûsöl a røzse-szedø.
+ lábravaló nélkül.
+ lengemagyarban iszik.
+ tüntet a pesti fiú.
+ térdel a gazda-fiú.
+ fürdik a szomszéd srác.
+ játszik a szomszéd srác.
+ fekszik a szomszéd srác.
+ táncol a szomszéd srác.
+ tüntet a szomszéd srác.
+ szenved a szomszéd srác.
+ alszik a szomszéd srác.
+ füstöl a szomszéd srác.
+
+
+ fürdik a szomszéd lány.
+ játszik a nagy csöcsû lány.
+ fekszik a nagy csöcsû lány.
+ mosdik a nagy csöcsû lány.
+ táncol a leprás lány.
+ tüntet a szomszéd lány.
+ szenved a copfos lány.
+ csókol a pesti leány.
+ˇ¯
+
+===== STRING 0043 =====
+24  15  13  30  33  36
+159 845 400
+
+===== STRING 0044 =====
+on mouseUp
+
+put line (1) of card field "KilencK11" of card id 5436 into vari91
+repeat forever
+get random (25)
+if it is not vari91 then exit repeat
+end repeat
+put it into vari91
+put vari91 into line (1) of card field "KilencK11" of cd id 5436
+put line (vari91) of card field "KilencK01" of card id 5436 after last char of card field "OtK02" of card id 4360
+
+put line (2) of card field "KilencK11" of card id 5436 into vari92
+repeat forever
+get random (13)
+if it is not vari92 then exit repeat
+end repeat
+put it into vari92
+put vari92 into line (2) of card field "KilencK11" of cd id 5436
+put line (vari92) of card field "KilencK02" of card id 5436 after last char of card field "OtK02" of card id 4360
+
+put line (3) of card field "KilencK11" of card id 5436 into vari93
+repeat forever
+get random (16)
+if it is not vari93 then exit repeat
+end repeat
+
+put it into vari93
+put vari93 into line (3) of card field "KilencK11" of cd id 5436
+put line (vari93) of card field "KilencK03" of card id 5436 after last char of card field "OtK02" of card id 4360
+
+put line (4) of card field "KilencK11" of card id 5436 into vari94
+repeat forever
+get random (11)
+if it is not vari94 then exit repeat
+end repeat
+
+put it into vari94
+put vari94 into line (4) of card field "KilencK11" of cd id 5436
+put line (vari94) of card field "KilencK04" of card id 5436 after last char of card field "OtK02" of card id 4360
+
+put line (5) of card field "KilencK11" of card id 5436 into vari95
+repeat forever
+get random (14)
+if it is not vari95 then exit repeat
+end repeat
+
+put it into vari95
+put vari95 into line (5) of card field "KilencK11" of cd id 5436
+put line (vari95) of card field "KilencK05" of card id 5436 after last char of card field "OtK02" of card id 4360
+
+put return after last char of card field "OtK02" of card id 4360
+put lineFeed after last char of card field "OtK02" of card id 4360
+delete last char of card field "OtK02" of card id 4360
+
+
+put line (6) of card field "KilencK11" of card id 5436 into vari96
+repeat forever
+get random (18)
+if it is not vari96 then exit repeat
+end repeat
+
+put it into vari96
+put vari96 into line (6) of card field "KilencK11" of cd id 5436
+put line (vari96) of card field "KilencK06" of card id 5436 after last char of card field "OtK02" of card id 4360
+
+put line (7) of card field "KilencK11" of card id 5436 into vari97
+repeat forever
+get random (12)
+if it is not vari97 then exit repeat
+end repeat
+
+put it into vari97
+put vari97 into line (7) of card field "KilencK11" of cd id 5436
+put line (vari97) of card field "KilencK07" of card id 5436 after last char of card field "OtK02" of card id 4360
+
+put line (8) of card field "KilencK11" of card id 5436 into vari98
+repeat forever
+get random (17)
+if it is not vari98 then exit repeat
+end repeat
+
+put it into vari98
+put vari98 into line (8) of card field "KilencK11" of cd id 5436
+put line (vari98) of card field "KilencK08" of card id 5436 after last char of card field "OtK02" of card id 4360
+
+put line (9) of card field "KilencK11" of card id 5436 into vari99
+repeat forever
+get random (23)
+if it is not vari96 then exit repeat
+end repeat
+
+put it into vari99
+put vari99 into line (9) of card field "KilencK11" of cd id 5436
+put line (vari99) of card field "KilencK09" of card id 5436 after last char of card field "OtK02" of card id 4360
+
+put line (10) of card field "KilencK11" of card id 5436 into vari901
+repeat forever
+get random (51)
+if it is not vari901 then exit repeat
+end repeat
+
+put it into vari901
+put vari901 into line (10) of card field "KilencK11" of cd id 5436
+put line (vari901) of card field "KilencK10" of card id 5436 after last char of card field "OtK02" of card id 4360
+
+
+end mouseUp
+
+===== STRING 0045 =====
+=Kuncog a
+Fekszik a
+Ágyban a
+Hûsöl a
+Ittas a
+Fázik a
+Izzad a
+Kérked a
+Játszik a
+Színlel a
+Csuklik a
+Pislog a
+Flancol a
+Alszik a
+Párzik a
+Prüszköl a
+Barna a
+Csámcsog a
+Flancol a
+Táncol a
+Henceg a
+Tapsol a
+Boldog a
+Csontos a
+Élvez a
+
+
+
+
+
+===== STRING 0046 =====
+= kedves,
+ nagylány,
+ némber,
+ drágám,
+ lelkem,
+ szépség,
+ kislány,
+ kis csaj,
+ bûbáj,
+ grófnø,
+z édes,
+z asszony,
+z úrnø,
+
+
+
+
+
+
+
+===== STRING 0047 =====
+= nincs takarója,
+ nincs bugyi rajta,
+ nincs szoknyája,
+ nincs pokróca,
+ tompora nyitva,
+ zoknija nincsen,
+ ég a kabátja,
+ lóg a kabátja,
+ nyitva az ablak,
+ nyitva a függöny,
+ víz a ruhája,
+ nincs mellénye,
+ tárva ruhája,
+ tárva kabátja,
+ tárva a kincse,
+ nyitva a kincse,
+
+
+
+
+ˇ¸
+
+===== STRING 0048 =====
+= az inge
+ a segge
+ a melle
+ a combja
+ a térde
+ a lába
+ a húsa
+ a háta
+ a válla
+ a børe
+ a karja
+ˇ˚
+
+===== STRING 0049 =====
+= futótûz.
+ kilátszik.
+ világít.
+ fehérlik.
+ vöröslik.
+ virágzik.
+ tüzet fog.
+ sugárzik.
+ piroslik.
+ aranylik.
+ királyi.
+ belobban.
+ gyopárzik.
+ szivárvány.
+
+
+
+===== STRING 0050 =====
+=Rút
+Szép
+Ál
+Új
+Szent
+Szûz
+Vad
+Sós
+Skót
+Dísz
+Friss
+Mû
+Røt
+Bø
+Disz
+Nagy
+Zord
+Zárt
+
+
+ˇ˘
+
+===== STRING 0051 =====
+= tûz-
+ víz-
+ nap-
+ láng-
+ föld-
+ hold-
+ hó-
+ jég-
+ láz-
+ vágy-
+ csáb-
+ hús-
+ 
+
+===== STRING 0052 =====
+=ráf,
+pír,
+híd,
+gömb,
+rács,
+gönc,
+kóc,
+sánc,
+völgy,
+rét,
+folt,
+sérv,
+vár,
+hegy,
+domb,
+part,
+
+
+===== STRING 0053 =====
+= kaszakø,
+ gyalupad,
+ gyufaszál,
+ fakopács,
+ csereföld,
+ levegø,
+ faluvég,
+ melegágy,
+ kavicságy,
+ daragyöngy,
+ kutyaól,
+ kapualj,
+ barikád,
+ cirok-árny,
+ elegáns,
+ felemás,
+ fali kép,
+ heverø,
+ legelø,
+ nyaraló,
+ farakás,
+ bujakór,
+ szakadék,
+ 
+
+
+
+ 
+
+ˇˆ
+
+===== STRING 0054 =====
+= égø mandulafák.
+ száraz kerti virág.
+ szikkasztott bujaság.
+ állókép, sokaság.
+ vastaps és bumeráng.
+ angyalszárny gomolyag.
+ øs szodomás barikád.
+ elsietett apaság.
+ kolhozpénz, kapukulcs.
+ felhøzø csacsiság.
+ száraz mandulafák.
+ égø kerti virág.
+ állókép, bujaság.
+ vastaps és bujaság.
+ øs szodomás bujaság.
+ elsietett bujaság.
+ kolhozpénz, bujaság.
+ felhøzø bujaság.
+ angyalszárny sokaság.
+ vastaps és sokaság.
+ øs szodomás sokaság.
+ kolhozpénz, sokaság.
+ felhøzø sokaság.
+ állókép, bumeráng.
+ elsietett bumeráng.
+ kolhozpénz, bumeráng.
+ felhøzø bumeráng.
+ angyalszárny bumeráng.
+ øs szodomás gomolyag.
+ felhøzø gomolyag.
+ vastaps és gomolyag.
+ kolhozpénz, gomolyag.
+ elsietett gomolyag.
+ állókép, barikád.
+ elsietett barikád.
+ kolhozpénz, barikád.
+ vastaps és barikád.
+ felhøzø barikád.
+ vastaps és kapukulcs.
+ elsietett kapukulcs.
+ állókép, kapukulcs.
+ øs szodomás apaság.
+ felhøzø apaság.
+ állókép, apaság.
+ kolhozpénz, apaság.
+ vastaps és apaság.
+ vastaps és csacsiság.
+ kolhozpénz, csacsiság.
+ állókép, csacsiság.
+ øs szodomás csacsiság.
+ elsietett csacsiság.
+ ˇı
+
+===== STRING 0055 =====
+16
+1
+13
+6
+4
+4
+5
+11
+15
+23
+
+===== STRING 0056 =====
+25  13  16  11  14  18  12  17  23  51
+405 794 188 800
+
+===== STRING 0057 =====
+on mouseUp
+
+put line (1) of card field "TizK10" of card id 5806 into vari101
+repeat forever
+get random (11)
+if it is not vari101 then exit repeat
+end repeat
+
+put it into vari101
+put vari101 into line (1) of card field "TizK10" of cd id 5806
+put line (vari101) of card field "TizK01" of card id 5806 after last char of card field "OtK02" of card id 4360
+
+put line (2) of card field "TizK10" of card id 5806 into vari102
+repeat forever
+get random (15)
+if it is not vari102 then exit repeat
+end repeat
+
+put it into vari102
+put vari102 into line (2) of card field "TizK10" of cd id 5806
+put line (vari102) of card field "TizK02" of card id 5806 after last char of card field "OtK02" of card id 4360
+
+put line (3) of card field "TizK10" of card id 5806 into vari103
+repeat forever
+get random (10)
+if it is not vari103 then exit repeat
+end repeat
+
+put it into vari103
+put vari103 into line (3) of card field "TizK10" of cd id 5806
+put line (vari103) of card field "TizK03" of card id 5806 after last char of card field "OtK02" of card id 4360
+
+put line (4) of card field "TizK10" of card id 5806 into vari104
+repeat forever
+get random (17)
+if it is not vari104 then exit repeat
+end repeat
+
+put it into vari104
+put vari104 into line (4) of card field "TizK10" of cd id 5806
+
+put line (vari104) of card field "TizK04" of card id 5806 after last char of card field "OtK02" of card id 4360
+
+
+
+put return after last char of card field "OtK02" of card id 4360
+put lineFeed after last char of card field "OtK02" of card id 4360
+delete last char of card field "OtK02" of card id 4360
+
+put line (vari104) of card field "TizK05" of card id 5806 after last char of card field "OtK02" of card id 4360
+
+
+put line (5) of card field "TizK10" of card id 5806 into vari105
+repeat forever
+get random (18)
+if it is not vari105 then exit repeat
+end repeat
+put it into vari105
+put vari105 into line (5) of card field "TizK10" of cd id 5806
+put line (vari105) of card field "TizK06" of card id 5806 after last char of card field "OtK02" of card id 4360
+
+
+put line (6) of card field "TizK10" of card id 5806 into vari106
+repeat forever
+get random (29)
+if it is not vari106 then exit repeat
+end repeat
+
+put it into vari106
+put vari106 into line (6) of card field "TizK10" of cd id 5806
+put line (vari106) of card field "TizK07" of card id 5806 after last char of card field "OtK02" of card id 4360
+
+put line (7) of card field "TizK10" of card id 5806 into vari107
+repeat forever
+get random (11)
+if it is not vari107 then exit repeat
+end repeat
+
+put it into vari107
+put vari107 into line (7) of card field "TizK10" of cd id 5806
+put line (vari107) of card field "TizK08" of card id 5806 after last char of card field "OtK02" of card id 4360
+
+
+
+
+
+end mouseUp
+
+
+===== STRING 0058 =====
+=Nincs Isten! 
+Isten nincs! 
+Talpra magyar! 
+Jó Uram, Ó! 
+Ó Big Bang! 
+Krisztus Urunk! 
+Hé Lucifer! 
+Ó magas ég! 
+Ó szent ég! 
+Szent Habakuk! 
+Szent Isten! 
+
+
+Kurva világ! 
+
+
+
+
+
+
+
+===== STRING 0059 =====
+=høforrás volt
+mûvégtag volt
+sófegyver volt
+vaktöltény volt
+száraz gøz volt
+vizenyøs láp volt
+nedves föld volt
+gøzfátyol volt
+szexpótló volt
+vízágyú volt
+nedves rongy volt
+keretes kép volt
+hófúvás volt
+gépfegyver volt
+ima-tenger volt
+
+ˇ˝
+
+===== STRING 0060 =====
+= a hitünk
+ az eszünk
+ a szavunk
+ az igénk
+ lelkünk
+ szívünk
+ üdvünk
+ a remény
+ a jövønk
+ vágyunkˇ¸
+
+===== STRING 0061 =====
+= elejétøl
+ elejétøl
+ elejétøl
+ Szodomától
+, eredendøn
+, eredendøn
+, eredendøn
+, eredendøn
+, eredendøn
+ Salamontól
+, velejéig
+, velejéig
+, velejéig
+, velejéig
+, közepétøl
+ születéstøl
+ Jeruzsálemˇ˚
+
+===== STRING 0062 =====
+=fogva.
+kezdve.
+gyenge.
+kezdve.
+gyenge.
+renyhe.
+ronda.
+renyhe.
+árva.
+kezdve.
+sáros.
+szørös.
+szürke.
+ronda.
+ronda.
+fogva.
+óta.
+
+árva.
+szürke.
+ronda.
+renyhe.
+sáros.
+ˇ˙
+
+===== STRING 0063 =====
+= A víz elfolyt.
+ A tûz kialudt.
+ A láz lelohadt.
+ A kéj megfúlt.
+ A víz leapadt.
+ A tél lerohant.
+ A nyár lefutott.
+ A fény megfúlt.
+ A fény elapadt.
+ A tûz lelohadt.
+ A víz leapadt.
+ A kéj elapadt.
+ A kéj lelohadt.
+ A kéj kilyukadt.
+ A könny elapadt.
+ A könny elfolyt.
+ A nyár lelohadt.
+ A nyár megfúlt.
+ 
+
+
+
+
+===== STRING 0064 =====
+= Fázunk
+ Félünk
+ Tûrûnk
+ Élünk
+ Porlunk
+ Döglünk
+ Égünk
+ Vedlünk
+ Hajlunk
+ Siklunk
+ Csuklunk
+ Kéklünk
+ Mállunk
+ Pállunk
+ Omlunk
+ Feslünk
+ Botlunk
+ Fûlünk
+ Bûzlünk
+ Habzunk
+ Rajzunk
+ Párzunk
+ Vérzünk
+ Porzunk
+ Fekszünk
+ Alszunk
+ Úszunk
+ Kúszunk
+ Sirunk
+
+ Pörlünk
+ Halkan
+ Dacból
+
+===== STRING 0065 =====
+= védtelenül.
+ vadkacsaként.
+ vadlibaként.
+ elvtelenül. 
+ meztelenül.
+ szótalanul.
+ szüntelenül.
+ próbabaként.
+ végtelenül.
+ parttalanul.
+ hasztalanul.
+
+
+ piszkafaként.
+
+===== STRING 0066 =====
+11  15  10  17  18  29  11
+161 063 100
+
+===== STRING 0067 =====
+ßÅâD¸x08DÄÑH@DÄÑÑÄD¯xÑ¯D
+
+===== STRING 0068 =====
+on mouseUp
+
+put line (1) of card field "TizenegyK10" of card id 5921 into vari111
+repeat forever
+get random (12)
+if it is not vari111 then exit repeat
+end repeat
+
+put it into vari111
+put vari111 into line (1) of card field "TizenegyK10" of cd id 5921
+put line (vari111) of card field "TizenegyK01" of card id 5921 after last char of card field "OtK02" of card id 4360
+
+put line (2) of card field "TizenegyK10" of card id 5921 into vari112
+repeat forever
+get random (11)
+if it is not vari112 then exit repeat
+end repeat
+
+put it into vari112
+put vari112 into line (2) of card field "TizenegyK10" of cd id 5921
+put line (vari112) of card field "TizenegyK02" of card id 5921 after last char of card field "OtK02" of card id 4360
+
+put line (3) of card field "TizenegyK10" of card id 5921 into vari113
+repeat forever
+get random (18)
+if it is not vari113 then exit repeat
+end repeat
+
+put it into vari113
+put vari113 into line (3) of card field "TizenegyK10" of cd id 5921
+put line (vari113) of card field "TizenegyK03" of card id 5921 after last char of card field "OtK02" of card id 4360
+
+
+
+
+put return after last char of card field "OtK02" of card id 4360
+put lineFeed after last char of card field "OtK02" of card id 4360
+delete last char of card field "OtK02" of card id 4360
+
+put line (4) of card field "TizenegyK10" of card id 5921 into vari114
+repeat forever
+get random (114)
+if it is not vari114 then exit repeat
+end repeat
+
+put it into vari114
+put vari114 into line (4) of card field "TizenegyK10" of cd id 5921
+
+put line (vari114) of card field "TizenegyK04" of card id 5921 after last char of card field "OtK02" of card id 4360
+
+
+
+
+put line (6) of card field "TizenegyK10" of card id 5921 into vari116
+repeat forever
+get random (11)
+if it is not vari116 then exit repeat
+end repeat
+put it into vari116
+put vari116 into line (6) of card field "TizenegyK10" of cd id 5921
+put line (vari116) of card field "TizenegyK06" of card id 5921 after last char of card field "OtK02" of card id 4360
+
+
+
+put line (7) of card field "TizenegyK10" of card id 5921 into vari117
+repeat forever
+get random (115)
+if it is not vari117 then exit repeat
+end repeat
+
+put it into vari117
+put vari117 into line (7) of card field "TizenegyK10" of cd id 5921
+put line (vari117) of card field "TizenegyK07" of card id 5921 after last char of card field "OtK02" of card id 4360
+
+
+
+end mouseUp
+
+
+
+
+
+
+
+===== STRING 0069 =====
+=Engem
+Téged
+Minket
+Tudd, hogy
+Lásd, hogy
+Féld, hogy
+Véld, hogy
+Hidd, hogy
+Jó, ha
+Fénye
+Lénye
+Árnya
+
+
+
+
+===== STRING 0070 =====
+= az én ellenségemtøl
+ az ø ellenségétøl
+ akárki szavától csendben
+ oroszlán szárnyaival még
+ erénytøl, lánytól, pénztøl
+ a szex mézes gyönyörétøl
+ az irgalmasságtól még
+ a rossztól, minden rossztól
+ az én nyomorúságomtól
+ a vétkek legvétkétøl
+ erénnyel, lánnyal, pénzzel
+
+
+===== STRING 0071 =====
+= megszabadíthat.
+ felszabadíthat.
+ elszabadíthat.
+ megmenekíthet.
+ elbarikádol.
+ elmenekíthet,
+ elkülöníthet.
+ elhidegíthet.
+ elkeresíthet.
+ elszigetelhet.
+ elregulálhat.
+ megbabonáztat.
+ ellakatolhat.
+ megbizseregtet.
+ elbizseregtet.
+ megkeseregtet.
+ megbetegíthet.
+ elbetegíthet.
+ 
+
+ ˇ¸
+
+===== STRING 0072 =====
+=Ülj a csalánba
+Ülj a gödörbe
+Ülj a verembe
+Ülj a homokra
+Bújj a gödörbe
+Bújj a szobába
+Bújj az akolba
+Bújj a karámba
+Bújj a verembe
+Hágj a hajóra
+Hágj a csalánba
+Hágj a fövenyre
+Hágj a homokra
+Menj a hajóra
+Menj a mezøre
+Menj a szobába
+Menj az öbölbe
+Menj az akolba
+Menj a csalánba
+Menj a karámba
+Menj a fövenyre
+Menj a laposba
+Menj a verembe
+Menj a terembe
+Menj a határba
+Menj a homokra
+Lépj a gödörbe
+Lépj a szobába
+Lépj az akolba
+Lépj a csalánba
+Lépj a karámba
+Lépj a fövenyre
+Lépj a verembe
+Lépj a terembe
+Lépj a homokra
+Állj a gödörbe
+Állj a szobába
+Állj az öbölbe
+Állj az akolba
+Állj a csalánba
+Állj a karámba
+Állj a fövenyre
+Állj a verembe
+Állj a terembe
+Állj a homokra
+Nézz a gödörbe
+Nézz a szobába
+Nézz az akolba
+Nézz a csalánra
+Nézz a karámba
+Nézz a verembe
+Nézz a fövenyre
+Nézz a terembe
+Nézz a homokra
+Fuss a mezøre
+Fuss a szobába
+Fuss az öbölbe
+Fuss az akolba
+Fuss a csalánba
+Fuss a karámba
+Fuss a fövenyre
+Fuss a laposba
+Fuss a verembe
+Fuss a határba
+Kússz a hajóra
+Kússz a gödörbe
+Kússz a szobába
+Kússz az akolba
+Kússz a csalánba
+Kússz a fövenyre
+Kússz a verembe
+Kússz a terembe
+Kússz a homokra
+Húzz a homokra
+Húzz a laposba
+Húzz a határba
+Húzz a mezøre
+Húzz az öbölbe
+Jöjj a hajóra
+Jöjj a gödörbe
+Jöjj a mezøre
+Jöjj a szobába
+Jöjj az öbölbe
+Jöjj az akolba
+Jöjj a csalánba
+Jöjj a karámba
+Jöjj a fövenyre
+Jöjj a laposba
+Jöjj a verembe
+Jöjj a terembe
+Jöjj a határba
+Jöjj a homokba
+Csússz a gödörbe
+Csússz a csalánba
+Csússz a verembe
+Csússz a homokra
+Csússz a fövenyre
+Mássz a hajóra
+Mássz a karámba
+Mássz a verembe
+Mássz a terembe
+Mássz a szobába
+Mássz a fövenyre
+Mássz a gödörbe
+Szarj a hajóra
+Szarj a szobába
+Szarj a gödörbe
+Szarj az akolba
+Szarj a csalánba
+Szarj a karámba
+Szarj a fövenyre
+Szarj a verembe
+Szarj a terembe
+Szarj a homokra
+
+Menj
+Lépj
+Állj
+Nézz
+Fuss
+Kússz
+Húzz
+Lökj
+Jöjj
+Csússz
+Mássz
+Bújj
+Ülj
+Hágj
+Térj
+Tarts
+
+Lökj a gödörbe
+Lökj a verembe
+Lökj a terembe
+Lökj a homokra
+Lökj a fövenyre
+Lökj a szobába
+
+
+===== STRING 0073 =====
+= a hajóra
+ a gödörbe
+ a mezøre
+ a szobába
+ az öbölbe
+ az akolba
+ a csalánba
+ a karámba
+ a fövenyre
+ a laposba
+ a verembe
+ a terembe
+ a határba
+ a homokra
+
+===== STRING 0074 =====
+= legény!
+ leány!
+ dudás!
+ kaszás!
+ fiú!
+ barát!
+ király!
+ vagány!
+ pogány!
+ lotyó!
+ öcsém!
+
+ bohóc!
+ tanonc!
+ babám!
+ tanár!
+ tatár!
+ huszár!
+ tahó!
+ titán!
+ palóc!
+ vadóc!
+ kolonc!
+ tolonc!
+ kovács!
+ takács!
+ magány!
+ cigány!
+ talán...
+  csatár!
+ faarc!
+ lidérc!
+
+===== STRING 0075 =====
+= S maszturbálj, muzsikálj!
+ Maszturbálj s vezekelj!
+ S maszturbálj, meditálj!
+ S maszturbálj, könyörögj!
+ S maszturbálj, hegedülj!
+ Maszturbálj s bizakodj!
+ S maszturbálva esengj!
+ S maszturbálva zenélj!
+ S négykézláb vezekelj!
+ S négykézláb bizakodj!
+ Négykézláb vezekelj!
+ Négykézláb bizakodj!
+ Négykézláb keseregj!
+ S négykézláb keseregj
+ S négykézláb kiabálj!
+ S négykézláb muzsikálj!
+ S négykézláb könyörögj!
+ S négykézláb meditálj!
+ S négykézláb hegedülj!
+ És térdelj, vezekelj!
+ És térdelj, bizakodj!
+ És térdelj, keseregj!
+ És térdelj, s kiabálj!
+ És térdelj, könyörögj!
+ És térdelj, s meditálj!
+ És térdelvezekelj!
+ És térdelj s muzsikálj!
+ S térdreborulva zenélj!
+ S térdreborulva esengj!
+ S térdreomolva zenélj!
+ S térdreomolva esengj!
+ S térdrelerogyva zenélj!
+ S térdrelerogyva esengj!
+ S vasszögeken vezekelj!
+ S vasszögeken keseregj!
+ S vasszögeken meditálj!
+ S vasszögeken hegedülj!
+ S vasszögeken fuvolázz!
+ S vasszögeken furulyázz!
+ S térdepeløn vezekelj!
+ S térdepeløn keseregj!
+ S térdepeløn meditálj!
+ S térdepeløn hegedülj!
+ S térdepeløn fuvolázz!
+ És szívbøl bizakodj!
+ És szívbøl vezekelj!
+ És szívbøl keseredj!
+ És szívbøl muzsikálj!
+ És szívbøl könyörögj!
+ És szívbøl meditálj!
+ És szívbøl hegedülj!
+ És szívbøl fuvolázz!
+ És muzsikálj, muzsikálj!
+ És muzsikálj, bizakodj!
+ És muzsikálj, vezekelj!
+ És muzsikálj, keseregj!
+ És muzsikálj, könyörögj!
+ És muzsikálj, meditálj!
+ És fuvolázz, fuvolázz!
+ És fuvolázz, bizakodj!
+ És fuvolázz, vezekelj!
+ És fuvolázz, keseregj!
+ És fuvolázz, muzsikálj!
+ És fuvolázz, könyörögj!
+ És fuvolázz, meditálj!
+ És furulyázz, furulyázz!
+ És furulyázz, bizakodj!
+ És furulyázz, vezekelj!
+ És furulyázz, keseregj!
+ És furulyázz, könyörögj!
+ És furulyázz, meditálj!
+ És gomolyogj, gomolyogj!
+ És gomolyogj, meditálj!
+ És gomolyogj, bizakodj!
+ És gomolyogj, vezekelj!
+ És gomolyogj, könyörögj!
+ És gomolyogj, meditálj!
+ És vezekelj, vezekelj!
+ És vezekelj, bizakodj!
+ És vezekelj, keseregj!
+ És vezekelj, muzsikálj!
+ És vezekelj, könyörögj!
+ És vezekelj, meditálj!
+ És vezekelj, hegedülj!
+ És vezekelve zenelj!
+ És vezekelve esengj!
+ És bizakodj, bizakodj!
+ És bizakodj, vezekelj!
+ És bizakodj, meditálj!
+ És bizakodj, könyörögj!
+ És bizakodj, muzsikálj!
+ És bizakodj, hegedülj!
+ És keseregj, keseregj!
+ És keseregj, vezekelj!
+ És keseregj, muzsikálj!
+ És keseregj, könyörögj!
+ És keseregj, meditálj!
+ És könyörögj, könyörögj!
+ És könyörögj, bizakodj!
+ És könyörögj, vezekelj!
+ És könyörögj, keseregj!
+ És könyörögj, muzsikálj!
+ És könyörögj, hegedülj!
+ És könyörögj, meditálj!
+ És meditálj, meditálj!
+ És meditálj, bizakodj!
+ És meditálj, vezekelj!
+ És meditálj, keseregj!
+ És meditálj, muzsikálj!
+ És meditálj, könyörögj!
+ És meditálj, hegedülj!
+ És meditálva esengj!
+ És meditálva zenélj!
+ És könyörögve esengj!
+ És könyörögve zenélj!
+
+
+
+ És bizakodj, térdelj!
+ És vezekelj, térdelj!
+ És keseregj, térdelj!
+ És muzsikálj, térdelj!
+ És könyörögj, térdelj!
+ És meditálj, térdelj!
+ És muzsikálj,
+ És fuvolázz,
+ És furulyázz,
+ És hegedülj,
+ És gomolyogj,
+ És szívbøl
+ És vezekelj,
+ És provokálj,
+ És bizakodj,
+ És jubilálj,
+ Asszimilálj,
+ Gesztikulálj,
+
+
+ Inficiálj,
+ És revelálj,
+ És gazsulálj,
+ És valahol
+ És mazsolázz,
+
+
+
+
+
+
+
+
+
+ˇ¯
+
+===== STRING 0076 =====
+= bizakodj!
+ vezekelj!
+ keseregj!
+ kiabálj!
+ provokálj!
+ muzsikálj!
+ gazsulálj!
+ könyörögj!
+ meditálj!
+ agitálj!
+ hegedülj!
+ 
+
+ rezonálj!
+
+
+===== STRING 0077 =====
+= elgomolyogtat.
+ elkopulálhat.
+ elpanamázhat.
+ megkarimáztat.
+ elbetegíthet,
+ elkalyibázhat
+ elboronálhat
+ elkicsodázhat
+ eltaligázhat
+ felrafiázhat
+ megrafiázhat
+ elrafiázhat
+ elfifikázik
+ ellogikázik
+ elmuzsikálhat.
+ eldarabolhat
+ elkupolázhat
+ elmazsolázhat
+ elfuvolázhat
+ elfurulyázik
+ eldatolyázik.
+ elkocsonyásít.
+ elfakutyáztat.
+ elhegedülhet.
+ elmakacsolhat.
+ elkulacsolhat.
+ elszivacsolhat.
+ elszegecselhet.
+ eldikicselhet.
+ elpaticsolhat.
+ elmaradoztat.
+ elijedeztet.
+ elrepedeztet.
+ felrepedeztet.
+ elepedeztet.
+ megmerevíthet.
+ kimerevíthet.
+ elmerevíthet,
+ megtizedelhet.
+ megrövidíthet.
+ elrececézhet.
+ elheherészhet.
+ felszalagoltat.
+ elcsomagolhat.
+ összefaraghat.
+ eltekeregtet.
+ elcsipereghet.
+ elnyomorithat
+ elnoszogathat
+ elkaparinthat.
+ megkeseríthet.
+ elmaradoztat.ˇˆ
+
+===== STRING 0078 =====
+12  11  18  114  11  115
+342 642 960
+
+===== STRING 0079 =====
+on mouseUp
+
+put line (1) of card field "TizenkettoK11" of card id 6318 into vari121
+repeat forever
+get random (12)
+if it is not vari121 then exit repeat
+end repeat
+
+put it into vari121
+put vari121 into line (1) of card field "TizenkettoK11" of cd id 6318
+put line (vari121) of card field "TizenkettoK01" of card id 6318 after last char of card field "OtK02" of card id 4360
+
+put line (2) of card field "TizenkettoK11" of card id 6318 into vari122
+repeat forever
+get random (12)
+if it is not vari122 then exit repeat
+end repeat
+
+put it into vari122
+put vari122 into line (2) of card field "TizenkettoK11" of cd id 6318
+put line (vari122) of card field "TizenkettoK02" of card id 6318 after last char of card field "OtK02" of card id 4360
+
+put line (3) of card field "TizenkettoK11" of card id 6318 into vari123
+repeat forever
+get random (18)
+if it is not vari123 then exit repeat
+end repeat
+
+put it into vari123
+put vari123 into line (3) of card field "TizenkettoK11" of cd id 6318
+put line (vari123) of card field "TizenkettoK03" of card id 6318 after last char of card field "OtK02" of card id 4360
+
+
+put line (4) of card field "TizenkettoK11" of card id 6318 into vari124
+repeat forever
+get random (14)
+if it is not vari124 then exit repeat
+end repeat
+
+put it into vari124
+put vari124 into line (4) of card field "TizenkettoK11" of cd id 6318
+
+put line (vari124) of card field "TizenkettoK04" of card id 6318 after last char of card field "OtK02" of card id 4360
+
+
+
+
+put line (5) of card field "TizenkettoK11" of card id 6318 into vari125
+repeat forever
+get random (20)
+if it is not vari125 then exit repeat
+end repeat
+put it into vari125
+put vari125 into line (5) of card field "TizenkettoK11" of cd id 6318
+put line (vari125) of card field "TizenkettoK05" of card id 6318 after last char of card field "OtK02" of card id 4360
+
+put return after last char of card field "OtK02" of card id 4360
+put lineFeed after last char of card field "OtK02" of card id 4360
+delete last char of card field "OtK02" of card id 4360
+
+
+put line (6) of card field "TizenkettoK11" of card id 6318 into vari126
+repeat forever
+get random (13)
+if it is not vari126 then exit repeat
+end repeat
+
+put it into vari126
+put vari126 into line (6) of card field "TizenkettoK11" of cd id 6318
+put line (vari126) of card field "TizenkettoK06" of card id 6318 after last char of card field "OtK02" of card id 4360
+
+put line (7) of card field "TizenkettoK11" of card id 6318 into vari127
+repeat forever
+get random (13)
+if it is not vari127 then exit repeat
+end repeat
+
+put it into vari127
+put vari127 into line (7) of card field "TizenkettoK11" of cd id 6318
+put line (vari127) of card field "TizenkettoK07" of card id 6318 after last char of card field "OtK02" of card id 4360
+
+put line (8) of card field "TizenkettoK11" of card id 6318 into vari128
+repeat forever
+get random (11)
+if it is not vari128 then exit repeat
+end repeat
+
+put it into vari128
+put vari128 into line (8) of card field "TizenkettoK11" of cd id 6318
+put line (vari128) of card field "TizenkettoK08" of card id 6318 after last char of card field "OtK02" of card id 4360
+
+put line (9) of card field "TizenkettoK11" of card id 6318 into vari129
+repeat forever
+get random (10)
+if it is not vari129 then exit repeat
+end repeat
+
+put it into vari129
+put vari129 into line (9) of card field "TizenkettoK11" of cd id 6318
+put line (vari129) of card field "TizenkettoK09" of card id 6318 after last char of card field "OtK02" of card id 4360
+
+
+
+
+end mouseUp
+
+===== STRING 0080 =====
+=Ánizstól
+Törvénytøl
+Rossz bortól
+Borszesztøl
+Lányszagtól
+Asszonytól
+Bosszútól
+Szégyentøl
+Átoktól
+Méregtøl
+Féltéstøl
+Bánatitól
+
+
+
+
+
+===== STRING 0081 =====
+= berekedt
+ elaszott
+ részeg
+ berugott
+ bepiált
+ beszeszelt
+ megesett
+ kiborult
+ lekonyult
+ kifacsart
+ spicces
+ kábult
+
+===== STRING 0082 =====
+= sámán,
+ pincér,
+ költø,
+ szobrász,
+ festø,
+ Adonisz,
+ Hermész,
+ honvéd,
+ rendør,
+ rabló,
+ vendég,
+ jött-ment,
+ zászlós,
+ portás,
+ postás,
+ veterán,
+ kocsisunk,
+ kapusunk,
+ 
+
+
+
+
+
+
+
+===== STRING 0083 =====
+= izzadva
+ átkozva
+ vétkezve
+ titkolva
+ bûnhødve
+ fölsírva
+ röstelve
+ szalutálva
+ szemetelve
+ kacarászva
+ dudorászva
+ betakarva
+ kitakarva
+ letakarva
+ 
+
+
+===== STRING 0084 =====
+= köszöntlek.
+ kereslek.
+ szeretlek.
+ szorítlak.
+ tagadlak.
+ tegezlek.
+ szapullak.
+ püföllek.
+ perellek.
+ dicsérlek. 
+ leszóllak.
+ lefoglak.
+ legyûrlek.
+ megintlek.
+ röhöglek.
+ segítlek.
+ követlek.
+ taposlak.
+ vezetlek.
+ vigyázlak.
+ 
+
+
+ imádlak.
+
+
+
+ˇ˘
+
+===== STRING 0085 =====
+=Emberi
+Isteni
+Szellemi
+Majdani
+Tegnapi
+Holnapi
+Ünnepi
+Látod-e?! —
+Hallod-e?! —
+Érzed-e?! —
+Érted-e?! —
+Isteni
+Egykori
+
+===== STRING 0086 =====
+= megmentønk
+ bélpoklunk
+ védernyønk
+ védøszárny
+ megváltónk
+ kármentønk
+ ügyvezetønk
+ félelmünk
+ izgalmunk
+ elmebajunk
+ gyógytükrünk
+ új babonánk
+ megtartónk
+
+ biztonság
+
+===== STRING 0087 =====
+= és temetønk
+ és tulipán
+ és kalodánk
+ és palotánk
+ és pagodánk
+ és tutajunk
+ és aranyunk
+ és menedék
+ és uzsoránk
+ és örömünk
+ és ligetünk
+
+
+
+ és pinaszør
+ és ararát
+ és temetø
+
+===== STRING 0088 =====
+= a szavad.
+ a kezed.
+ az eszed.
+ a hajad.
+ a szemed.
+ a magány.
+ a közöny.
+ a nyomor.
+ a pokol.
+ a tüzed.
+
+ a mocsár.
+ a korán.
+ a pecsét.ˇÙ
+
+===== STRING 0089 =====
+1
+8
+14
+12
+8
+6
+11
+4
+4
+
+===== STRING 0090 =====
+12  12  18  14  20  13  13  11  10
+14 529 715 200
+
+TizenkettoK
+
+===== STRING 0091 =====
+on mouseUp
+
+put line (1) of card field "TizenharomK13" of card id 6543 into vari131
+repeat forever
+get random (10)
+if it is not vari131 then exit repeat
+end repeat
+
+put it into vari131
+put vari131 into line (1) of card field "TizenharomK13" of cd id 6543
+put line (vari131) of card field "TizenharomK01" of card id 6543 after last char of card field "OtK02" of card id 4360
+
+put line (2) of card field "TizenharomK13" of card id 6543 into vari132
+repeat forever
+get random (10)
+if it is not vari132 then exit repeat
+end repeat
+
+put it into vari132
+put vari132 into line (2) of card field "TizenharomK13" of cd id 6543
+put line (vari132) of card field "TizenharomK02" of card id 6543 after last char of card field "OtK02" of card id 4360
+
+put line (3) of card field "TizenharomK13" of card id 6543 into vari133
+repeat forever
+get random (14)
+if it is not vari133 then exit repeat
+end repeat
+
+put it into vari133
+put vari133 into line (3) of card field "TizenharomK13" of cd id 6543
+put line (vari133) of card field "TizenharomK03" of card id 6543 after last char of card field "OtK02" of card id 4360
+
+
+put line (4) of card field "TizenharomK13" of card id 6543 into vari134
+repeat forever
+get random (10)
+if it is not vari134 then exit repeat
+end repeat
+
+put it into vari134
+put vari134 into line (4) of card field "TizenharomK13" of cd id 6543
+
+put line (vari134) of card field "TizenharomK04" of card id 6543 after last char of card field "OtK02" of card id 4360
+
+
+
+
+put line (5) of card field "TizenharomK13" of card id 6543 into vari135
+repeat forever
+get random (14)
+if it is not vari135 then exit repeat
+end repeat
+put it into vari135
+put vari135 into line (5) of card field "TizenharomK13" of cd id 6543
+put line (vari135) of card field "TizenharomK05" of card id 6543 after last char of card field "OtK02" of card id 4360
+
+
+put line (6) of card field "TizenharomK13" of card id 6543 into vari136
+repeat forever
+get random (16)
+if it is not vari136 then exit repeat
+end repeat
+
+put it into vari136
+put vari136 into line (6) of card field "TizenharomK13" of cd id 6543
+put line (vari136) of card field "TizenharomK06" of card id 6543 after last char of card field "OtK02" of card id 4360
+
+put return after last char of card field "OtK02" of card id 4360
+put lineFeed after last char of card field "OtK02" of card id 4360
+delete last char of card field "OtK02" of card id 4360
+
+
+put line (7) of card field "TizenharomK13" of card id 6543 into vari137
+repeat forever
+get random (11)
+if it is not vari137 then exit repeat
+end repeat
+put it into vari137
+put vari137 into line (7) of card field "TizenharomK13" of cd id 6543
+put line (vari137) of card field "TizenharomK07" of card id 6543 after last char of card field "OtK02" of card id 4360
+
+put line (8) of card field "TizenharomK13" of card id 6543 into vari138
+repeat forever
+get random (10)
+if it is not vari138 then exit repeat
+end repeat
+put it into vari138
+put vari138 into line (8) of card field "TizenharomK13" of cd id 6543
+put line (vari138) of card field "TizenharomK08" of card id 6543 after last char of card field "OtK02" of card id 4360
+
+put line (9) of card field "TizenharomK13" of card id 6543 into vari139
+repeat forever
+get random (11)
+if it is not vari139 then exit repeat
+end repeat
+put it into vari139
+put vari139 into line (9) of card field "TizenharomK13" of cd id 6543
+put line (vari139) of card field "TizenharomK09" of card id 6543 after last char of card field "OtK02" of card id 4360
+
+
+
+put line (10) of card field "TizenharomK13" of card id 6543 into vari1310
+repeat forever
+get random (11)
+if it is not vari1310 then exit repeat
+end repeat
+put it into vari1310
+put vari1310 into line (10) of card field "TizenharomK13" of cd id 6543
+put line (vari1310) of card field "TizenharomK10" of card id 6543 after last char of card field "OtK02" of card id 4360
+
+
+put line (11) of card field "TizenharomK13" of card id 6543 into vari1311
+repeat forever
+get random (10)
+if it is not vari1311 then exit repeat
+end repeat
+put it into vari1311
+put vari1311 into line (11) of card field "TizenharomK13" of cd id 6543
+put line (vari1311) of card field "TizenharomK11" of card id 6543 after last char of card field "OtK02" of card id 4360
+
+put line (12) of card field "TizenharomK13" of card id 6543 into vari1312
+repeat forever
+get random (11)
+if it is not vari1312 then exit repeat
+end repeat
+put it into vari1312
+put vari1312 into line (12) of card field "TizenharomK13" of cd id 6543
+put line (vari1312) of card field "TizenharomK12" of card id 6543 after last char of card field "OtK02" of card id 4360
+
+
+
+end mouseUp
+
+===== STRING 0092 =====
+=Lásd, aki
+Ø, aki
+Nézd, aki
+Tudd, aki
+Lám, aki
+Ó, aki
+Már aki
+Mert aki
+Íme, ki
+Mind, aki
+
+
+
+===== STRING 0093 =====
+= tûzzel
+ szørrel
+ nøvel
+ lánnyal
+ szûzzel
+ csajjal
+ hölggyel
+ csókkal
+ bókkal
+ szexszel
+ 
+
+ vízzel
+ vassal
+ køvel
+ tûvel
+ hóval
+ kénnel
+
+===== STRING 0094 =====
+= døzsöl,
+ fekszik,
+ játszik,
+ társul,
+ táncol,
+ tervez,
+ tá-tá,
+ pitykéz,
+ csörtet,
+ bütyköl,
+ flancol,
+ piszmog,
+ henceg,
+ kérked,
+
+ tesped
+ döglik
+
+
+===== STRING 0095 =====
+= tûzzel
+ szørrel
+ nøvel
+ lánnyal
+ szûzzel
+ csajjal
+ hölggyel
+ csókkal
+ bókkal
+ szexszel
+ 
+
+ vízzel
+ vassal
+ køvel
+ tûvel
+ hóval
+ kénnel
+
+===== STRING 0096 =====
+= døzsöl
+ fekszik
+ játszik
+ társul
+ táncol
+ tervez
+ csörtet
+ bütyköl
+ flancol
+ piszmog
+ henceg
+ kérked
+ tesped
+ döglik
+ˇ¯
+
+===== STRING 0097 =====
+= egész nap,
+ ez egyszer,
+ ad acta,
+ akárhol,
+ akárhogy,
+ eløször,
+, akármit!,
+ egy évig,
+ egy órát,
+ ezentúl,
+ azonnal,
+ erøvel,
+ a fûben,
+ a réten,
+ a gazban,
+ a lócán,
+
+
+
+ az ágyban,ˇ˜
+
+===== STRING 0098 =====
+=sírba
+ágyra
+földre
+jégre
+hóba
+porba
+tûzbe
+fûre
+gyepre
+tönkre
+holtra
+
+===== STRING 0099 =====
+= sodorja
+ borítja
+ szorítja
+ lapítja
+ tapodja
+ taszítja
+ cibálja
+ emészti
+ veszejti
+ darálja
+
+
+ röpíti
+ okítja
+ emészti
+ veszejti
+ csavarja
+
+===== STRING 0100 =====
+= a szesz.
+ a bor.
+ a sör.
+ a pénz.
+ a steksz.
+ a kéj.
+ az éj.
+ a gøg.
+ a félsz.
+ a frász.
+ a bûn.
+
+ magát.
+ eszét.
+ fejét.
+ faszát.
+ fülét.
+ szemét.
+ kezét.ˇÙ
+
+===== STRING 0101 =====
+= Sírba
+ Ágyra
+ Földre
+ Jégre
+ Hóba
+ Porba
+ Tûzbe
+ Fûre
+ Gyepre
+ Tönkre
+ HoltraˇÒ
+
+===== STRING 0102 =====
+8
+7
+4
+8
+1
+10
+1
+9
+8
+1
+9
+6
+
+===== STRING 0103 =====
+= sodorja
+ borítja
+ szorítja
+ lapítja
+ tapodja
+ taszítja
+ cibálja
+ emészti
+ veszejti
+ darálja
+
+
+ röpíti
+ okítja
+ emészti
+ veszejti
+ csavarja
+
+===== STRING 0104 =====
+= a szesz.
+ a bor.
+ a sör.
+ a pénz.
+ a steksz.
+ a kéj.
+ az éj.
+ a gøg.
+ a félsz.
+ a frász.
+ a bûn.
+
+ magát.
+ eszét.
+ fejét.
+ faszát.
+ fülét.
+ szemét.
+ kezét.ˇ
+
+===== STRING 0105 =====
+=10  10  14  10  14  16  11  10  11  11  10 11
+4 591 417 600 000
+
+===== STRING 0106 =====
+on mouseUp
+
+put line (1) of card field "TizennegyK11" of card id 6749 into vari1401
+repeat forever
+get random (15)
+if it is not vari1401 then exit repeat
+end repeat
+
+put it into vari1401
+put vari1401 into line (1) of card field "TizennegyK11" of cd id 6749
+put line (vari1401) of card field "TizennegyK01" of card id 6749 after last char of card field "OtK02" of card id 4360
+
+put line (2) of card field "TizennegyK11" of card id 6749 into vari1402
+repeat forever
+get random (15)
+if it is not vari1402 then exit repeat
+end repeat
+
+put it into vari1402
+put vari1402 into line (2) of card field "TizennegyK11" of cd id 6749
+put line (vari1402) of card field "TizennegyK02" of card id 6749 after last char of card field "OtK02" of card id 4360
+
+put line (3) of card field "TizennegyK11" of card id 6749 into vari1403
+repeat forever
+get random (16)
+if it is not vari1403 then exit repeat
+end repeat
+
+put it into vari1403
+put vari1403 into line (3) of card field "TizennegyK11" of cd id 6749
+put line (vari1403) of card field "TizennegyK03" of card id 6749 after last char of card field "OtK02" of card id 4360
+
+
+put line (4) of card field "TizennegyK11" of card id 6749 into vari1404
+repeat forever
+get random (12)
+if it is not vari1404 then exit repeat
+end repeat
+
+put it into vari1404
+put vari1404 into line (4) of card field "TizennegyK11" of cd id 6749
+
+put line (vari1404) of card field "TizennegyK04" of card id 6749 after last char of card field "OtK02" of card id 4360
+
+
+
+
+put line (5) of card field "TizennegyK11" of card id 6749 into vari1405
+repeat forever
+get random (10)
+if it is not vari1405 then exit repeat
+end repeat
+put it into vari1405
+put vari1405 into line (5) of card field "TizennegyK11" of cd id 6749
+put line (vari1405) of card field "TizennegyK05" of card id 6749 after last char of card field "OtK02" of card id 4360
+
+put return after last char of card field "OtK02" of card id 4360
+put lineFeed after last char of card field "OtK02" of card id 4360
+delete last char of card field "OtK02" of card id 4360
+
+
+put line (6) of card field "TizennegyK11" of card id 6749 into vari1406
+repeat forever
+get random (21)
+if it is not vari1406 then exit repeat
+end repeat
+
+put it into vari1406
+put vari1406 into line (6) of card field "TizennegyK11" of cd id 6749
+put line (vari1406) of card field "TizennegyK06" of card id 6749 after last char of card field "OtK02" of card id 4360
+
+put line (7) of card field "TizennegyK11" of card id 6749 into vari1407
+repeat forever
+get random (16)
+if it is not vari1407 then exit repeat
+end repeat
+
+put it into vari1407
+put vari1407 into line (7) of card field "TizennegyK11" of cd id 6749
+put line (vari1407) of card field "TizennegyK07" of card id 6749 after last char of card field "OtK02" of card id 4360
+
+put line (8) of card field "TizennegyK11" of card id 6749 into vari1408
+repeat forever
+get random (31)
+if it is not vari1408 then exit repeat
+end repeat
+
+put it into vari1408
+put vari1408 into line (8) of card field "TizennegyK11" of cd id 6749
+put line (vari1408) of card field "TizennegyK08" of card id 6749 after last char of card field "OtK02" of card id 4360
+
+put line (10) of card field "TizennegyK11" of card id 6749 into vari1410
+repeat forever
+get random (9)
+if it is not vari1410 then exit repeat
+end repeat
+
+put it into vari1410
+put vari1410 into line (10) of card field "TizennegyK11" of cd id 6749
+put line (vari1410) of card field "TizennegyK10" of card id 6749 after last char of card field "OtK02" of card id 4360
+
+
+
+end mouseUp
+
+===== STRING 0107 =====
+=Ételed
+Életed
+Álmaid
+Terveid
+Vágyaid
+Mondatod
+Gondjaid
+Munkád
+Mûveid
+Verseid
+Kincseid
+Napjaid
+Nászaid
+Éjeid
+Szózatod
+Bánatod
+
+
+
+
+===== STRING 0108 =====
+= elmúlván
+ alkonya jø,
+ estéjén
+ øszén, ó,
+ elszórván
+ elveszvén
+ eltûnvén
+ elmúltán
+ elhülvén
+ elhullván
+ elhalván
+ urnáján
+ eltörvén
+ elszórván
+ alján, ó, 
+
+
+ árkából
+ legvégén
+ óráján
+ ápolván
+ nyugtán, ó,
+ végezténˇ¸
+
+===== STRING 0109 =====
+= haragot
+ örömöt
+ mérget
+ vágyat
+ álmot
+ kedvet
+ zamatot
+ mámort
+ üdvöt
+ szikrát
+ vidulást
+ nevetést
+ kacagást
+ pezsgøt
+ tokajit
+ ser-italt
+
+
+
+===== STRING 0110 =====
+= kebeledbe
+ szívedbe
+ lelkedbe
+ szemeidbe
+ szavaidba
+ versedbe
+ strófádba
+ soraidba
+ levegôdbe
+ palotádba
+ ten öledbe
+ bordádra
+ 
+
+
+
+
+
+===== STRING 0111 =====
+= ne lökj már,
+ ne hozz már,
+ ne tégy már,
+ ne zúdíts,
+ ne önts már,
+ ne loccsancs,
+ ne löttyints,
+ ne fröccsencs,
+ ne lódíts,
+ ne csorgass,
+ 
+
+
+ ne forralj,
+
+
+===== STRING 0112 =====
+=Bajkeverø
+Rosszakaró
+Ködkavaró
+Vajh, szomorú
+Kedvaszaló
+Szarkavaró
+Mert keserû
+Mert savanyú
+Mert szomorú
+Mert elaszott
+Összeaszott
+Összeaszalt
+Rosszul aszalt
+Megszomorult
+Megsavanyult
+Elmeszesült
+Megmeredø
+Elrohadó
+Køvé vált
+Összelapult
+Összeesett
+
+
+
+
+ˇ¯
+
+===== STRING 0113 =====
+= szívnek
+ szájnak
+ észnek
+ szónak
+ nyelvnek
+ hangnak
+ szentnek
+ arcnak
+ kannak
+ pasinak
+ pulinak
+ csacsinak
+ faszinak
+ daginak
+ gurunak
+ mukinak
+
+
+
+
+nønek
+ janinak
+ mukinakˇ˜
+
+===== STRING 0114 =====
+= kedvre derülni
+ kedvre hevülni
+ kedvre vidulni
+ kedvbe borulni
+ kedvre virulni
+ borba borulni
+ borra derülni
+ borra hevülni
+ borba merülni
+ borra vidulni
+ borba virulni
+ dalra derülni
+ dalra hevülni
+ dalra vidulni
+ dalra kigyúlni
+ dalra bomolni
+ dalba örülni
+ dalba virulni
+ fényre derülni
+ fénybe hevülni
+ fényre vidulni
+ fénybe borulni
+ színbe borulni
+ színbe derülni
+ színbe hevülni
+ színre vidulni
+ színbe vidulni
+ tûzbe hevülni
+ szeszbe hevülni
+ szeszbe derülni
+ vágyba hevülni
+ 
+
+
+
+
+
+ ˇı
+
+===== STRING 0115 =====
+= nehéz.
+ halál.
+ tilos.
+ a vég.
+ cikis.
+ csalás.
+ hibás.
+ csapás.
+ zsenáns.
+ 
+
+
+ fekély.
+ galád.
+
+ csapás.
+ bajos.
+ hibás.
+
+ 
+
+
+ kevés.
+  kakás
+
+ csodás.
+ mesés.
+ viszály.
+ veszély.
+
+
+
+
+
+
+
+
+
+===== STRING 0116 =====
+9
+11
+11
+3
+8
+3
+12
+7
+
+5ˇˆ
+
+===== STRING 0117 =====
+15  15  16  12  10  21  16  31  9
+40 497 408 000
+
+
+
+
+TizennegyK
+
+===== STRING 0118 =====
+on mouseUp
+
+put line (1) of card field "TizenotK10" of card id 6975 into vari1501
+repeat forever
+get random (16)
+if it is not vari1501 then exit repeat
+end repeat
+
+put it into vari1501
+put vari1501 into line (1) of card field "TizenotK10" of cd id 6975
+put line (vari1501) of card field "TizenotK01" of card id 6975 after last char of card field "OtK02" of card id 4360
+
+put line (2) of card field "TizenotK10" of card id 6975 into vari1502
+repeat forever
+get random (10)
+if it is not vari1502 then exit repeat
+end repeat
+
+put it into vari1502
+put vari1502 into line (2) of card field "TizenotK10" of cd id 6975
+put line (vari1502) of card field "TizenotK02" of card id 6975 after last char of card field "OtK02" of card id 4360
+
+put line (3) of card field "TizenotK10" of card id 6975 into vari1503
+repeat forever
+get random (13)
+if it is not vari1503 then exit repeat
+end repeat
+
+put it into vari1503
+put vari1503 into line (3) of card field "TizenotK10" of cd id 6975
+put line (vari1503) of card field "TizenotK03" of card id 6975 after last char of card field "OtK02" of card id 4360
+
+
+put line (4) of card field "TizenotK10" of card id 6975 into vari1504
+repeat forever
+get random (17)
+if it is not vari1504 then exit repeat
+end repeat
+
+put it into vari1504
+put vari1504 into line (4) of card field "TizenotK10" of cd id 6975
+
+put line (vari1504) of card field "TizenotK04" of card id 6975 after last char of card field "OtK02" of card id 4360
+
+
+put return after last char of card field "OtK02" of card id 4360
+put lineFeed after last char of card field "OtK02" of card id 4360
+delete last char of card field "OtK02" of card id 4360
+
+put line (5) of card field "TizenotK10" of card id 6975 into vari1505
+repeat forever
+get random (20)
+if it is not vari1505 then exit repeat
+end repeat
+put it into vari1505
+put vari1505 into line (5) of card field "TizenotK10" of cd id 6975
+put line (vari1505) of card field "TizenotK05" of card id 6975 after last char of card field "OtK02" of card id 4360
+
+
+put line (6) of card field "TizenotK10" of card id 6975 into vari1506
+repeat forever
+get random (15)
+if it is not vari1506 then exit repeat
+end repeat
+
+put it into vari1506
+put vari1506 into line (6) of card field "TizenotK10" of cd id 6975
+put line (vari1506) of card field "TizenotK06" of card id 6975 after last char of card field "OtK02" of card id 4360
+
+put line (7) of card field "TizenotK10" of card id 6975 into vari1507
+repeat forever
+get random (63)
+if it is not vari1507 then exit repeat
+end repeat
+
+put it into vari1507
+put vari1507 into line (7) of card field "TizenotK10" of cd id 6975
+put line (vari1507) of card field "TizenotK07" of card id 6975 after last char of card field "OtK02" of card id 4360
+
+
+
+
+end mouseUp
+
+===== STRING 0119 =====
+=Nyílt, zabolátlan
+Megzabolázott
+Megbabonázott
+Átokkal szórt
+Felfegyverzett
+Megregulázott
+Égbekiáltó
+Meghamisított
+Elfeketített
+Összekuszált
+Tûzbôl nôtt
+Szikra szagú
+Osztatlan
+Elszaporított
+Összegereblyélt
+Ó, ezerédes
+
+
+Késre vigyázó
+Tûzre vigyázóˇ˝
+
+===== STRING 0120 =====
+= nyelv,
+ kedv,
+ szív,
+ szó,
+ szem,
+ száj,
+ fül,
+ hang,
+ gøg,
+ báj,
+
+
+
+ˇ¸
+
+===== STRING 0121 =====
+= nyomorúságunk
+ alaposságunk
+ fontosságunk
+ önmentségünk
+ férgességünk
+ féltékenység
+ önteltségünk
+ éberségünk
+ balfaszságunk
+ elesettségünk
+ bénultságunk
+ elevenségünk
+ bátorságunk
+
+
+
+ üszkösségünk
+
+
+===== STRING 0122 =====
+= szüleménye!
+ melegágya!
+ veteménye!
+ puha fészke!
+ buzogánya!
+ bumerángja!
+ temetøje!
+ hozománya!
+ puha sátra!
+ patikája!
+ barikádja!
+ karimája!
+ kerevetje!
+ repedéke!
+ takarója!
+ fakabátja!
+ lepedøje!
+
+ süteménye,
+ petefészke!
+
+
+
+
+
+ paripája,ˇ˙
+
+===== STRING 0123 =====
+=Minden nap
+Ültünkben
+Esténként
+Fáradtan
+Megtörten
+Bûnbakként
+Félholtan
+Vesztesként
+Lankadtan
+Sértettként
+Fegyverrel
+Nap mint nap
+Sánta napon
+Drága remény,
+Ócska remény,
+Hûségbøl
+Hóhérként
+Pünkösdig
+Éjfélig
+Ádventig
+
+
+
+Fegyverrel
+Mindenkit
+Jóságot
+Hívságot
+mint az esø
+mint a halak
+mint a halász
+mint a vadász
+mint a vezér
+hétføtøl
+szerdától
+péntektøl
+szombattól
+
+===== STRING 0124 =====
+= siratunk
+ temetünk
+ takarunk
+ szapulunk
+ befedünk
+ remegünk
+ lapulunk
+ lebegünk
+ lerogyunk
+ lebukunk
+ kilesünk
+ csevegünk
+ tolatunk
+ telelünk
+ csoszogunk
+
+ 
+
+ vezetünk.
+ tüzelünk.
+ tolatunk.
+ tekerünk.
+ evezünk.
+ zuhogunk.
+
+===== STRING 0125 =====
+= s titkon várjuk a fényt.
+ s titkon várjuk a lányt.
+ s titkon várjuk a nøt.
+ s titkon várjuk az øszt.
+ s titkon várjuk a gázt.
+ s némán isszuk a bort.
+ s némán isszuk a szeszt.
+ s többé nem borozunk.
+ s ettøl jól berugunk.
+ s végül jól berugunk.
+ s minden nap berugunk.
+ s ültünkben berugunk.
+ s esténként berugunk.
+ s fáradtan berugunk.
+ s évenként berugunk.
+ s megtörten berugunk.
+ s bûnbakként berugunk.
+ s félholtan berugunk.
+ s vesztesként berugunk.
+ s lankadtan berugunk.
+, sértettként berugunk.
+ s elvbøl megnevezünk.
+ Múltunk sem menedék.
+ s várjuk a ... mit? micsodát?
+ s várjuk a fényt egyedül.
+ s várjuk a kóbor idôt.
+ s játsszuk a kóbor apát.
+ s féljülk a kóbor esôt.
+ s játsszuk a kóbor anyát!
+ s tûrjük a korcs ölebet.
+ s lessük a korcs ölebet.
+ s várjuk a korcs ölebet.
+ s várjuk az Isten-igét.
+ s féljük az Isten-igét.
+ s halljuk a préri szavát.
+ s isszuk az utca zaját.
+ s féljük az utca zaját.
+ s tûrjük az utca szavát.
+ s halljuk a szív ütemét.
+ s haljuk az ûr ütemét.
+ s verjük a szív ütemét.
+ s halljuk a vér futamát.
+! Öngyilkos szeretônk!
+! Öngyilkos repedék!
+! Öngyilkos ma az ég!
+! Öngyilkos tegezés!
+! Öngyilkos tagadás!
+, nem lesz már szüretünk.
+. Élô fegyver a szó.
+. Élô fegyver a nyelv.
+. Élô fegyver a kedv.
+. Élô fegyver a szív.
+. Élô fegyver a szem.
+. Élô fegyver a száj.
+. Élô fegyver a fül.
+. Élô fegyver a hang.
+. Élô fegyver a gôg.
+. Élô fegyver a báj.
+. Többé nincsen erônk!
+ s várjuk a záporesøt.
+ s féljük a záporesøt.
+ s nézzük a záporesøt.
+ s tûrjük a záporesøt.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===== STRING 0126 =====
+16  10  13  17  20  15  63
+668 304 000
+
+===== STRING 0127 =====
+on mouseUp
+
+put line (1) of card field "TizenhatK10" of card id 7215 into vari1601
+repeat forever
+get random (13)
+if it is not vari1601 then exit repeat
+end repeat
+put it into vari1601
+put vari1601 into line (1) of card field "TizenhatK10" of cd id 7215
+put line (vari1601) of card field "TizenhatK01" of card id 7215 after last char of card field "OtK02" of card id 4360
+
+put line (2) of card field "TizenhatK10" of card id 7215 into vari1602
+repeat forever
+get random (70)
+if it is not vari1602 then exit repeat
+end repeat
+put it into vari1602
+put vari1602 into line (2) of card field "TizenhatK10" of cd id 7215
+put line (vari1602) of card field "TizenhatK02" of card id 7215 after last char of card field "OtK02" of card id 4360
+
+put line (3) of card field "TizenhatK10" of card id 7215 into vari1603
+repeat forever
+get random (28)
+if it is not vari1603 then exit repeat
+end repeat
+put it into vari1603
+put vari1603 into line (3) of card field "TizenhatK10" of cd id 7215
+put line (vari1603) of card field "TizenhatK03" of card id 7215 after last char of card field "OtK02" of card id 4360
+
+put line (4) of card field "TizenhatK10" of card id 7215 into vari1604
+repeat forever
+get random (14)
+if it is not vari1604 then exit repeat
+end repeat
+put it into vari1604
+put vari1604 into line (4) of card field "TizenhatK10" of cd id 7215
+put line (vari1604) of card field "TizenhatK04" of card id 7215 after last char of card field "OtK02" of card id 4360
+
+put line (5) of card field "TizenhatK10" of card id 7215 into vari1605
+
+if vari1603 < 11 then
+
+repeat forever
+get random (13)
+if it is not vari1605 then exit repeat
+end repeat
+put it into vari1605
+put vari1605 into line (5) of card field "TizenhatK10" of cd id 7215
+put line (vari1605) of card field "TizenhatK05" of card id 7215 after last char of card field "OtK02" of card id 4360
+
+put return after last char of card field "OtK02" of card id 4360
+put lineFeed after last char of card field "OtK02" of card id 4360
+delete last char of card field "OtK02" of card id 4360
+
+else
+put line (14) of card field "TizenhatK10" of card id 7215 into vari16051
+
+repeat forever
+get random (13)
+if it is not vari16051 then exit repeat
+end repeat
+put it into vari16051
+put vari16051 into line (14) of card field "TizenhatK10" of cd id 7215
+put line (vari16051) of card field "TizenhatK051" of card id 7215 after last char of card field "OtK02" of card id 4360
+
+put return after last char of card field "OtK02" of card id 4360
+put lineFeed after last char of card field "OtK02" of card id 4360
+delete last char of card field "OtK02" of card id 4360
+
+
+end if
+
+
+
+
+put line (6) of card field "TizenhatK10" of card id 7215 into vari1606
+repeat forever
+get random (72)
+if it is not vari1606 then exit repeat
+end repeat
+put it into vari1606
+put vari1606 into line (6) of card field "TizenhatK10" of cd id 7215
+put line (vari1606) of card field "TizenhatK06" of card id 7215 after last char of card field "OtK02" of card id 4360
+
+if vari1606 > 50 then
+put line (11) of card field "TizenhatK10" of card id 7215 into vari1611
+repeat forever
+get random (11)
+if it is not vari1611 then exit repeat
+end repeat
+put it into vari1611
+put vari1611 into line (11) of card field "TizenhatK10" of cd id 7215
+put line (vari1611) of card field "TizenhatK12" of card id 7215 after last char of card field "OtK02" of card id 4360
+else
+put line (7) of card field "TizenhatK10" of card id 7215 into vari1607
+repeat forever
+get random (30)
+if it is not vari1607 then exit repeat
+end repeat
+put it into vari1607
+put vari1607 into line (7) of card field "TizenhatK10" of cd id 7215
+put line (vari1607) of card field "TizenhatK07" of card id 7215 after last char of card field "OtK02" of card id 4360
+end if
+
+
+put line (8) of card field "TizenhatK10" of card id 7215 into vari1608
+repeat forever
+get random (15)
+if it is not vari1608 then exit repeat
+end repeat
+put it into vari1608
+put vari1608 into line (8) of card field "TizenhatK10" of cd id 7215
+put line (vari1608) of card field "TizenhatK08" of card id 7215 after last char of card field "OtK02" of card id 4360
+
+
+
+put line (9) of card field "TizenhatK10" of card id 7215 into vari1609
+
+if vari1608 < 2 then
+
+get random (2)
+if it is not (2) then
+put line (12) of card field "TizenhatK09" of card id 7215 after last char of card field "OtK02" of card id 4360
+else
+put line (13) of card field "TizenhatK09" of card id 7215 after last char of card field "OtK02" of card id 4360
+end if
+
+else
+
+repeat forever
+get random (11)
+if it is not vari1609 then exit repeat
+end repeat
+put it into vari1609
+put vari1609 into line (9) of card field "TizenhatK10" of cd id 7215
+put line (vari1609) of card field "TizenhatK09" of card id 7215 after last char of card field "OtK02" of card id 4360
+
+end if
+
+put line (10) of card field "TizenhatK10" of card id 7215 into vari1609
+repeat forever
+get random (8)
+if it is not vari1610 then exit repeat
+end repeat
+put it into vari1610
+put vari1610 into line (10) of card field "TizenhatK10" of cd id 7215
+put line (vari1610) of card field "TizenhatK11" of card id 7215 after last char of card field "OtK02" of card id 4360
+
+
+
+
+end mouseUp
+
+===== STRING 0128 =====
+=Égi
+Vézna
+Csúnya
+Néma
+Furcsa
+Gyáva
+Béna
+Gyönge
+Balga
+Durva
+Ritka
+Kurva
+Ronda
+
+Puszta
+Tiszta
+Bamba
+Csorba
+Görbe
+Barna
+Enyhe
+Ferde
+Régi
+Fránya
+Rusnya
+Renyhe
+Csorba
+
+===== STRING 0129 =====
+= szegényként
+ csibészként
+ reményként
+ kevélyként
+ irígyként
+ kezesként
+ nemesként
+ gonoszként
+ ravaszként
+ zsiványként
+ hazugként
+ bolondként
+ piszokként
+ duhajként
+ szamárként
+ baromként
+ pogányként
+ cigányként
+ naívként
+ tanúként
+ barátként
+ nyakasként
+ kacérként
+ huszárként
+ madárként
+ nyakasság,
+ kacérság,
+ okosság,
+ hiúság,
+ adottság,
+ zavartság,
+ tagoltság,
+ kuszáltság,
+ ziláltság,
+ pogányság,
+ cigányság,
+ naívság,
+ tanúság,
+ kopárság,
+ sietség,
+ merészség,
+ egészség, 
+ csibészség,
+ reménység, 
+ kevélység,
+ irígység,
+ merevség,
+ levertség,
+ kimértség,
+ feszültség,
+ tehetség,
+ nemesség,
+ kopárság,
+ ravaszság,
+ gonoszság,
+ zsiványság,
+ hanyagság,
+ duhajság,
+ hazugság,
+ bolondság,
+ fonákság,
+ piszokság,
+ tanulság,
+ vidámság,
+ finomság,
+ szamárság,
+ mohóság,
+ baromság,
+ szegénység,
+ badarság,
+
+
+ soványként
+ hanyagként
+ badarként
+ mohóként
+ silányként
+ hiúként
+ okosként
+
+ kopárság,
+ mulatság,
+ adósság,
+ barátság,
+ kicsinység,
+ silányság,
+ kezesség,
+ soványság,
+ potomság,
+ˇ¸
+
+===== STRING 0130 =====
+= összeaszalt
+ elfenekelt
+ eltángált
+ elgázolt
+ megcsúfolt
+ fölhergelt
+ felszarvalt
+ megkéselt
+ hírbe kevert
+ megcsúfolt
+ íme a bús
+ íme a szép
+ íme a korcs
+ íme a hû
+ itt ül a bús
+ itt ül a szép
+ itt ül a korcs
+ itt ül az új
+ hûsöl a bús
+ hûsöl a szép
+ hûsöl a korcs
+ hûsöl az új
+ alszik a szép
+ alszik a bús
+ alszik a korcs
+ ébred a bús
+ álmodik, ó,
+ ébred lám
+
+ itt jön a bús
+ itt jön a szép
+ itt jön a korcs
+ itt jön a hû
+
+ megzápult
+ félørült
+ átfestett
+ szájbabaszott
+ elfuserált
+ megrongált
+ széttépett
+ elszeletelt
+ elpréselt
+ szeszbedobott
+ megkésett
+ vérbekevert
+ elkalapált
+ összerezeltˇ˚
+
+===== STRING 0131 =====
+= álHøs
+ álszent
+ császár
+ vendég
+ csóró
+ Bálvány
+ álBárd
+ føhøs
+ Jövevény
+ álBölcs
+ Hermész
+ Adonisz
+ Neptún
+ ifjú
+
+ csataBárd
+
+
+
+
+===== STRING 0132 =====
+= vezekel most,
+ vacsorázik,
+ dudorászik,
+ fuvolázik,
+ kacarászik,
+ heherészik,
+ datolyázik,
+ bogarászik,
+ egerészik,
+ citerázik,
+ csöcsörészik,
+ meakulpáz,
+ neve, címe:
+ 
+
+
+
+, a sötétben
+, puha ágyon
+, a szobában
+, puha széken
+, a szekéren
+, meleg ágyon
+, betegágyon
+, bumeránggal,
+, kavics-ágyon
+, kalapostúl,
+, gatya nélkül,
+, falu végén
+, ruha nélkül,
+, a hazáért; 
+
+
+
+ hazudik pénzt,
+ keres engem,
+ˇ˘
+
+===== STRING 0133 =====
+=Egri
+Ørsi
+Benke
+Balla
+Petri
+Pócsi
+Módy
+Borcsa
+Bencze 
+Bába
+Báthy
+Csécsi
+Kézdi
+Kurdi
+Kurta
+Árva
+Szende
+Györffy
+Csorda
+Dóczi
+Érdi
+Erki
+Móra
+Gozsdu
+Hódi
+Kucka
+Kúti
+Mádi
+Léva
+Mózsi
+Morva
+Pándi
+Nyéki
+Pálfy
+Pályi
+Csányi
+Rosta
+Sánta
+Tátra
+Szépe
+Csáky
+Kende
+Váczi
+Réthy
+Zöldi
+Gálffi
+Fábri
+Dérczy
+Dési
+Egri
+Rácz
+Tóth
+Kós
+Ganz
+Soós
+Herz
+Láng
+Végh
+Solt
+Vígh
+Szél
+Szép
+Szász
+Sík
+Papp
+Pócs
+Klein
+György
+Gál
+Csák
+Ágh
+Ácsˇ¯
+
+===== STRING 0134 =====
+= Botond,
+ Dezsô,
+ Jenô,
+ Ferenc,
+ Mihály,
+ Tiborc,
+ Izsák,
+ Adolf,
+ Balázs,
+ Cirill,
+ Csanád,
+ Donát,
+ Elôd,
+ Emôd,
+ Fidél,
+ Geréb,
+ Hubert,
+ Hugó,
+ Iván,
+ Kunó,
+ Leó,
+ Loránd,
+ Lukács,
+ Manó,
+ Milán,
+ Özséb,
+ Petúr,
+ Rezsô,
+ Roland,
+ Rudolf,
+ Szabolcs,
+ Szilárd,
+ Tamás,
+ Timót,
+ Valér,
+ Zorán,
+ˇ˜
+
+===== STRING 0135 =====
+= gáz- és
+ csámpás
+ sérült
+ a piás
+ dörzsölt
+ agyafúrt
+ babonás
+ ragyogó
+ berugós
+ fø-fø
+ hazudós
+ beszeszelt
+ titkos
+ részeg
+ remegø
+
+ bepiált
+
+ bárcás
+ csendes
+ rendes
+ mérges
+ morcos
+ haragos
+ régész
+ bencés
+ cserkész,ˇˆ
+
+===== STRING 0136 =====
+= villanydrót
+ köztelefon
+ fémkábel
+ drótvezeték
+ csøvezeték
+ ólomcsø
+ ízzószál
+ fûtøszál
+ gyújtószál
+ csengødrót
+ fûtøtest
+ vízvezeték
+ gøzvezeték
+ ˇı
+
+===== STRING 0137 =====
+2
+9
+19
+7
+6
+72
+21
+10
+8
+8
+2
+
+
+12
+
+===== STRING 0138 =====
+= szerelø.
+ kezelø.
+ lerakó.
+ bekötø.
+ berakó.
+ lefedø.
+ befedø.
+ eladó.
+
+ kutató.
+ keresø.
+ felezø.
+ falazó.
+ vakoló.
+ pakoló.
+ keresø.
+ magató.
+ taroló.
+ perelø.
+ soroló.
+ sorozó.
+ terelø.
+ reszelø.
+ taposó.
+ vezetø.
+ faszoló.
+
+
+
+
+
+
+
+
+
+===== STRING 0139 =====
+= Aladár,
+ Elemér,
+ Benedek,
+ Töhötöm,
+ Barabás,
+ Tivadar,
+ Alajos,
+ Salamon,
+ Kelemen,
+ Vladimír,
+ Tihamér,
+
+
+
+
+
+===== STRING 0140 =====
+A13  70    14  364  1720  15  13  8
+12 442 964 352 000
+
+===== STRING 0141 =====
+= a sötétben,
+ puha ágyon,
+ a szobában,
+, puha széken,
+ a szekéren,
+, meleg ágyon,
+, betegágyon,
+, bumeránggal,
+, kavics-ágyon,
+, kalapostúl,
+, gatya nélkül,
+, falu végén,
+, ruha nélkül,
+
+ a hazáért; 
+TizenhatK
+
+===== STRING 0142 =====
+on mouseUp
+
+
+put line (1) of card field "TizenhetK10" of card id 7426 into vari1701
+repeat forever
+get random (20)
+if it is not vari1701 then exit repeat
+end repeat
+put it into vari1701
+put vari1701 into line (1) of card field "TizenhetK10" of cd id 7426
+put line (vari1701) of card field "TizenhetK01" of card id 7426 after last char of card field "OtK02" of card id 4360
+
+put line (2) of card field "TizenhetK10" of card id 7426 into vari1702
+repeat forever
+get random (11)
+if it is not vari1702 then exit repeat
+end repeat
+put it into vari1702
+put vari1702 into line (2) of card field "TizenhetK10" of cd id 7426
+put line (vari1702) of card field "TizenhetK02" of card id 7426 after last char of card field "OtK02" of card id 4360
+
+put line (3) of card field "TizenhetK10" of card id 7426 into vari1703
+repeat forever
+get random (10)
+if it is not vari1703 then exit repeat
+end repeat
+put it into vari1703
+put vari1703 into line (3) of card field "TizenhetK10" of cd id 7426
+put line (vari1703) of card field "TizenhetK03" of card id 7426 after last char of card field "OtK02" of card id 4360
+
+put line (4) of card field "TizenhetK10" of card id 7426 into vari1704
+repeat forever
+get random (14)
+if it is not vari1704 then exit repeat
+end repeat
+put it into vari1704
+put vari1704 into line (4) of card field "TizenhetK10" of cd id 7426
+put line (vari1704) of card field "TizenhetK04" of card id 7426 after last char of card field "OtK02" of card id 4360
+
+
+put line (5) of card field "TizenhetK10" of card id 7426 into vari1705
+repeat forever
+get random (50)
+if it is not vari1705 then exit repeat
+end repeat
+put it into vari1705
+put vari1705 into line (5) of card field "TizenhetK10" of cd id 7426
+put line (vari1705) of card field "TizenhetK05" of card id 7426 after last char of card field "OtK02" of card id 4360
+
+put return after last char of card field "OtK02" of card id 4360
+put lineFeed after last char of card field "OtK02" of card id 4360
+delete last char of card field "OtK02" of card id 4360
+
+put line (6) of card field "TizenhetK10" of card id 7426 into vari1706
+repeat forever
+get random (44)
+if it is not vari1706 then exit repeat
+end repeat
+put it into vari1706
+put vari1706 into line (6) of card field "TizenhetK10" of cd id 7426
+put line (vari1706) of card field "TizenhetK06" of card id 7426 after last char of card field "OtK02" of card id 4360
+
+if vari1706 > 30 then
+put line (7) of card field "TizenhetK10" of card id 7426 into vari1707
+repeat forever
+get random (11)
+if it is not vari1707 then exit repeat
+end repeat
+put it into vari1707
+put vari1707 into line (7) of card field "TizenhetK10" of cd id 7426
+put line (vari1707) of card field "TizenhetK07" of card id 7426 after last char of card field "OtK02" of card id 4360
+end if
+
+
+if vari1706 < 22 then
+get random (10)
+if it < 6 then
+put line (vari1706) of card field "TizenhetK06" of card id 7426 after last char of card field "OtK02" of card id 4360
+else
+
+put line (8) of card field "TizenhetK10" of card id 7426 into vari1708
+repeat forever
+get random (15)
+if it is not vari1708 then exit repeat
+end repeat
+put it into vari1708
+put vari1708 into line (8) of card field "TizenhetK10" of cd id 7426
+put line (vari1708) of card field "TizenhetK08" of card id 7426 after last char of card field "OtK02" of card id 4360
+
+
+put line (9) of card field "TizenhetK10" of card id 7426 into vari1709
+repeat forever
+get random (15)
+if it is not vari1709 then exit repeat
+end repeat
+put it into vari1709
+put vari1709 into line (9) of card field "TizenhetK10" of cd id 7426
+put line (vari1709) of card field "TizenhetK09" of card id 7426 after last char of card field "OtK02" of card id 4360
+end if
+
+else
+
+put line (8) of card field "TizenhetK10" of card id 7426 into vari1708
+repeat forever
+get random (15)
+if it is not vari1708 then exit repeat
+end repeat
+put it into vari1708
+put vari1708 into line (8) of card field "TizenhetK10" of cd id 7426
+put line (vari1708) of card field "TizenhetK08" of card id 7426 after last char of card field "OtK02" of card id 4360
+
+
+put line (9) of card field "TizenhetK10" of card id 7426 into vari1709
+repeat forever
+get random (15)
+if it is not vari1709 then exit repeat
+end repeat
+put it into vari1709
+put vari1709 into line (9) of card field "TizenhetK10" of cd id 7426
+put line (vari1709) of card field "TizenhetK09" of card id 7426 after last char of card field "OtK02" of card id 4360
+end if
+
+
+
+end mouseUp
+
+===== STRING 0143 =====
+=Hajnali pír
+Sánta remény
+Esti homály
+Déli sugár
+Reggeli fény
+Éjjeli köd
+Angyali báj
+Ébred a nap
+Lobban a nap
+Pirkad az ég
+Esti magány
+Ébred a fény
+Pirkad a nap
+Égi parázs
+Hajnali tûz
+Reggeli tûz
+Asszonyi kéj
+Csacska leány
+Reggeli pír
+Hajnali fény
+
+ˇ˛
+
+===== STRING 0144 =====
+= lopakodva
+ vonakodva
+ lesekedve
+ vacakolva
+ vezekelve
+ huzakodva
+ szakadozva
+ epedezve
+ piszmogva
+ pusmogva
+ epekedveˇ˝
+
+===== STRING 0145 =====
+= belép
+ benéz
+ betér
+ besír
+ beszól
+ benyúl
+ beleng
+ bering
+ besúg
+ belejt
+ 
+
+
+===== STRING 0146 =====
+= a szobába.
+ a lakásba.
+ a karámba.
+ a terembe.
+ a bozótba.
+ a bokorba.
+ a zanótba.
+ a faházba.
+ a gödörbe.
+ a vödörbe.
+ a csöbörbe.
+ az edénybe.
+ a kajütbe.
+ a kupéba.
+
+
+===== STRING 0147 =====
+= Tavasz lesz.
+ Tavasz van.
+ Szünet lesz.
+ Szünet van.
+ Meleg lesz.
+ Meleg van.
+ Hideg lesz.
+ Hideg van.
+ Vihar lesz.
+ Esø lesz.
+ Elég volt.
+ Szüret lesz.
+ Szüret van.
+ Dagály lesz.
+ Dagály van.
+ Apály lesz.
+ Apály van.
+ Piac van.
+ Narancs nincs.
+ Ma nincs más.
+ Haragszol?
+ Hiszel még?
+ Tanulj hát!
+ Veszekszel?
+ Csaló vagy?
+ Csalás nincs!
+ Fölébredsz?
+ Verekszel?
+ Fagyos vagy?
+ Hová mész?
+ Kivel vagy?
+ Kinek szólsz?
+ Kiért szólsz?
+ Kirøl szólsz?
+ Miért szólsz?
+ Minek szólsz?
+ Nekem szólsz?
+ Parancs szól!
+ Rideg vagy?
+ Remegsz még?
+ Remegj hát!
+ Rügyeznél?
+ Röhögnél?
+ Sokat türsz!
+ Mit állsz itt?!
+ Mit állsz ott?
+ Kinek kell?
+ Elég lesz?
+ Varázslat!
+ Zenélj csak!
+
+
+
+
+
+
+
+
+
+ ˇ˙
+
+===== STRING 0148 =====
+=Mosd ki az álmaidat! 
+Mosd ki a terveidet! 
+Mosd ki reményeidet! 
+Mosd ki az életedet! 
+Mosd ki a gondjaidat! 
+Mosd ki a bûneidet! 
+Szórd ki az álmaidat! 
+Lökd el az életedet! 
+Szórd ki a gondjaidat! 
+Dobd ki az álmaidat! 
+Dobd ki a terveidet! 
+Dobd ki reményeidet! 
+Dobd ki az életedet! 
+Dobd ki a gondjaidat! 
+Dobd ki a bûneidet! 
+Lökd el az álmaidat! 
+Lökd el a terveidet! 
+Lökd le reményeidet! 
+Lökd el az életedet! 
+Lökd el a gondjaidat! 
+Lökd el a bûneidet! 
+Lápi szömörcecelégy! 
+Lápi szamócafatok! 
+Házi pogány a család! 
+Házi szegénymaradék! 
+Házi vagány valahány?! 
+Tiszta szeméremelø! 
+Mint a szömörcecelégy! 
+Ó, te felöklelemény! 
+Minta karambulizás! 
+Mennyi
+Ennyi
+Ronda
+Kvázi
+Semmi
+Annyi
+Høsi
+Régi
+Øsi
+Kurva
+Durva
+Satnya
+Zsenge
+Enyhe
+
+
+===== STRING 0149 =====
+= pogány szülemény!
+ szegény-maradék! 
+ vagányrakomány! 
+ világcsapodár! 
+ szeméremelø! 
+ fehérkacsalád! 
+ kedély-esemény! 
+ szamócafat! Az! 
+ szömörcecelégy! 
+ karambulizás! 
+ efendiadém! 
+
+ alábbhagyafúrt.
+ efendiadém.
+ misézikerág.
+ rabicfaladár.
+ gyomorfaladár.
+ kiérlelemér.
+ felöklelemény.
+
+
+===== STRING 0150 =====
+=Vesd le
+Vesd ki
+Vedd le
+Tedd le
+Tedd ki
+Tedd el
+Lökd le
+Lökd ki
+Lökd el
+Dobd el
+Dobd ki
+Dobd le
+Górd ki
+Hányd ki
+Szórd ki
+
+
+
+ Varrd meg
+ Vedd fel
+ Húzd fel
+ Vedd ki
+ Vesd le
+ Vesd ki
+ Húzd le
+ Mosd kiˇ˜
+
+===== STRING 0151 =====
+= a munkaruhád.
+ a tiszta ruhád.
+ a børmokaszint.
+ a børbekecsed.
+ a børdzsekidet.
+ a szvetteredet.
+ a szennyesedet.
+ a tiszta ruhát.
+ a börberidet.
+ az álmaidat.
+ a terveidet.
+ reményeidet.
+ az életedet.
+ a gondjaidat.
+ a bûneidet.
+
+ a sárga cipød.
+ a filckalapod.
+ a barna gatyád.
+
+===== STRING 0152 =====
+13
+9
+6
+7
+6
+33
+9
+9
+14
+
+===== STRING 0153 =====
+20  11  10  14  50  44  10  15  15
+152 460 00 0 000TizenhetK
+
+===== STRING 0154 =====
+on mouseUp
+
+put line (1) of card field "TizennyolcK10" of card id 7789 into vari1801
+repeat forever
+get random (16)
+if it is not vari1801 then exit repeat
+end repeat
+
+put it into vari1801
+put vari1801 into line (1) of card field "TizennyolcK10" of cd id 7789
+put line (vari1801) of card field "TizennyolcK01" of card id 7789 after last char of card field "OtK02" of card id 4360
+
+put line (2) of card field "TizennyolcK10" of card id 7789 into vari1802
+repeat forever
+get random (15)
+if it is not vari1802 then exit repeat
+end repeat
+
+put it into vari1802
+put vari1802 into line (2) of card field "TizennyolcK10" of cd id 7789
+put line (vari1802) of card field "TizennyolcK02" of card id 7789 after last char of card field "OtK02" of card id 4360
+
+put line (3) of card field "TizennyolcK10" of card id 7789 into vari1803
+repeat forever
+get random (11)
+if it is not vari1803 then exit repeat
+end repeat
+
+put it into vari1803
+put vari1803 into line (3) of card field "TizennyolcK10" of cd id 7789
+put line (vari1803) of card field "TizennyolcK03" of card id 7789 after last char of card field "OtK02" of card id 4360
+
+
+put line (4) of card field "TizennyolcK10" of card id 7789 into vari1804
+repeat forever
+get random (23)
+if it is not vari1804 then exit repeat
+end repeat
+
+put it into vari1804
+put vari1804 into line (4) of card field "TizennyolcK10" of cd id 7789
+
+put line (vari1804) of card field "TizennyolcK04" of card id 7789 after last char of card field "OtK02" of card id 4360
+
+
+
+
+put line (5) of card field "TizennyolcK10" of card id 7789 into vari1805
+repeat forever
+get random (13)
+if it is not vari1805 then exit repeat
+end repeat
+put it into vari1805
+put vari1805 into line (5) of card field "TizennyolcK10" of cd id 7789
+put line (vari1805) of card field "TizennyolcK05" of card id 7789 after last char of card field "OtK02" of card id 4360
+
+put return after last char of card field "OtK02" of card id 4360
+put lineFeed after last char of card field "OtK02" of card id 4360
+delete last char of card field "OtK02" of card id 4360
+
+
+
+
+
+put line (6) of card field "TizennyolcK10" of card id 7789 into vari1806
+repeat forever
+get random (208)
+if it is not vari1806 then exit repeat
+end repeat
+
+put it into vari1806
+put vari1806 into line (6) of card field "TizennyolcK10" of cd id 7789
+put line (vari1806) of card field "TizennyolcK06" of card id 7789 after last char of card field "OtK02" of card id 4360
+
+
+put line (8) of card field "TizennyolcK10" of card id 7789 into vari1808
+repeat forever
+get random (15)
+if it is not vari1808 then exit repeat
+end repeat
+
+put it into vari1808
+put vari1808 into line (8) of card field "TizennyolcK10" of cd id 7789
+put line (vari1808) of card field "TizennyolcK08" of card id 7789 after last char of card field "OtK02" of card id 4360
+
+put line (9) of card field "TizennyolcK10" of card id 7789 into vari1809
+repeat forever
+get random (10)
+if it is not vari1809 then exit repeat
+end repeat
+
+put it into vari1809
+put vari1809 into line (9) of card field "TizennyolcK10" of cd id 7789
+put line (vari1809) of card field "TizennyolcK09" of card id 7789 after last char of card field "OtK02" of card id 4360
+
+
+
+
+end mouseUp
+
+
+
+===== STRING 0155 =====
+=Sírja felett
+Szárnya alatt
+Szíve tövén
+Lelke alatt
+Lelke felett
+Sírja alatt
+Sírja tövén
+Szíve felett
+Szíve alatt
+Szárnya felett
+Szárnya tövén
+Ágya fölött
+Ágya megett
+Ágya alatt
+Ingében
+Inge alatt
+
+
+
+===== STRING 0156 =====
+= gomolyog
+ bolydul
+ mocorog
+ batyuzik
+ bodroz
+ bolyhol
+ bomlik
+ reszket
+ setteg
+ kushad
+ kucorog
+ guggol
+ gravitál
+ tempóz
+ táncol
+ 
+
+
+
+
+===== STRING 0157 =====
+= suttogva
+ settegve
+ pusmogva
+ piszmogva
+ kavarogva
+ keveregve
+ kántálva
+ dúdolva
+ sercegve
+ szösszenve
+ szürcsögve
+ 
+
+===== STRING 0158 =====
+= az alkonyi
+ a hárshegyi
+ a hárstea
+ a reggeli
+ az éjjeli
+ a szombati
+ az áfonya
+ a csimpolya
+ a csormolya
+ a szervita
+ a szarmata
+ a mandula
+ a bestia
+ a hárpia
+ a szépia
+ a dália
+ az orgia
+ egy uncia
+ a gyógytea
+ a guzlica
+ a bodzafa
+ a szilvafa
+ az almafa
+
+
+ a muslica
+ a zongora
+ az osztriga
+ a cimbora
+ egy angora
+ a tarhonya
+ a burgonya
+ a laktanya
+ a bûntanya
+ az øsanya
+
+ az óhaza
+ az øshaza
+ a maffia
+ˇ˚
+
+===== STRING 0159 =====
+= szellø.
+ permet.
+ pára.
+ légár.
+ illat.
+ felszél.
+ alszél.
+ bûz, ó!
+ párlat.
+ szaglat.
+ bûvszer.
+ cefre.
+ ájer.
+
+ langyár.
+
+===== STRING 0160 =====
+=Lám a szavaktól fél,
+Lám a szavaktól tart,
+Lám a szavaktól fut,
+Lám a szavaktól kék s
+Lám a szavaktól zöld s
+Lám a szavakból él s
+Lám a szavakra figyel s
+Lám a szavakhoz húz s
+Most a szavaktól fél s
+Most a szavaktól tart s
+Most a szavaktól fut s
+Most a szavaktól kék s
+Most a szavaktól zöld s
+Most a szavak mezején
+Most a szavakból él,
+Most a szavakra figyel,
+Most a szavakhoz húz,
+Míg a szavaktól fél,
+Míg a szavaktól tart,
+Míg a szavaktól fut,
+Míg a szavaktól kék,
+Míg a szavaktól zöld,
+Míg a szavak mezején
+Míg a szavakból él,
+Míg a szavakra figyel,
+Míg a szavakhoz húz,
+Mert a nyomortól fél,
+Mert a nyomortól tart,
+Mert a nyomortól fut,
+Mert a nyomortól kék,
+Mert a nyomortól zöld,
+Mert a nyomorból él,
+Mert a nyomorra figyel,
+Mert a nyomorhoz húz,
+Most a nyomortól fél,
+Most a nyomortól tart,
+Most a nyomortól fut,
+Most a nyomortól kék s
+Most a nyomortól zöld s
+Most a nyomor mezején
+Most a nyomorból él s
+Most a nyomorra figyel s
+Most a nyomorhoz húz s
+Míg a nyomortól fél,
+Míg a nyomortól tart,
+Míg a nyomortól fut,
+Míg a nyomortól kék,
+Míg a nyomortól zöld,
+Míg a nyomorból él,
+Míg a nyomorra figyel,
+Míg a nyomorhoz húz,
+Mert a gonosztól fél,
+Mert a gonosztól tart,
+Mert a gonosztól fut,
+Mert a gonosztól kék,
+Mert a gonosztól zöld,
+Ám a gonosz mezején
+Ø a gonoszból él s
+Ø a gonoszra figyel s
+Ø a gonoszhoz húz s
+Most a gonosztól fél,
+Most a gonosztól tart,
+Most a gonosztól fut,
+Most a gonosztól kék s
+Most a gonosztól zöld s
+Most a gonosz mezején
+Most a gonoszból él,
+Most a gonoszra figyel,
+Most a gonoszhoz húz,
+Míg a gonosztól fél,
+Míg a gonosztól tart,
+Míg a gonosztól fut,
+Míg a gonosztól kék,
+Míg a gonosztól zöld,
+Míg a gonoszból él,
+Míg a gonoszra figyel,
+Míg a gonoszhoz húz,
+Mert a hazugtól fél,
+Mert a hazugtól tart,
+Mert a hazugtól fut,
+Mert a hazugtól kék,
+Mert a hazugtól zöld,
+Mert a hazugra figyel,
+Mert a hazughoz húz,
+Most a hazugtól fél,
+Most a hazugtól tart,
+Most a hazugtól fut,
+Most a hazugból él s
+Most a hazugra figye s
+Most a hazughoz húz s
+Míg a hazugtól fél,
+Míg a hazugtól tart,
+Míg a hazugtól fut,
+Míg a hazugtól kék,
+Míg a hazugtól zöld,
+Míg a hazug mezején
+Míg a hazugból él,
+Míg a hazugra figyel,
+Míg a hazughoz húz,
+Mert a haragtól fél,
+Mert a haragtól tart,
+Mert a haragtól fut,
+Mert a haragtól kék,
+Mert a haragtól zöld,
+Mert a haragból él,
+Mert a haragra figyel,
+Mert a haraghoz húz,
+Most a haragtól fél,
+Most a haragtól tart,
+Most a haragtól fut,
+Most a haragtól kék,
+Most a haragtól zöld,
+Most a harag mezején
+Most a haragból él,
+Most a haragra figyel,
+Most a haraghoz húz,
+Míg a haragtól fél,
+Míg a haragtól tart,
+Míg a haragtól fut,
+Míg a haragtól kék,
+Míg a haragtól zöld,
+Míg a haragból él,
+Míg a haragra figyel,
+Míg a haraghoz húz,
+Mert az anyagtól fél,
+Ø az anyagtól tart, s
+Ø az anyagtól fut s
+Ø az anyagból él s
+Ø az anyagra figyel s
+Most az anyagtól fél,
+Most az anyagtól tart,
+Most az anyagtól fut,
+Most az anyagtól kék,
+Most az anyagtól zöld,
+Most az anyagból él,
+Most az anyagra figyel,
+Most az anyaghoz húz,
+Míg az anyagtól fél,
+Míg az anyagtól tart,
+Míg az anyagtól fut,
+Míg az anyagtól kék,
+Míg az anyagtól zöld,
+Míg az anyag mezején
+Míg az anyagból él,
+Míg az anyagra figyel,
+Míg az anyaghoz húz,
+Mert a világtól fél,
+Mert a világtól tart,
+Mert a világtól fut,
+Mert a világból él,
+Mert a világra figyel,
+Mert a világhoz húz,
+Most a világtól fél,
+Most a világtól tart,
+Most a világtól fut,
+Most a világtól kék,
+Most a világtól zöld,
+Most a világ mezején
+Most a világból él,
+Most a világra figyel,
+Most a világhoz húz,
+Míg a világtól fél,
+Míg a világtól tart,
+Míg a világtól fut,
+Míg a világtól kék,
+Míg a világtól zöld,
+Míg a világ mezején
+Míg a világból él,
+Míg a világra figyel,
+Míg a világhoz húz,
+Mert a szereptøl fél,
+Mert a szereptøl tart,
+Mert a szereptøl fut,
+Mert a szereptøl kék,
+Mert a szereptøl zöld,
+Ø a szerepbøl él s
+Mert a szerepre figyel s
+Most a szereptøl fél s
+Most a szereptøl tart s
+Most a szereptøl fut s
+Most a szereptøl kék s
+Most a szereptøl zöld s
+Most a szerepbøl él,
+Most a szerepre figyel,
+Most a szerephez húz,
+Míg a szereptøl fél,
+Míg a szereptøl tart,
+Míg a szereptøl fut,
+Míg a szereptøl kék,
+Míg a szereptøl zöld,
+Míg a szerepbøl él,
+Míg a szerepre figyel,
+Míg a szerephez húz,
+Mert a hirigtøl fél,
+Mert a hirigtøl tart,
+Mert a hirigbøl él s
+Mert a hirigre figyel s
+Mert a hirighez húz s
+Most a hirigtøl fél,
+Most a hirigtøl tart,
+Most a hirigtøl fut s
+Most a hirigtøl kék s
+Most a hirigtøl zöld s
+Most a hirig mezején
+Most a hirigbøl él,
+Most a hirigre figyel,
+Most a hirighez húz,
+Míg a hirigtøl fél,
+Míg a hirigtøl tart,
+Míg a hirigtøl fut,
+Míg a hirigre figyel,
+Mind, aki vár, aki él,
+ 
+ˇ¯
+
+===== STRING 0161 =====
+= menti
+ védi
+ tûri
+ szûri
+ szánja
+ óvja
+ félti
+ hívja
+ szidja
+ gyötri
+ gyûri
+ vágja
+ tépi
+ marja
+ rúgja
+
+
+Fújd fel
+Szánja
+Küldi
+Szard leˇ˜
+
+===== STRING 0162 =====
+= az isteneket.
+ a szellemeket.
+ a bajnokokat.
+ a bûnösöket.
+ a faszfejeket.
+ a gondolatot.
+ a lepcseseket.
+ a langyosokat.
+ az életedet.
+ az életemet.
+ 
+
+ az életedet,
+ az állatokat,
+
+
+===== STRING 0163 =====
+11
+9
+6
+12
+11
+38
+
+5
+5
+
+===== STRING 0164 =====
+16  15  11  23  13  208  15  10
+24 628 032 000
+
+===== STRING 0165 =====
+on mouseUp
+
+put line (1) of card field "TizenkilencK11" of card id 8035 into vari1901
+repeat forever
+get random (18)
+if it is not vari1901 then exit repeat
+end repeat
+put it into vari1901
+put vari1901 into line (1) of card field "TizenkilencK11" of cd id 8035
+put line (vari1901) of card field "TizenkilencK01" of card id 8035 after last char of card field "OtK02" of card id 4360
+
+put line (2) of card field "TizenkilencK11" of card id 8035 into vari1902
+repeat forever
+get random (34)
+if it is not vari1902 then exit repeat
+end repeat
+put it into vari1902
+put vari1902 into line (2) of card field "TizenkilencK11" of cd id 8035
+put line (vari1902) of card field "TizenkilencK02" of card id 8035 after last char of card field "OtK02" of card id 4360
+
+put line (3) of card field "TizenkilencK11" of card id 8035 into vari1903
+repeat forever
+get random (14)
+if it is not vari1903 then exit repeat
+end repeat
+put it into vari1903
+put vari1903 into line (3) of card field "TizenkilencK11" of cd id 8035
+put line (vari1903) of card field "TizenkilencK03" of card id 8035 after last char of card field "OtK02" of card id 4360
+
+put line (4) of card field "TizenkilencK11" of card id 8035 into vari1904
+repeat forever
+get random (11)
+if it is not vari1904 then exit repeat
+end repeat
+put it into vari1904
+put vari1904 into line (4) of card field "TizenkilencK11" of cd id 8035
+put line (vari1904) of card field "TizenkilencK04" of card id 8035 after last char of card field "OtK02" of card id 4360
+
+put line (5) of card field "TizenkilencK11" of card id 8035 into vari1905
+repeat forever
+get random (12)
+if it is not vari1905 then exit repeat
+end repeat
+put it into vari1905
+put vari1905 into line (5) of card field "TizenkilencK11" of cd id 8035
+put line (vari1905) of card field "TizenkilencK05" of card id 8035 after last char of card field "OtK02" of card id 4360
+put return after last char of card field "OtK02" of card id 4360
+put lineFeed after last char of card field "OtK02" of card id 4360
+delete last char of card field "OtK02" of card id 4360
+
+put line (6) of card field "TizenkilencK11" of card id 8035 into vari1906
+repeat forever
+get random (13)
+if it is not vari1906 then exit repeat
+end repeat
+put it into vari1906
+put vari1906 into line (6) of card field "TizenkilencK11" of cd id 8035
+put line (vari1906) of card field "TizenkilencK06" of card id 8035 after last char of card field "OtK02" of card id 4360
+
+
+put line (7) of card field "TizenkilencK11" of card id 8035 into vari1907
+repeat forever
+get random (10)
+if it is not vari1907 then exit repeat
+end repeat
+put it into vari1907
+put vari1907 into line (7) of card field "TizenkilencK11" of cd id 8035
+put line (vari1907) of card field "TizenkilencK07" of card id 8035 after last char of card field "OtK02" of card id 4360
+
+
+
+put line (8) of card field "TizenkilencK11" of card id 8035 into vari1908
+repeat forever
+get random (16)
+if it is not vari1908 then exit repeat
+end repeat
+put it into vari1908
+put vari1908 into line (8) of card field "TizenkilencK11" of cd id 8035
+put line (vari1908) of card field "TizenkilencK08" of card id 8035 after last char of card field "OtK02" of card id 4360
+
+put line (9) of card field "TizenkilencK11" of card id 8035 into vari1909
+
+if vari1908 < 10 then
+repeat forever
+get random (11)
+if it is not vari1909 then exit repeat
+end repeat
+put it into vari1909
+put vari1909 into line (9) of card field "TizenkilencK11" of cd id 8035
+put line (vari1909) of card field "TizenkilencK09" of card id 8035 after last char of card field "OtK02" of card id 4360
+
+else
+repeat forever
+get random (16)
+if it is not vari1909 then exit repeat
+end repeat
+put it into vari1909
+put vari1909 into line (9) of card field "TizenkilencK11" of cd id 8035
+put line (vari1909) of card field "TizenkilencK09" of card id 8035 after last char of card field "OtK02" of card id 4360
+
+end if
+
+
+put line (10) of card field "TizenkilencK11" of card id 8035 into vari1909
+repeat forever
+get random (11)
+if it is not vari1910 then exit repeat
+end repeat
+put it into vari1910
+put vari1910 into line (10) of card field "TizenkilencK11" of cd id 8035
+put line (vari1910) of card field "TizenkilencK10" of card id 8035 after last char of card field "OtK02" of card id 4360
+
+
+
+
+
+end mouseUp
+
+===== STRING 0166 =====
+=Ott, hol a
+Távol a
+Nálad a
+Øsszel a
+Nyáron a
+Máskor a
+Akkor a
+Tudd, hogy a
+Hidd, hogy a
+Íme, a
+Otthon a
+Nézd, hogy a
+Majdan a
+Végre a
+Holnap a
+Most, hogy a
+Végül a
+Látod?! A
+
+
+
+
+Egyszer a
+Áldott
+
+
+===== STRING 0167 =====
+=z esti sugár
+ reggeli fény
+ szikra-szemû
+ høscincér
+ nádi tücsök
+ nádi rigó
+ hajnali pír
+ hajnalpír
+z égi manó
+ mennyei Jó
+ nøcsábász
+ szoknyapecér
+ nagybátyád
+ nagynénéd
+ szolgálód
+ szép szeretød
+ drága leány
+ csacska leány
+z úri fiú
+ suszterné
+ hentesné
+ polgárør
+ rendørség
+ honvédség
+ bálnavadász
+z esperes úr
+ plébános
+ vak mikulás
+z ørült nø
+ házi tanár
+ bajkeverø
+ szomszéd lány
+z üknagyapó
+z üknagyanyó
+
+ 
+ 
+ˇ˝
+
+===== STRING 0168 =====
+= gøzfátyolt
+ gumipárnát
+ bugyizászlót
+ melltartót
+ inggallért
+ rongyfelhøt
+ zsebkendøt
+ szûzfátyolt
+ szørlabdát
+ koriandert
+ szivacsalmát
+ szerecsenfût
+ csoda-lámpást
+ gumilabdát
+
+
+
+
+ budiajtót
+ herezacskótˇ¸
+
+===== STRING 0169 =====
+= úsztat
+ áztat
+ forgat
+ lenget
+ pörget
+ hordoz
+ mosdat
+ leplez
+ mozgat
+ paskol
+ ringat
+
+
+ rugdal
+ tárol
+ tervez
+ vontat
+ zsongat
+ faggat
+ csépel
+ bolygat
+ szaggat
+
+ altat
+ kormoz
+ terget
+ sorsol
+ színlel
+ tapsol
+ tördel
+ˇ˚
+
+===== STRING 0170 =====
+= az ágon,
+ a földön,
+ a vízben,
+ a légben,
+ a tóban,
+ a lépcsøn,
+ a téren,
+ a fûben,
+ ocsúdva,
+, aranylót,
+ a hóban,
+, ezüstöt,
+ 
+
+
+ az éren,
+ elønnyel,
+ erøvel,
+
+===== STRING 0171 =====
+=Férfierø
+Hagyd örökül
+Add örökül
+Mondd egyedül
+Mondd ki a szót
+Mondd ki, mi bánt
+Írd le, mi bánt
+Add ki magad
+Vald be bajod
+Adj, adakozz
+Tudd, mire jutsz
+Tudd, mit akarsz
+Tudd, mit igér ˇ˘
+
+===== STRING 0172 =====
+= ha kihúnysz,
+ ha lebuksz,
+ ha lekopsz,
+ ha lehullsz,
+ ha repülsz,
+ ha zuhansz,
+ ha kihülsz,
+ ha lerogysz,
+ ha berúgsz,
+ ha kimúlsz,
+
+ ha lefogysz,
+
+===== STRING 0173 =====
+= zsirban
+ bûnben
+ szeszben
+ sörben
+ borban
+ drogban
+ tejben
+ vajban
+ sárban
+ jódtól
+ sótól
+ sörtøl
+ bortól
+ szesztøl
+ szextøl
+ drogtól
+
+ 
+ 
+ lábtól
+
+ tûzbenˇ˜
+
+===== STRING 0174 =====
+= foszlik
+ feslik
+ bomlik
+ romlik
+ tesped
+ sorvad
+ senyved
+ satnyul
+ fonnyad
+ oszlik
+ erjed
+ ájul
+
+
+
+ omlik
+ porlad
+ fénylik
+ enged
+ döglik
+ bûzlik
+ hámlik
+
+
+===== STRING 0175 =====
+= a kéj.
+ a csók.
+ a báj.
+ az élv.
+ az ész.
+ az üdv.
+ a szív.
+ az „én”.
+ igéd.
+ a szó.
+ erød.
+
+ az úr.
+ az ász.
+
+
+===== STRING 0176 =====
+1
+19
+12
+2
+6
+9
+8
+3
+7
+3ˇÛ
+
+===== STRING 0177 =====
+18  34  14 11  12  13  10  16  16  11
+414 027 694 080TizenkilencK
+
+===== STRING 0178 =====
+on mouseUp
+
+put line (1) of card field "HuszK10" of card id 8318 into vari2001
+repeat forever
+get random (10)
+if it is not vari2001 then exit repeat
+end repeat
+put it into vari2001
+put vari2001 into line (1) of card field "HuszK10" of cd id 8318
+put line (vari2001) of card field "HuszK01" of card id 8318 after last char of card field "OtK02" of card id 4360
+
+put line (2) of card field "HuszK10" of card id 8318 into vari2002
+repeat forever
+get random (11)
+if it is not vari2002 then exit repeat
+end repeat
+put it into vari2002
+put vari2002 into line (2) of card field "HuszK10" of cd id 8318
+put line (vari2002) of card field "HuszK02" of card id 8318 after last char of card field "OtK02" of card id 4360
+
+put line (3) of card field "HuszK10" of card id 8318 into vari2003
+repeat forever
+get random (13)
+if it is not vari2003 then exit repeat
+end repeat
+put it into vari2003
+put vari2003 into line (3) of card field "HuszK10" of cd id 8318
+put line (vari2003) of card field "HuszK03" of card id 8318 after last char of card field "OtK02" of card id 4360
+
+
+put line (4) of card field "HuszK10" of card id 8318 into vari2004
+repeat forever
+get random (10)
+if it is not vari2004 then exit repeat
+end repeat
+
+put it into vari2004
+put vari2004 into line (4) of card field "HuszK10" of cd id 8318
+if vari2003 = 13 then
+put line (10) of card field "HuszK04" of card id 8318 after last char of card field "OtK02" of card id 4360
+
+else
+
+put line (vari2004) of card field "HuszK04" of card id 8318 after last char of card field "OtK02" of card id 4360
+end if
+
+
+
+put line (5) of card field "HuszK10" of card id 8318 into vari2005
+repeat forever
+get random (14)
+if it is not vari2005 then exit repeat
+end repeat
+put it into vari2005
+put vari2005 into line (5) of card field "HuszK10" of cd id 8318
+
+
+put line (vari2005) of card field "HuszK05" of card id 8318 after last char of card field "OtK02" of card id 4360
+
+
+
+put return after last char of card field "OtK02" of card id 4360
+put lineFeed after last char of card field "OtK02" of card id 4360
+delete last char of card field "OtK02" of card id 4360
+
+
+put line (6) of card field "HuszK10" of card id 8318 into vari2006
+repeat forever
+get random (15)
+if it is not vari2006 then exit repeat
+end repeat
+
+
+
+
+
+put it into vari2006
+put vari2006 into line (6) of card field "HuszK10" of cd id 8318
+put line (vari2006) of card field "HuszK06" of card id 8318 after last char of card field "OtK02" of card id 4360
+
+put line (7) of card field "HuszK10" of card id 8318 into vari2007
+repeat forever
+get random (11)
+if it is not vari2007 then exit repeat
+end repeat
+
+put it into vari2007
+put vari2007 into line (7) of card field "HuszK10" of cd id 8318
+put line (vari2007) of card field "HuszK07" of card id 8318 after last char of card field "OtK02" of card id 4360
+
+put line (8) of card field "HuszK10" of card id 8318 into vari2008
+repeat forever
+get random (10)
+if it is not vari2008 then exit repeat
+end repeat
+
+put it into vari2008
+put vari2008 into line (8) of card field "HuszK10" of cd id 8318
+put line (vari2008) of card field "HuszK08" of card id 8318 after last char of card field "OtK02" of card id 4360
+
+
+put line (9) of card field "HuszK10" of card id 8318 into vari2009
+repeat forever
+get random (25)
+if it is not vari2009 then exit repeat
+end repeat
+put it into vari2009
+put vari2009 into line (9) of card field "HuszK10" of cd id 8318
+put line (vari2009) of card field "HuszK09" of card id 8318 after last char of card field "OtK02" of card id 4360
+
+
+
+
+end mouseUp
+
+===== STRING 0179 =====
+=Rossz ízek 
+Vágyálmok 
+Hontalan ágy 
+Szolga-napok 
+Éhinség 
+Éji magány 
+Rab monológ 
+Barbár vágy 
+Recski mesék 
+Ronda viták 
+
+Kínkamrák 
+
+
+Búvó ott
+Nem tudok én
+Tört bordák
+
+ˇ˛
+
+===== STRING 0180 =====
+=peremén
+mélyén
+földjén
+partján
+szirtjén
+fövenyén
+balján
+csúcsán
+taraján
+közepén
+alján
+
+
+cicijén
+ honi táj, ó 
+ meghalni se
+ házán
+ gömbjén
+ velején
+ talaján
+keretén
+kosaránˇ˝
+
+===== STRING 0181 =====
+= panamázik
+ totojázik
+ kacarászik
+ citerázik
+ karikázik
+ leveledzik
+ vért izzad
+ kínszenved
+ heherészik
+ nyögdécsel
+ hajbókol
+ tornázik
+ lakomázik
+
+ sokféle
+
+ melegágyaz
+kirepeszti
+ elereszti
+ lakomázik
+ kalapácsol
+ fakopácsol
+ megvan-e
+ élni se
+ nem nyûvi
+ nem húzza
+ nem zúzza
+ nem ørli
+ nem vágja
+ nem rágja
+ nem tépi
+
+
+===== STRING 0182 =====
+= emígy a
+ amúgy a
+ a néma
+ a náci
+ a døre
+ a törpe
+ a tompa
+ a nyegle
+ a spicli
+ akárki
+ 
+ fasiszta
+ a medve
+ még az az
+ nélküled
+, tép a
+, bøg a
+, cseng a
+, dúl a
+ a ronda
+, csüng a
+, fúj a
+, hág a
+ a néma
+ a méla
+ a léha
+ a kába
+ a béna
+ a durva
+ a kurva
+ a bolha
+ a bomba
+ a bamba
+ a rondaˇ˚
+
+===== STRING 0183 =====
+= tekintet.
+ boszorkány.
+ fejønø.
+ fososgém.
+ vadállat.
+ vadorzó.
+ magiszter.
+ kolompos.
+ gazember.
+ kuruzsló.
+ miniszter.
+ apostol.
+ eretnek.
+ oroszlán.
+z
+
+ otthon.
+ immár.
+ vagányság.
+ komorság.
+ cukorbaj.
+ szegénység
+ csodálat.
+ kurucság.
+ kevélység.
+ szemérem.
+
+===== STRING 0184 =====
+=Fölszabadulni
+Elszabadulni
+Fölkerekedni
+Megszabadulni
+Elmenekülni
+Eltirhulni
+Megmenekülni
+Tudj hova menni
+Most odamenni?
+Elkarikázni
+Elszéledni
+Megpattanni
+Elpattanni
+Elkerekezni
+Elszabadulni
+
+
+
+Elkeveredni
+Elkanyadorni
+Fölcseperedni
+
+===== STRING 0185 =====
+= legény!
+ leány!
+ bizony!
+ apám!
+ anyám!
+ öcsém!
+ komám!
+ fiú!
+ babám!
+ fiam!
+ cicám!
+ 
+
+
+
+ nem ám
+ csak úgy
+ sehogyˇ¯
+
+===== STRING 0186 =====
+= Gyorsan
+ Nyiltan
+ Szótlan
+ Reggel
+ Éjjel
+ Csendben
+ Halkan
+ Lassan
+ Rendben
+ Gyáván
+
+ˇ˜
+
+===== STRING 0187 =====
+=, mint a halál.
+, mint a madár.
+, puska eløtt.
+, mint Babilon.
+, mint a csodák!
+, munka után!
+, mint fakutyák!
+, mint Barabás!
+, munka eløtt.
+, vizsga után.
+, vizsga eløtt.
+, barmok eløtt.
+, lámpa alatt.
+, a csürhe után.
+, a csürhe eløtt.
+, a csürhe mögött.
+ fonnyad a füst.
+ terjed a füst.
+ fonnyad a köd.
+ megfog a füst.
+ táncol a füst.
+ megfog a köd.
+ terjed a köd.
+ táncol a köd.
+ vagy soha már.
+ˇˆ
+
+===== STRING 0188 =====
+6
+7
+13
+10
+12
+5
+3
+4
+21ˇÙ
+
+===== STRING 0189 =====
+10  11  13  10  14  15  11  10  25
+8 258 250 000
+
+===== STRING 0190 =====
+on mouseUp
+
+put line (1) of card field "HuszonegyK10" of card id 8701 into vari2101
+repeat forever
+get random (20)
+if it is not vari2101 then exit repeat
+end repeat
+
+put it into vari2101
+put vari2101 into line (1) of card field "HuszonegyK10" of cd id 8701
+put line (vari2101) of card field "HuszonegyK01" of card id 8701 after last char of card field "OtK02" of card id 4360
+
+put line (2) of card field "HuszonegyK10" of card id 8701 into vari2102
+repeat forever
+get random (15)
+if it is not vari2102 then exit repeat
+end repeat
+
+put it into vari2102
+put vari2102 into line (2) of card field "HuszonegyK10" of cd id 8701
+put line (vari2102) of card field "HuszonegyK02" of card id 8701 after last char of card field "OtK02" of card id 4360
+
+put line (3) of card field "HuszonegyK10" of card id 8701 into vari2103
+repeat forever
+get random (11)
+if it is not vari2103 then exit repeat
+end repeat
+
+put it into vari2103
+put vari2103 into line (3) of card field "HuszonegyK10" of cd id 8701
+put line (vari2103) of card field "HuszonegyK03" of card id 8701 after last char of card field "OtK02" of card id 4360
+
+
+
+put line (4) of card field "HuszonegyK10" of card id 8701 into vari2104
+if vari2102 < 2 then
+put line (12) of card field "HuszonegyK04" of card id 8701 after last char of card field "OtK02" of card id 4360
+else
+end if
+if vari2102 > 1 and vari2102 < 6 then
+get random (2)
+if it is not 2 then
+put line (10) of card field "HuszonegyK04" of card id 8701 after last char of card field "OtK02" of card id 4360
+else
+put line (11) of card field "HuszonegyK04" of card id 8701 after last char of card field "OtK02" of card id 4360
+end if
+else
+end if
+
+if vari2102 > 5 then
+repeat forever
+get random (9)
+if it is not vari2104 then exit repeat
+end repeat
+put it into vari2104
+put vari2104 into line (4) of card field "HuszonegyK10" of cd id 8701
+put line (vari2104) of card field "HuszonegyK04" of card id 8701 after last char of card field "OtK02" of card id 4360
+else
+end if
+
+
+
+
+
+
+put line (5) of card field "HuszonegyK10" of card id 8701 into vari2105
+
+
+
+if vari2102 > 0 and vari2102 < 6 then
+repeat forever
+get random (15)
+if it is not vari2105 then exit repeat
+end repeat
+put it into vari2105
+put vari2105 into line (5) of card field "HuszonegyK10" of cd id 8701
+put line (vari2105) of card field "HuszonegyK05" of card id 8701 after last char of card field "OtK02" of card id 4360
+
+
+else
+
+
+repeat forever
+get random (13)
+if it is not vari2105 then exit repeat
+end repeat
+put it into vari2105
+put vari2105 into line (5) of card field "HuszonegyK10" of cd id 8701
+put line (vari2105) of card field "HuszonegyK05" of card id 8701 after last char of card field "OtK02" of card id 4360
+end if
+
+put return after last char of card field "OtK02" of card id 4360
+put lineFeed after last char of card field "OtK02" of card id 4360
+delete last char of card field "OtK02" of card id 4360
+
+
+put line (6) of card field "HuszonegyK10" of card id 8701 into vari2106
+repeat forever
+get random (20)
+if it is not vari2106 then exit repeat
+end repeat
+
+put it into vari2106
+put vari2106 into line (6) of card field "HuszonegyK10" of cd id 8701
+put line (vari2106) of card field "HuszonegyK06" of card id 8701 after last char of card field "OtK02" of card id 4360
+
+put line (7) of card field "HuszonegyK10" of card id 8701 into vari2107
+repeat forever
+get random (12)
+if it is not vari2107 then exit repeat
+end repeat
+
+put it into vari2107
+put vari2107 into line (7) of card field "HuszonegyK10" of cd id 8701
+put line (vari2107) of card field "HuszonegyK07" of card id 8701 after last char of card field "OtK02" of card id 4360
+
+put line (8) of card field "HuszonegyK10" of card id 8701 into vari2108
+repeat forever
+get random (15)
+if it is not vari2108 then exit repeat
+end repeat
+
+put it into vari2108
+put vari2108 into line (8) of card field "HuszonegyK10" of cd id 8701
+put line (vari2108) of card field "HuszonegyK08" of card id 8701 after last char of card field "OtK02" of card id 4360
+
+put line (9) of card field "HuszonegyK10" of card id 8701 into vari2109
+repeat forever
+get random (16)
+if it is not vari2109 then exit repeat
+end repeat
+
+put it into vari2109
+put vari2109 into line (9) of card field "HuszonegyK10" of cd id 8701
+put line (vari2109) of card field "HuszonegyK09" of card id 8701 after last char of card field "OtK02" of card id 4360
+
+
+
+
+
+end mouseUp
+
+===== STRING 0191 =====
+=Próféták
+Atléták
+Kurd paripák
+Rác katonák
+Római nøk
+Sánta király
+Kíntornász
+Téli bohóc
+Kincskeresøk
+Szertornász
+Køszobrász
+Rókavadász
+Öttusa sztár
+Vendégløs
+Belgyógyász
+Császárnék
+Császárnøk
+Taxi sofør
+Angolnák
+Fodrásznøk
+
+
+
+
+
+
+
+
+ˇ˛
+
+===== STRING 0192 =====
+= által szólt
+ révén hált
+ révén járt
+ révén volt
+ révén ült
+ ürügyén szólt
+ nyelvén szólt
+ mellett szólt
+ hangján szólt
+ tetemén ült
+ tetemén várt
+ mellett jött
+ mellett várt
+ ürügyén jött
+ ürügyén kért
+ 
+ 
+ 
+ 
+ ˇ˝
+
+===== STRING 0193 =====
+= régen
+ øsszel
+ akkor
+ egyszer
+ újfent
+ máskor
+ télen
+ mégis
+ nyáron
+ reggel
+ éjjel
+
+===== STRING 0194 =====
+= pøre
+ drága
+ kedves
+ nedves
+ borzos
+ sírva
+ morcos
+ hetyke
+ bamba
+ véled
+ nálad
+ néked
+
+===== STRING 0195 =====
+= anyósod.
+ elødöd.
+ Ilonkád.
+ Etelkád.
+ Arankád.
+ oroszkád.
+ imádód.
+ adósod.
+ Iluskád.
+ utódod.
+ Irénkéd.
+ apácád.
+ üzéred.
+ az isten.
+ az asszony.
+
+
+
+
+===== STRING 0196 =====
+=Cserhalom
+Életek
+Állatok
+Vérebek
+Ördögök
+Várurak
+Várnagyok
+Pest-Buda
+Debrecen
+Tolvajok
+Lengyelek
+Németek
+Angolok
+Orvosok
+Egriek
+Koldusok
+Tankosok
+Vesztesek
+Vétkesek
+Szarvasok
+
+ˇ˘
+
+===== STRING 0197 =====
+= és az apák
+ eltitkolt
+ elfojtott
+ átkártolt
+ elperzselt
+ elfuserált
+ elfeledett
+ oly gyönyörû
+ ellebegø
+ elrepedø
+ elragadó
+ oly pompás
+ ˇ¯
+
+===== STRING 0198 =====
+= hírét
+ szennyét
+ hamvát
+ mocskát
+ piszkát
+ vackát
+ bûzét
+ félszét
+ vágyát
+ selymét
+ vásznát
+ színét
+ gyöngyét
+ ékét
+ fényét
+ 
+
+
+===== STRING 0199 =====
+= hozta fiad.
+ dobta feléd. 
+ szórta reád.
+ dobta eléd.
+ hozta neked.
+ adta neked.
+ adta alád.
+ dobta feléd.
+ tette eléd. 
+ tette alád.
+ lökte eléd.
+ hozta nejed.
+ hozta feléd.
+ adta fiad.
+ hozta alád.
+ szórta feléd.
+ˇÙ
+
+===== STRING 0200 =====
+=20  15  11  12  15  20  12  15  16
+34 214 400 000
+
+===== STRING 0201 =====
+17
+9
+1
+8
+6
+11
+2
+9
+6HuszonegyK
+
+===== STRING 0202 =====
+on mouseUp
+
+put line (1) of card field "HuszonkettoK10" of card id 8952 into vari2201
+repeat forever
+get random (47)
+if it is not vari2201 then exit repeat
+end repeat
+
+put it into vari2201
+put vari2201 into line (1) of card field "HuszonkettoK10" of cd id 8952
+put line (vari2201) of card field "HuszonkettoK01" of card id 8952 after last char of card field "OtK02" of card id 4360
+
+put line (2) of card field "HuszonkettoK10" of card id 8952 into vari2202
+
+if vari2201 > 42 then
+repeat forever
+get random (12)
+if it is not vari2202 then exit repeat
+end repeat
+else
+repeat forever
+get random (17)
+if it is not vari2202 then exit repeat
+end repeat
+end if
+
+put it into vari2202
+put vari2202 into line (2) of card field "HuszonkettoK10" of cd id 8952
+put line (vari2202) of card field "HuszonkettoK02" of card id 8952 after last char of card field "OtK02" of card id 4360
+
+put line (3) of card field "HuszonkettoK10" of card id 8952 into vari2203
+repeat forever
+get random (24)
+if it is not vari2203 then exit repeat
+end repeat
+
+put it into vari2203
+put vari2203 into line (3) of card field "HuszonkettoK10" of cd id 8952
+put line (vari2203) of card field "HuszonkettoK03" of card id 8952 after last char of card field "OtK02" of card id 4360
+
+
+put line (4) of card field "HuszonkettoK10" of card id 8952 into vari2204
+repeat forever
+get random (11)
+if it is not vari2204 then exit repeat
+end repeat
+
+put it into vari2204
+put vari2204 into line (4) of card field "HuszonkettoK10" of cd id 8952
+
+put line (vari2204) of card field "HuszonkettoK04" of card id 8952 after last char of card field "OtK02" of card id 4360
+
+
+
+
+put line (5) of card field "HuszonkettoK10" of card id 8952 into vari2205
+repeat forever
+get random (11)
+if it is not vari2205 then exit repeat
+end repeat
+put it into vari2205
+put vari2205 into line (5) of card field "HuszonkettoK10" of cd id 8952
+put line (vari2205) of card field "HuszonkettoK05" of card id 8952 after last char of card field "OtK02" of card id 4360
+
+put return after last char of card field "OtK02" of card id 4360
+put lineFeed after last char of card field "OtK02" of card id 4360
+delete last char of card field "OtK02" of card id 4360
+
+
+put line (6) of card field "HuszonkettoK10" of card id 8952 into vari2206
+repeat forever
+get random (21)
+if it is not vari2206 then exit repeat
+end repeat
+
+put it into vari2206
+put vari2206 into line (6) of card field "HuszonkettoK10" of cd id 8952
+put line (vari2206) of card field "HuszonkettoK06" of card id 8952 after last char of card field "OtK02" of card id 4360
+
+put line (7) of card field "HuszonkettoK10" of card id 8952 into vari2207
+repeat forever
+get random (14)
+if it is not vari2207 then exit repeat
+end repeat
+
+put it into vari2207
+put vari2207 into line (7) of card field "HuszonkettoK10" of cd id 8952
+put line (vari2207) of card field "HuszonkettoK07" of card id 8952 after last char of card field "OtK02" of card id 4360
+
+put line (8) of card field "HuszonkettoK10" of card id 8952 into vari2208
+repeat forever
+get random (24)
+if it is not vari2208 then exit repeat
+end repeat
+
+put it into vari2208
+put vari2208 into line (8) of card field "HuszonkettoK10" of cd id 8952
+put line (vari2208) of card field "HuszonkettoK08" of card id 8952 after last char of card field "OtK02" of card id 4360
+
+
+
+end mouseUp
+
+===== STRING 0203 =====
+=Álmodozó
+Ébredezø
+Vesztegelø
+Mélázó
+Szenvelgø
+Részegedø
+Rostokoló
+Elpihenø
+Megpihenø
+Elnyugovó
+Megnyugvó
+Elfekvø
+Kocsmázó
+Öldöklø
+Haldokló
+Høbörgø
+Hintázó
+Sétáló
+Szédelgø
+Elfuserált
+Gyári melós
+Rókavadász
+Vendégløs
+Køszobrász
+Kíntornász
+Kincskeresø
+Szertornász
+Belgyógyász
+Taxi sofør
+Sekrestyés
+Jó alakú
+Haldokló
+Elhanyagolt
+Csókálló
+Fényûzø
+Hitvalló
+Køvé vált
+Bajkeverø
+Rosszakaró
+Összeaszott
+Szarkavaró
+Szeszføzø
+Egzotikus
+Ópiumos
+Rapszodikus
+Hipnotikus
+Önkéntes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ˇ˛
+
+===== STRING 0204 =====
+= szüleink
+ nagyapánk
+ nagyanyánk
+ rokonunk
+ bácsink
+ bátyám
+ bátyánk
+ néném
+ nénénk
+ rokonok
+ fiaink
+ fattyunk
+ eleink
+ øsünk
+ ükapánk
+ ükanyánk
+ øsöm
+
+ˇ˝
+
+===== STRING 0205 =====
+= bûnét
+ mocskát
+ piszkát
+ szemetét
+ báját
+ vétkét
+ szennyét
+ gyönyörét
+ vagyonát
+ kenyerét
+ cicijét
+ szövegét
+ aranyát
+ selymét
+ kelyhét
+ papucsát
+ szívét
+ lelkét
+ húsát
+ vállát
+ børét
+ karját
+ szørét
+ kacaját
+ 
+
+
+ tettét
+
+
+ˇ¸
+
+===== STRING 0206 =====
+= takarítjuk
+ menekítjük
+ aprítjuk
+ belevágjuk
+ beledobjuk
+ lesöpörjük
+ letaszítjuk
+ betemetjük
+ betakarjuk
+ besöpörjük
+ betaszítjuk
+
+ belezúzzuk 
+
+ beaprítjuk
+ 
+ belehintjük
+ beleszórjuk
+ belesózzuk
+ ködösítjükˇ˚
+
+===== STRING 0207 =====
+= a földbe.
+ a tûzbe.
+ a sárba.
+ a lyukba.
+ a sírba.
+ a porba.
+ a kútba.
+ a tóba.
+ a vízbe.
+ a hóba.
+ a fûbe.
+
+
+az üstbe
+ agyagba.
+ 
+
+===== STRING 0208 =====
+=Rengeteget
+Retteneset
+Isteneset
+Förgeteget
+Esztelenül
+Csendesedünk,
+Bánatosan
+Rettenesen
+Jókedvbøl
+Álmosodunk,
+Tönkre megyünk,
+Szégyenbøl
+Ocsmányan
+Gyöngéden
+Könnyelmûn
+Halványan
+Szepløsen
+Bûntudván
+Bús szívvel
+Álcázón
+Restségbøl
+
+===== STRING 0209 =====
+= hazudunk.
+ falazunk.
+ takarunk.
+ tagadunk.
+ guritunk.
+ tagadunk.
+ tarolunk.
+ zsarolunk.
+ perelünk.
+ lapulunk.
+ lihegünk.
+ mekegünk.
+ makogunk.
+ csipegünk.
+
+
+
+===== STRING 0210 =====
+= Nincs többé hitelünk.
+ Nincsen már hitelünk.
+ Nem lesz már hitelünk.
+ Felbomlott a szavunk.
+ Nem sokat ér a szavunk.
+ Herdáljuk hitelünk.
+ Hol van még becsület?
+ Elkurvult a szavunk.
+ Megbomlott az agyunk.
+ Mészárszék az eszünk.
+ Mészárszék az agyunk.
+ Véreskést csevegünk.
+ Vasrácsból köpenyünk.
+ Elfogy az össz hitelünk.
+ Másra se jó a szavunk.
+ Megzápul hitelünk.
+ Elhervad hitelünk.
+ Elposhad hitelünk.
+ Szétporlik hitelünk.
+ Elrothad hitelünk.
+ Megfonnyad hitelünk.
+ Elfonnyad hitelünk.
+ Elkurvul hitelünk.
+ Nincs itt már becsület!
+
+
+
+
+
+
+
+
+
+===== STRING 0211 =====
+=47  17  24  11  11  21  14  24
+16 372 008 576
+
+===== STRING 0212 =====
+on mouseUp
+
+put line (1) of card field "HuszonharomK10" of card id 9069 into vari2301
+repeat forever
+get random (20)
+if it is not vari2301 then exit repeat
+end repeat
+
+put it into vari2301
+put vari2301 into line (1) of card field "HuszonharomK10" of cd id 9069
+put line (vari2301) of card field "HuszonharomK01" of card id 9069 after last char of card field "OtK02" of card id 4360
+
+put line (2) of card field "HuszonharomK10" of card id 9069 into vari2302
+repeat forever
+get random (20)
+if it is not vari2302 then exit repeat
+end repeat
+
+put it into vari2302
+put vari2302 into line (2) of card field "HuszonharomK10" of cd id 9069
+put line (vari2302) of card field "HuszonharomK02" of card id 9069 after last char of card field "OtK02" of card id 4360
+
+put line (3) of card field "HuszonharomK10" of card id 9069 into vari2303
+repeat forever
+get random (11)
+if it is not vari2303 then exit repeat
+end repeat
+
+put it into vari2303
+put vari2303 into line (3) of card field "HuszonharomK10" of cd id 9069
+put line (vari2303) of card field "HuszonharomK03" of card id 9069 after last char of card field "OtK02" of card id 4360
+
+
+put line (4) of card field "HuszonharomK10" of card id 9069 into vari2304
+repeat forever
+get random (16)
+if it is not vari2304 then exit repeat
+end repeat
+
+put it into vari2304
+put vari2304 into line (4) of card field "HuszonharomK10" of cd id 9069
+
+put line (vari2304) of card field "HuszonharomK04" of card id 9069 after last char of card field "OtK02" of card id 4360
+
+
+
+
+put line (5) of card field "HuszonharomK10" of card id 9069 into vari2305
+repeat forever
+get random (16)
+if it is not vari2305 then exit repeat
+end repeat
+put it into vari2305
+put vari2305 into line (5) of card field "HuszonharomK10" of cd id 9069
+put line (vari2305) of card field "HuszonharomK05" of card id 9069 after last char of card field "OtK02" of card id 4360
+
+put return after last char of card field "OtK02" of card id 4360
+put lineFeed after last char of card field "OtK02" of card id 4360
+delete last char of card field "OtK02" of card id 4360
+
+
+put line (6) of card field "HuszonharomK10" of card id 9069 into vari2306
+repeat forever
+get random (11)
+if it is not vari2306 then exit repeat
+end repeat
+
+put it into vari2306
+put vari2306 into line (6) of card field "HuszonharomK10" of cd id 9069
+put line (vari2306) of card field "HuszonharomK06" of card id 9069 after last char of card field "OtK02" of card id 4360
+
+put line (7) of card field "HuszonharomK10" of card id 9069 into vari2307
+repeat forever
+get random (12)
+if it is not vari2307 then exit repeat
+end repeat
+
+put it into vari2307
+put vari2307 into line (7) of card field "HuszonharomK10" of cd id 9069
+put line (vari2307) of card field "HuszonharomK07" of card id 9069 after last char of card field "OtK02" of card id 4360
+
+put line (8) of card field "HuszonharomK10" of card id 9069 into vari2308
+repeat forever
+get random (13)
+if it is not vari2308 then exit repeat
+end repeat
+
+put it into vari2308
+put vari2308 into line (8) of card field "HuszonharomK10" of cd id 9069
+put line (vari2308) of card field "HuszonharomK08" of card id 9069 after last char of card field "OtK02" of card id 4360
+
+put line (9) of card field "HuszonharomK10" of card id 9069 into vari2309
+repeat forever
+get random (20)
+if it is not vari2309 then exit repeat
+end repeat
+
+put it into vari2309
+put vari2309 into line (9) of card field "HuszonharomK10" of cd id 9069
+put line (vari2309) of card field "HuszonharomK09" of card id 9069 after last char of card field "OtK02" of card id 4360
+
+
+
+
+end mouseUp
+
+===== STRING 0213 =====
+Párizsi csík
+Kis zsír-folt
+Tengeri szörny
+Almalevél
+Skót hímzés
+Városi sár
+Vállaji sár
+Tengeri gyöngy
+Kis földgömb
+Termál víz
+Zöld fügefák
+Kéjlekvár
+Szilvalevél
+Szøløfürt
+Bodzavirág
+Orgona-ág
+Gyémánt-csepp
+Gyöngykoszorú
+Körtevirág
+Nyárfa-ezüstˇ˛
+
+===== STRING 0214 =====
+ csöcse mentén...
+ fara táján...
+ a ruháján...
+ a hajában...
+ nyaka mentén...
+ fara mentén...
+ haja mentén...
+ nyaka táján...
+ csöcse táján...
+ derekánál...
+ a bokáján...
+ szeme mélyén...
+ a szemébøl...
+ a kezébøl...
+ a kezénél...
+ a csöcsénél...
+ ajakánál...
+ füle táján...
+ a nyakánál...
+ a szeménél...
+
+
+ eres ingnyak 
+ arasz ángyó
+ turulinkó
+ terebantin
+ babatangó
+ deres örmény
+ fara csüngmó
+ gararingló
+ javasasszony
+
+
+
+===== STRING 0215 =====
+ most!
+ pont,
+ lám!
+ ah!
+ ejh!
+ hé!
+ hû!
+ csüccs!
+ nász!
+ vajh,
+ ámˇ¸
+
+===== STRING 0216 =====
+ csudajó...
+ csupa szín...
+ csupaszon...
+ csoda szép...
+ csacsikám...
+ cicukám...
+ picikém...
+ hidegen...
+ melegen...
+ öregem...
+ aranyom...
+ tüzesen...
+ vörösen...
+ deresen...
+ finoman...
+ gyönyörûm...
+
+===== STRING 0217 =====
+ tovaringyó!
+ pihekönnyû!
+ csereszør ø!
+ aranyasszony!
+ sarokasszony!
+ mire jó még?
+ mire használsz?
+ mire rímelsz?
+ tolató hø!
+ sose csámcsogj!
+ ha lefekszel!
+ kire fekszem!
+ ha lefekszem!
+ kerekasszony!
+ vezetøke!
+ szopogatnám!
+
+ 
+
+ tolató-hó.
+ telelø-hø.
+ tudatoszkán.
+ belebömböl.
+, na ki csámcsog?!
+ tetején tej.
+ tovaringyó.
+ tülekedvén.ˇ˙
+
+===== STRING 0218 =====
+Ejnye, a
+Bezzeg a
+Nézd csak, a
+Minden a
+Már csak a
+Hajjaj, a
+Füstöl a
+S végül a
+S itt van a
+S hol van a
+Hej-haj, a
+
+Bánat a
+Véres a
+Fegyver a
+Ráspoly a
+Ébred aˇ˘
+
+===== STRING 0219 =====
+z ülvesekø!
+z álvasutas!
+ táboribanc!
+ vármegyehá’!
+ tengeripacs!
+ féldecigány!
+ ferdelelø!
+ szikragyogó!
+ szikrafogó!
+z élesemény!
+z élvelejó!
+ pillan(a)tás!
+
+
+ kancsuka volt.
+ árjakabú.
+ vár-megyehá'.
+ varjakadó.
+ élveszedelm.
+ bambibibam.
+ újrakodó.
+ helyrekedø.
+ székrekedés
+
+===== STRING 0220 =====
+ Példaadó
+ Vastagodó
+ Tisztelegø
+ Díszvacsorán
+ Vastagadó
+ Vesztegelø
+ Pendely alá
+ Létra mögött
+ Lóca mögött
+ Lóca alatt
+ Asztal alatt
+ Pendely alatt
+ Szoknya alatt
+
+ Verstagoló
+ Közlekedø
+ Lábravaló
+
+===== STRING 0221 =====
+= renegát.
+ majom, ó.
+ pici pötty.
+ jatagán.
+ pecabot.
+ hetyepetty.
+ pulya-bók.
+ bakacsók.
+ aranyér. 
+ mese-szôr.
+ teveszør.
+ paca hül.
+ paca nô.
+ baka-nyál.
+ teve reng.
+ baka-szó.
+ baka-tûz.
+ bakabát.
+ bakanóc.
+ bakanász.
+ 
+
+ meredély.
+ maradály.
+ zebegény.
+ˇˆ
+
+===== STRING 0222 =====
+17
+17
+2
+12
+16
+4
+7
+9
+16
+
+===== STRING 0223 =====
+20  20  11  16  16  11  12  13  20
+38 658 048 000HuszonharomK
+
+===== STRING 0224 =====
+on mouseUp
+put line (1) of card field "HuszonnegyK10" of card id 9223 into vari241
+repeat forever
+get random (12)
+if it is not vari241 then exit repeat
+end repeat
+
+put it into vari241
+put vari241 into line (1) of card field "HuszonnegyK10" of cd id 9223
+put line (vari241) of card field "HuszonnegyK01" of card id 9223 after last char of card field "OtK02" of card id 4360
+
+put line (2) of card field "HuszonnegyK10" of card id 9223 into vari242
+repeat forever
+get random (18)
+if it is not vari242 then exit repeat
+end repeat
+
+put it into vari242
+put vari242 into line (2) of card field "HuszonnegyK10" of cd id 9223
+put line (vari242) of card field "HuszonnegyK02" of card id 9223 after last char of card field "OtK02" of card id 4360
+
+put line (3) of card field "HuszonnegyK10" of card id 9223 into vari243
+repeat forever
+get random (10)
+if it is not vari243 then exit repeat
+end repeat
+
+put it into vari243
+put vari243 into line (3) of card field "HuszonnegyK10" of cd id 9223
+put line (vari243) of card field "HuszonnegyK03" of card id 9223 after last char of card field "OtK02" of card id 4360
+
+
+put line (4) of card field "HuszonnegyK10" of card id 9223 into vari244
+repeat forever
+get random (10)
+if it is not vari244 then exit repeat
+end repeat
+
+put it into vari244
+put vari244 into line (4) of card field "HuszonnegyK10" of cd id 9223
+
+put line (vari244) of card field "HuszonnegyK04" of card id 9223 after last char of card field "OtK02" of card id 4360
+
+
+
+
+put line (5) of card field "HuszonnegyK10" of card id 9223 into vari245
+repeat forever
+get random (16)
+if it is not vari245 then exit repeat
+end repeat
+put it into vari245
+put vari245 into line (5) of card field "HuszonnegyK10" of cd id 9223
+put line (vari245) of card field "HuszonnegyK05" of card id 9223 after last char of card field "OtK02" of card id 4360
+
+put return after last char of card field "OtK02" of card id 4360
+put lineFeed after last char of card field "OtK02" of card id 4360
+delete last char of card field "OtK02" of card id 4360
+
+
+put line (6) of card field "HuszonnegyK10" of card id 9223 into vari246
+repeat forever
+get random (10)
+if it is not vari246 then exit repeat
+end repeat
+
+put it into vari246
+put vari246 into line (6) of card field "HuszonnegyK10" of cd id 9223
+put line (vari246) of card field "HuszonnegyK06" of card id 9223 after last char of card field "OtK02" of card id 4360
+
+put line (7) of card field "HuszonnegyK10" of card id 9223 into vari247
+repeat forever
+get random (15)
+if it is not vari247 then exit repeat
+end repeat
+
+put it into vari247
+put vari247 into line (7) of card field "HuszonnegyK10" of cd id 9223
+put line (vari247) of card field "HuszonnegyK07" of card id 9223 after last char of card field "OtK02" of card id 4360
+
+put line (8) of card field "HuszonnegyK10" of card id 9223 into vari248
+repeat forever
+get random (11)
+if it is not vari248 then exit repeat
+end repeat
+
+put it into vari248
+put vari248 into line (8) of card field "HuszonnegyK10" of cd id 9223
+put line (vari248) of card field "HuszonnegyK08" of card id 9223 after last char of card field "OtK02" of card id 4360
+
+put line (9) of card field "HuszonnegyK10" of card id 9223 into vari249
+repeat forever
+get random (20)
+if it is not vari249 then exit repeat
+end repeat
+
+put it into vari249
+put vari249 into line (9) of card field "HuszonnegyK10" of cd id 9223
+put line (vari249) of card field "HuszonnegyK09" of card id 9223 after last char of card field "OtK02" of card id 4360
+
+
+
+end mouseUp
+
+===== STRING 0225 =====
+=Lágerbøl
+Börtönbøl
+Fogdából
+Tébolyból
+Cellából
+Rabságból
+Rabszívbøl
+Zárkából
+Karcerbøl
+Rabszájból
+Fogságból
+Fegyházból
+
+
+
+
+
+
+
+Markóbólˇ˛
+
+===== STRING 0226 =====
+= szabadult
+ menekült
+ kiszakadt
+ kirepült
+ kifolyó
+ kifutó
+ eredø
+ szakadó
+ születø
+ repedø
+ epedø
+ kibukó
+ szálló
+ kinövø
+ roppant
+ forró
+ ørült
+ felemás
+ 
+
+ döngø
+ csengø
+ fröccsent
+ rebbent
+ robbant
+ pattantˇ˝
+
+===== STRING 0227 =====
+= szerelem
+ átkok
+ gondok
+ honvágy
+ szeretet
+ féltés
+ bosszú
+ szidalom
+ haragunk
+ vérszomj
+ 
+ 
+
+===== STRING 0228 =====
+= tüze éled.
+ tüze ébred.
+ szele lebben.
+ tüze lebben.
+ szele éled.
+ szele ébred.
+ heve robban.
+ heve ébred.
+ heve éled.
+ heve lebben.
+ˇ˚
+
+===== STRING 0229 =====
+= Eløször
+ A hóban
+ A bajban
+ Elébb még
+ A tûzben
+ A høben
+ Eløbb még
+ A vészben
+ A zajban
+ Azonnal
+ Ezennel
+ Ugyancsak
+ Örömmel
+ Ez egyszer
+ Ijedtén
+ Akárha
+
+ Ocsúdtán
+
+ Emitten
+
+
+
+===== STRING 0230 =====
+=Félteni
+Sújtani
+Bántani
+Fojtani
+Ejteni
+Tiltani
+Rontani
+Ártani
+Írtani
+Sérteni
+
+Bontani
+Oltani
+Ölteni
+Dûteni
+Hûteni
+Ontani
+Menteni
+Sejteni
+Inteni
+Bújtani
+Dönteni
+Váltani
+Kelteni
+Félteni
+
+===== STRING 0231 =====
+= enged a múlt
+ bíztat a múlt
+ súlykol a múlt
+ buzdit a múlt
+ sürget a múlt
+ zargat a múlt
+ lökdös a múlt
+ késztet a múlt
+ hajszol a múlt
+ kerget a múlt
+ fût a jövø
+ kész a jövø
+ hív a jövø
+ gyøzköd a múlt
+ fût az idø
+
+
+
+ˇ¯
+
+===== STRING 0232 =====
+=, aztán
+, késøbb
+ s végtén
+ s egyszer
+ s végül
+ s többnyire
+ s végtibe
+ s végtire
+ s majdan
+, majdan
+, mígnem
+
+
+ s egykor
+ s akkorˇ˜
+
+===== STRING 0233 =====
+= megbabonáz.
+ porba lapít.
+ földre taszít.
+ földarabol.
+ szétkaszabol.
+ földre teper.
+ földbe temet.
+ megkeserít.
+ sárba taszít.
+ porba taszít.
+ porba teper.
+ sírba taszít.
+ sírba temet.
+ sírba segít.
+ földbe segít.
+ földbe takar.
+ sírba takar.
+ sírba teper.
+ sírba tapos.
+ földbe tapos.
+ porba tapos.
+ sárba tapos.
+ sárba teper.
+
+
+ˇˆ
+
+===== STRING 0234 =====
+9
+10
+1
+4
+15
+1
+2
+4
+2ˇÙ
+
+===== STRING 0235 =====
+12  18  10  10  16   10  15  11  20
+11 404 800 000
+HuszonnegyK
+
+===== STRING 0236 =====
+on mouseUp
+
+put line (1) of card field "HuszonotK10" of card id 9591 into vari2501
+repeat forever
+get random (10)
+if it is not vari2501 then exit repeat
+end repeat
+
+put it into vari2501
+put vari2501 into line (1) of card field "HuszonotK10" of cd id 9591
+put line (vari2501) of card field "HuszonotK01" of card id 9591 after last char of card field "OtK02" of card id 4360
+
+put line (2) of card field "HuszonotK10" of card id 9591 into vari2502
+repeat forever
+get random (12)
+if it is not vari2502 then exit repeat
+end repeat
+
+put it into vari2502
+put vari2502 into line (2) of card field "HuszonotK10" of cd id 9591
+put line (vari2502) of card field "HuszonotK02" of card id 9591 after last char of card field "OtK02" of card id 4360
+
+put line (3) of card field "HuszonotK10" of card id 9591 into vari2503
+repeat forever
+get random (26)
+if it is not vari2503 then exit repeat
+end repeat
+
+put it into vari2503
+put vari2503 into line (3) of card field "HuszonotK10" of cd id 9591
+put line (vari2503) of card field "HuszonotK03" of card id 9591 after last char of card field "OtK02" of card id 4360
+
+
+put line (4) of card field "HuszonotK10" of card id 9591 into vari2504
+repeat forever
+get random (10)
+if it is not vari2504 then exit repeat
+end repeat
+
+put it into vari2504
+put vari2504 into line (4) of card field "HuszonotK10" of cd id 9591
+
+put line (vari2504) of card field "HuszonotK04" of card id 9591 after last char of card field "OtK02" of card id 4360
+
+
+
+
+put line (5) of card field "HuszonotK10" of card id 9591 into vari2505
+repeat forever
+get random (12)
+if it is not vari2505 then exit repeat
+end repeat
+put it into vari2505
+put vari2505 into line (5) of card field "HuszonotK10" of cd id 9591
+put line (vari2505) of card field "HuszonotK05" of card id 9591 after last char of card field "OtK02" of card id 4360
+
+put return after last char of card field "OtK02" of card id 4360
+put lineFeed after last char of card field "OtK02" of card id 4360
+delete last char of card field "OtK02" of card id 4360
+
+
+put line (6) of card field "HuszonotK10" of card id 9591 into vari2506
+repeat forever
+get random (11)
+if it is not vari2506 then exit repeat
+end repeat
+
+put it into vari2506
+put vari2506 into line (6) of card field "HuszonotK10" of cd id 9591
+put line (vari2506) of card field "HuszonotK06" of card id 9591 after last char of card field "OtK02" of card id 4360
+
+put line (7) of card field "HuszonotK10" of card id 9591 into vari2507
+repeat forever
+get random (12)
+if it is not vari2507 then exit repeat
+end repeat
+
+put it into vari2507
+put vari2507 into line (7) of card field "HuszonotK10" of cd id 9591
+put line (vari2507) of card field "HuszonotK07" of card id 9591 after last char of card field "OtK02" of card id 4360
+
+
+
+
+put line (8) of card field "HuszonotK10" of card id 9591 into vari2508
+
+if vari2507 > 10 then
+repeat forever
+get random (11)
+if it is not vari2508 then exit repeat
+end repeat
+else
+repeat forever
+get random (14)
+if it is not vari2508 then exit repeat
+end repeat
+end if
+
+put it into vari2508
+put vari2508 into line (8) of card field "HuszonotK10" of cd id 9591
+put line (vari2508) of card field "HuszonotK08" of card id 9591 after last char of card field "OtK02" of card id 4360
+
+
+
+put line (9) of card field "HuszonotK10" of card id 9591 into vari2509
+
+if vari2508 < 4 then
+repeat forever
+get random (6)
+if it is not vari2509 then exit repeat
+end repeat
+put it into vari2509
+else
+repeat forever
+get random (16)
+if it is not vari2509 then exit repeat
+end repeat
+put it into vari2509
+add 6 to vari2509
+
+end if
+
+
+put vari2509 into line (9) of card field "HuszonotK10" of cd id 9591
+put line (vari2509) of card field "HuszonotK09" of card id 9591 after last char of card field "OtK02" of card id 4360
+
+
+
+end mouseUp
+
+===== STRING 0237 =====
+=Házsongárd
+Hollókø
+Lomnici csúcs
+Galyatetø
+Mont Everest
+Gellérthegy
+Kis-Balaton
+Alpesi táj
+Alföldön
+Erdélyben
+
+===== STRING 0238 =====
+= ti ti tá
+ tá tá
+ ti ti tá
+ tá tá
+ ti ti tá
+ tá tá
+ ti ti tá
+ tá tá
+ ti ti tá
+ tá tá
+ ti ti tá
+ tá tá
+
+===== STRING 0239 =====
+=-borozáskor.
+-bori fürdø.
+-bori kórház.
+-bori lelkész.
+-bori ágyú.
+-bori postás.
+p-szeradagként.
+b-laüvegbøl.
+rnyalatokból.
+fonyaízû.
+ji sajátság.
+ltosok arcán.
+-rogatóstól.
+merikából.
+lomelûzø.
+porodottan.
+rok eløttem.
+rok utánam.
+nczene csendül.
+panyag-orgona.
+pcukor árus.
+rgyas igével.
+rgyi hibával.
+rsadalomrajz.
+voli tájak.
+vvezetékes.
+ˇ¸
+
+===== STRING 0240 =====
+= Még se
+ Jaj, de
+ Félve
+ Nyögve
+ Fájva
+ Fázva
+ Rejtve
+ Sírva
+ Sértve
+ Bøgve
+ 
+ˇ˚
+
+===== STRING 0241 =====
+= világítsz!
+ igyekszel.
+ vigyáztál.
+ vadultál.
+ ugattál.
+ tapodtál.
+ tegeztél.
+ bagóztál.
+ cseréltél.
+ ütöttél.
+ maradtál.
+ okítlak.
+
+
+ degeszre.
+ fajultál?
+ csodállak.
+ feszítlek.
+ bizonyság.
+ eretnek.
+ vetültél.
+
+===== STRING 0242 =====
+=Már soha
+Többé
+Most már
+Innen
+Látod-e?
+Hallod-e!
+Érted-e?
+Tudd, hogy
+Halld, hogy
+Lásd, hogy
+Sajnos,
+
+
+
+
+Nem baj.
+Nagy baj.
+Azt ám!
+Mit még!
+Baszd meg!
+Hogy, hogy?!
+Lófaszt!
+Majrés.
+Úgy ám!
+Cseszd meg!ˇ˘
+
+===== STRING 0243 =====
+= nincs pihenés! —
+ nem menekülsz! —
+ nincs menedék! —
+ nincs hova menj! —
+ nincs kifelé! —
+ nincs kaszakø! —
+ nincs ereszalj! —
+ nincs zeneszó! —
+ nincs nyaralás! —
+ nincs haza út! —
+ nincs nyugalom! —
+ nincs kegyelem! —
+
+
+ Lökd be a bort!
+ Nincs pinaszør!
+ Volt szeretød!
+ Van szeretød?!
+ Szolga ne légy!
+ Tûzbe ne lépj!
+ Tengeri szörny!
+ Szoptad a szót?
+ Terjed az AIDS?
+ Támad az AIDS?
+ Fosnivaló!
+ Cérnafaszú!
+
+===== STRING 0244 =====
+= jönnek a
+ várnak a
+ lesnek a
+ fagytodig
+ reggelig
+ holnapig
+ száz napig
+ holnap is
+ holtodig
+ sírodig
+ jártodig
+ éjjel is
+ este is
+ évekig
+
+
+
+
+
+ Ülnek az
+ Törnek az
+ Szállnak az
+ Jönnek az
+
+===== STRING 0245 =====
+=z álcsecsemøk
+z ónkatonák...
+z ûrrepüløk...
+z orgonafák...
+z áldozatok...
+ fejbetegek... 
+ hajt a tatár!
+ ûz a nyomor!
+ ûz a tatár!
+ hajt a nyomor!
+ ûz a család!
+ hajt a család!
+ szaggat a sás!
+ szúr a szemed!
+ szúr a magány!
+ vagdal a sás!
+ vagdal a szél!
+ szaggat a kór!
+ vág a bilincs!
+ szúr a nyomor!
+ ûz a nyomor!
+ ûz a magány!
+
+ˇˆ
+
+===== STRING 0246 =====
+10
+9
+22
+5
+2
+4
+12
+6
+18ˇÙ
+
+===== STRING 0247 =====
+10  2  26  10  12  11  12  14  22
+2 536 934 400HuszonotK
+
+===== STRING 0248 =====
+on mouseUp
+
+put line (1) of card field "HuszonhatK10" of card id 9912 into vari2601
+repeat forever
+get random (52)
+if it is not vari2601 then exit repeat
+end repeat
+
+put it into vari2601
+put vari2601 into line (1) of card field "HuszonhatK10" of cd id 9912
+put line (vari2601) of card field "HuszonhatK01" of card id 9912 after last char of card field "OtK02" of card id 4360
+
+put line (2) of card field "HuszonhatK10" of card id 9912 into vari2602
+repeat forever
+get random (22)
+if it is not vari2602 then exit repeat
+end repeat
+
+put it into vari2602
+put vari2602 into line (2) of card field "HuszonhatK10" of cd id 9912
+put line (vari2602) of card field "HuszonhatK02" of card id 9912 after last char of card field "OtK02" of card id 4360
+
+put line (3) of card field "HuszonhatK10" of card id 9912 into vari2603
+repeat forever
+get random (33)
+if it is not vari2603 then exit repeat
+end repeat
+
+put it into vari2603
+put vari2603 into line (3) of card field "HuszonhatK10" of cd id 9912
+put line (vari2603) of card field "HuszonhatK03" of card id 9912 after last char of card field "OtK02" of card id 4360
+
+
+put return after last char of card field "OtK02" of card id 4360
+put lineFeed after last char of card field "OtK02" of card id 4360
+delete last char of card field "OtK02" of card id 4360
+
+
+
+put line (4) of card field "HuszonhatK10" of card id 9912 into vari2604
+repeat forever
+get random (10)
+if it is not vari2604 then exit repeat
+end repeat
+
+put it into vari2604
+put vari2604 into line (4) of card field "HuszonhatK10" of cd id 9912
+
+put line (vari2604) of card field "HuszonhatK04" of card id 9912 after last char of card field "OtK02" of card id 4360
+
+
+
+put line (5) of card field "HuszonhatK10" of card id 9912 into vari2605
+repeat forever
+get random (10)
+if it is not vari2605 then exit repeat
+end repeat
+put it into vari2605
+put vari2605 into line (5) of card field "HuszonhatK10" of cd id 9912
+put line (vari2605) of card field "HuszonhatK05" of card id 9912 after last char of card field "OtK02" of card id 4360
+
+
+
+put line (6) of card field "HuszonhatK10" of card id 9912 into vari2606
+repeat forever
+get random (60)
+if it is not vari2606 then exit repeat
+end repeat
+
+put it into vari2606
+put vari2606 into line (6) of card field "HuszonhatK10" of cd id 9912
+put line (vari2606) of card field "HuszonhatK06" of card id 9912 after last char of card field "OtK02" of card id 4360
+
+
+
+end mouseUp
+
+===== STRING 0249 =====
+=Mustárt! Mustárt
+Lekvárt! Lekvárt
+Mézet! Mézet
+Cukrot! Cukrot
+Lekvárt! Mézet
+Mézet! Lekvárt
+Friss vajat enyhén
+Zsírt! Libazsírt is
+Forró hurkát
+Étolajat! Zsírt
+Sárga vajat! Zsírt
+Tejfölt! Tejfölt
+Tejfölt! Mézet
+Mézet! Tejfölt
+Tejfölt! Cukrot
+Cukrot! Tejfölt
+Zsírt és tejfölt
+Tejfölt! Lekvárt
+Lekvárt! Tejfölt
+Langyos mézet
+Zsíros tejfölt
+Tejfölös ondót
+Sajtot! Sajtot
+Sajtot! Tejfölt
+Tejfölt! Sajtot
+Krémet! Krémet
+Krémet! Mézet
+Mézet! Krémet
+Mézes krémet
+Cukrot! Krémet
+Krémet! Cukrot
+Cukros krémet
+Langyos krémet
+Lekvárt! Krémet
+Krémet! Lekvárt
+Francia krémet
+Osztrák krémet
+Mákot! Krémet
+Krémet! Mákot
+Mákos krémet
+Krémes mákot
+Cukrot! Mákot
+Mákot! Cukrot
+Cukros mákot
+Mákos cukrot
+Fokhagymás zsírt
+Meggyet, málnát
+Szøke tepertøt
+Sonkát, kolbászt
+Øszibarackot
+Sonkát, hurkát
+Hurkát, kolbászt
+
+
+
+
+
+
+Májpástétumotˇ˛
+
+===== STRING 0250 =====
+= kenj a kenyérre.
+ kenj piritósra.
+ kenj a cipóra.
+ tégy a zsebedbe.
+ rakj a bödönbe.
+ rakj a zsebedbe.
+ rakj a kosárba.
+ tégy a kosárba.
+ tégy a bödönbe.
+ most csomagolj be.
+ kérj a kalácsra.
+ kérj a kenyérre.
+ kérj a cipóra.
+ kenj a kalácsra.
+ tégy a kalácsra.
+ tégy a cipóra.
+ rakj a kalácsra.
+ rakj a cipóra.
+ rakj a kenyérre.
+ tégy piritósra.
+ kérj piritósra.
+ rakj piritósra.
+ 
+
+
+
+
+
+===== STRING 0251 =====
+= Ne várj a halálra!
+ Ne várj Gizikére!
+ Ne nézz a szemembe!
+ Ne vidd el az álmom!
+ Ne hagyd magad! Élvezz!
+ Ne várj, ne ragaszkodj!
+ Ne félj, ne pisilj be!
+ Ne öntsd ki a lelked!
+ Ne mondd ki a jelszót!
+ Ne mondj le a jóról!
+ Ne szállj le a lóról!
+ Ne nézz a tükörbe!
+ Ne tedd el a késed!
+ Ne vedd le az inged!
+ Ne szarj be eløre!
+ Na mondd, ami még bánt!
+ Ne higyj a jövødbe!
+ Ne várj soha jobbat!
+ Ne hagyd ki a ziccert!
+ Ne ülj fel a lóra!
+ Ne szállj a vonatra!
+ Ne szállj repüløre!
+ Ebédre ne készülj!
+ Ne hidd, hogy elég lesz!
+ Ne félj a fosástól!
+ Ne kend magad össze!
+ Ne félj az evéstøl!
+ Ne félj a kajától!
+ Ne nyald meg az ujjad!
+ Ne nyald le az ajkad!
+ Ne nyald ki a bögrét!
+ Ne szórd el a morzsát!
+ Ne nyald ki a tányért!
+
+===== STRING 0252 =====
+=Megzápult
+Elsápadt
+Összeesett
+Eltompult
+Megkergült
+Megsérült
+Elbambult
+Elkurvult
+Most dilinyós
+Tönkre hülyült
+
+
+Bambulaság
+Állva bolond
+Ørült lett
+
+
+
+ˇ˚
+
+===== STRING 0253 =====
+= a világ!
+ a hazánk!
+ a hazám!
+ a varázs!
+ anyaföld!
+ a falunk!
+ a hitem!
+ a hitünk!
+ a megyénk!
+ a szavad!
+
+ a bokor.
+ jeges ûr.
+ a nevem.
+ a szavam.
+  a falum!
+
+===== STRING 0254 =====
+= Nyílnak az orgonafák.
+ Róza, nem ér a nevem!
+ Légy hedonista, ha tudsz!
+ Légy szemafor! Vakarózz!
+ Légy pacifista! ne høs!
+ Jön Jani bácsi, a høs.
+ Mint Puca Pista, pofázz...
+ Majd hedonista leszend.
+ Most hedonista lehetsz.
+ Most hedonista leszel.
+ Volt hedonista nyafog.
+ Két hedonista nyafog.
+ Majd pacifista leszel.
+ Most pacifista lehetsz.
+ Most pacifista leszel.
+ Volt pacifista nyafog.
+ Két pacifista nyafog.
+ Majd onanista leszel.
+ Most onanista leszel.
+ Most onanista lehetsz.
+ Volt onanista nyafog.
+ Két onanista nyafog.
+ S én, onanista-gyanús.
+ S én, pacifista-gyanús.
+ Ó, hedonista-kegyúr!
+ Légy onanista! Tekerj!
+ Már spekulálnia kell!
+ Most spekulálni se kell.
+ Ó, spekulálni akarsz?!
+ Most spekulálni akarsz?
+ Most spekulálj, ha akarsz!
+ Most örömödre ihatsz!
+ Most örömödre ehetsz!
+ Itt örömödre ehetsz!
+ Itt örömödre ihatsz!
+ Nincs örömödre vigasz!
+ Lásd, örömödre szarik!
+ Szép szeretødre nevet!
+ Szép szeretødre rogyik.
+ Szard le a táltosokat!
+ Verd ki a vérebeket!
+ Várd ki a „szebb” napokat!
+ Törd be a holnapokat!
+ Törd meg a mennyei szót.
+ Nyomd meg a kétkerekût!
+ Baszd meg a „szebb” napokat!
+ Védjed a tetveidet.
+ Lám, örömödre szarik!
+ Lenge magyarban igyál.
+ Lenge magyarban egyél.
+ Hû szeretømre szarik!
+ Az! jön a székrekedés.
+ Lám, jön a székrekedés.
+ Sorsod a székrekedés!
+ Kínos a székrekedés!
+ Kínoz a székrekedés!
+ Nincs szeretød! Ne keress!
+ Mint szemafor figyeled.
+ Csak figyelem! Figyelem!
+ Nincs kegyelem! Figyelem!
+ Hatvanegy
+ˇı
+
+===== STRING 0255 =====
+52
+22
+33
+10
+10
+60
+
+226 512 000
+
+===== STRING 0256 =====
+on mouseUp
+
+put line (1) of card field "HuszonhetK10" of card id 10156 into vari271
+repeat forever
+get random (10)
+if it is not vari271 then exit repeat
+end repeat
+
+put it into vari271
+put vari271 into line (1) of card field "HuszonhetK10" of cd id 10156
+put line (vari271) of card field "HuszonhetK01" of card id 10156 after last char of card field "OtK02" of card id 4360
+
+put line (2) of card field "HuszonhetK10" of card id 10156 into vari272
+repeat forever
+get random (10)
+if it is not vari272 then exit repeat
+end repeat
+
+put it into vari272
+put vari272 into line (2) of card field "HuszonhetK10" of cd id 10156
+put line (vari272) of card field "HuszonhetK02" of card id 10156 after last char of card field "OtK02" of card id 4360
+
+put line (3) of card field "HuszonhetK10" of card id 10156 into vari273
+repeat forever
+get random (11)
+if it is not vari273 then exit repeat
+end repeat
+
+put it into vari273
+put vari273 into line (3) of card field "HuszonhetK10" of cd id 10156
+put line (vari273) of card field "HuszonhetK03" of card id 10156 after last char of card field "OtK02" of card id 4360
+
+
+put line (4) of card field "HuszonhetK10" of card id 10156 into vari274
+repeat forever
+get random (10)
+if it is not vari274 then exit repeat
+end repeat
+
+put it into vari274
+put vari274 into line (4) of card field "HuszonhetK10" of cd id 10156
+
+put line (vari274) of card field "HuszonhetK04" of card id 10156 after last char of card field "OtK02" of card id 4360
+
+
+
+
+put line (5) of card field "HuszonhetK10" of card id 10156 into vari275
+repeat forever
+get random (10)
+if it is not vari275 then exit repeat
+end repeat
+put it into vari275
+put vari275 into line (5) of card field "HuszonhetK10" of cd id 10156
+put line (vari275) of card field "HuszonhetK05" of card id 10156 after last char of card field "OtK02" of card id 4360
+
+put return after last char of card field "OtK02" of card id 4360
+put lineFeed after last char of card field "OtK02" of card id 4360
+delete last char of card field "OtK02" of card id 4360
+
+
+put line (6) of card field "HuszonhetK10" of card id 10156 into vari276
+repeat forever
+get random (16)
+if it is not vari276 then exit repeat
+end repeat
+
+put it into vari276
+put vari276 into line (6) of card field "HuszonhetK10" of cd id 10156
+put line (vari276) of card field "HuszonhetK06" of card id 10156 after last char of card field "OtK02" of card id 4360
+
+put line (7) of card field "HuszonhetK10" of card id 10156 into vari277
+repeat forever
+get random (10)
+if it is not vari277 then exit repeat
+end repeat
+
+put it into vari277
+put vari277 into line (7) of card field "HuszonhetK10" of cd id 10156
+put line (vari277) of card field "HuszonhetK07" of card id 10156 after last char of card field "OtK02" of card id 4360
+
+put line (8) of card field "HuszonhetK10" of card id 10156 into vari278
+repeat forever
+get random (10)
+if it is not vari278 then exit repeat
+end repeat
+
+put it into vari278
+put vari278 into line (8) of card field "HuszonhetK10" of cd id 10156
+put line (vari278) of card field "HuszonhetK08" of card id 10156 after last char of card field "OtK02" of card id 4360
+
+put line (9) of card field "HuszonhetK10" of card id 10156 into vari279
+repeat forever
+get random (22)
+if it is not vari279 then exit repeat
+end repeat
+
+put it into vari279
+put vari279 into line (9) of card field "HuszonhetK10" of cd id 10156
+put line (vari279) of card field "HuszonhetK09" of card id 10156 after last char of card field "OtK02" of card id 4360
+
+
+end mouseUp
+
+===== STRING 0257 =====
+Ocsmányság
+Disznóság
+Káromlás
+Kurv’anyukád
+Bájcsevegés
+Ócsárlás
+Náci nyögés
+Szórohadék
+Szentséglés
+Durva szöveg
+
+Kis nyilas ék
+Egy nyilas arc
+Egy nyilas úr
+Egy nyilas ør
+
+
+===== STRING 0258 =====
+ feketíti a
+ maszatolja a
+ bitorolja a
+ szagosítja a
+ mocskolja a
+ piszkítja a
+ marjítja a
+ büdösíti a
+ nehezíti a
+ foltozza a
+ 
+
+ szarosítja a
+ telefossa a
+ 
+ begyalázza a 
+ beszarozza a
+ leszarozza a
+ telefossa a
+ lovagolja a
+ díszíti a
+ sarabolja aˇ¸
+
+===== STRING 0259 =====
+ könyvtár
+ könyvek
+ versek
+ szentek
+ mûvek
+ könyvház
+z ízlés
+ tiszták
+ bölcsek
+ strófák
+ vének
+
+ balsors
+ csontváz
+ gondok
+
+===== STRING 0260 =====
+ drága
+ drága
+ minta
+ tiszta
+ tarka
+ gála
+ szûzi
+ játszi
+ szende
+ szimpla
+ szürke
+
+
+ páva
+ príma
+ nyári
+ vaksi
+ menta
+ nimfa
+ mirha hála
+ szende
+ árva
+ forma
+ pára
+ vatta
+ irha
+ nyári
+ déli
+ szürke
+ kósza szimpla
+ láma
+ néma
+ hajsza
+ spongyaˇ˙
+
+===== STRING 0261 =====
+ ruháját.
+ kabátját.
+ zakóját.
+ zekéjét.
+ csuháját.
+ derûjét.
+ haragját.
+ igéjét.
+ darócát.
+ csodáját.
+
+ kalapját.
+ hatalmát.
+ hajékét.
+ gerincét. fölényét
+ kedélyét.
+ damasztját.
+ darócát.
+ gatyáját.
+ hajóját.
+ iszákját.
+ ezüstjét.
+ figyelmét.
+ bugyorját.
+ csodáját.
+ csomagját.
+ cafatját.
+ cipøjét.
+ szobáját.
+ pofáját.
+ gyufáját.
+ betétét.
+ betonját.
+ betûjét.
+ bibircsét.
+ bilincsét.
+ bitóját.
+ bizalmát.
+ bogáncsát.
+ bodorját.
+ bokáját.
+ bolondját.
+
+
+
+
+ edényét.ˇ˘
+
+===== STRING 0262 =====
+=Zúzott szó-
+Tördelt szó-
+Roppant szó-
+Éles szó-
+Tépett szó-
+Szúró szó-
+Végsø szó-
+Tépø szó-
+Eltört szó-
+Roppant szó-
+Csapzott szó-
+Vagdalt szó-
+Dörzsölt szó-
+Ørölt szó-
+Ørült szó-
+Szétzúzott 
+
+Csépelt szó-
+Szóból tört 
+Földhöz vert 
+Falhoz vert 
+Ketté tört 
+Szó-zúzott 
+
+===== STRING 0263 =====
+szerepek –
+cserepek –
+üvegek –
+darabok –
+szeletek –
+szedetek –
+kupacok –
+gyutacsok –
+kövecsek –
+kavicsok –
+
+
+gyöngyök –
+kések –
+pörcök –
+
+===== STRING 0264 =====
+ sértøk,
+ durvák,
+ szúrók,
+ fájók,
+ vágók,
+ sajgók,
+ forrók,
+ bántók,
+ kínzók,
+ sebtibe
+ kocsmai
+
+ nyúzók,
+ zúzók,
+ vésøk,
+ bordók,
+ csángók,
+ bunkók,
+ tuskók,
+ sarlók,
+ tarlók,
+ fúrók,
+
+
+===== STRING 0265 =====
+ szemtelenek.
+ féktelenek.
+ szívtelenek.
+ becstelenek.
+ hasztalanok.
+ szertelenek.
+ fajtalanok.
+ nyugtalanok.
+ csintalanok,
+ jogtalanok.
+ gáttalanok.
+ gáncstalanok.
+ hontalanok.
+ úttalanok.
+ súlytalanok.
+ féktelenek.
+ hirtelenek.
+ becstelenek.
+ dicstelenek.
+ szívtelenek.
+ kénytelenek.
+ meztelenek.
+ 
+
+
+ elvtelenek. 
+ˇı
+
+===== STRING 0266 =====
+10  10  11  10  10  16  10  10  22
+3 872 000 000   
+HuszonhetK
+
+===== STRING 0267 =====
+on mouseUp
+
+put line (1) of card field "HuszonnyolcK11" of card id 10486 into vari281
+repeat forever
+get random (10)
+if it is not vari281 then exit repeat
+end repeat
+
+put it into vari281
+put vari281 into line (1) of card field "HuszonnyolcK11" of cd id 10486
+put line (vari281) of card field "HuszonnyolcK01" of card id 10486 after last char of card field "OtK02" of card id 4360
+
+put line (2) of card field "HuszonnyolcK11" of card id 10486 into vari282
+repeat forever
+get random (12)
+if it is not vari282 then exit repeat
+end repeat
+
+put it into vari282
+put vari282 into line (2) of card field "HuszonnyolcK11" of cd id 10486
+put line (vari282) of card field "HuszonnyolcK02" of card id 10486 after last char of card field "OtK02" of card id 4360
+
+put line (3) of card field "HuszonnyolcK11" of card id 10486 into vari283
+repeat forever
+get random (11)
+if it is not vari283 then exit repeat
+end repeat
+
+put it into vari283
+put vari283 into line (3) of card field "HuszonnyolcK11" of cd id 10486
+put line (vari283) of card field "HuszonnyolcK03" of card id 10486 after last char of card field "OtK02" of card id 4360
+
+
+put line (4) of card field "HuszonnyolcK11" of card id 10486 into vari284
+repeat forever
+get random (12)
+if it is not vari284 then exit repeat
+end repeat
+
+put it into vari284
+put vari284 into line (4) of card field "HuszonnyolcK11" of cd id 10486
+
+put line (vari284) of card field "HuszonnyolcK04" of card id 10486 after last char of card field "OtK02" of card id 4360
+
+
+
+
+put line (5) of card field "HuszonnyolcK11" of card id 10486 into vari285
+repeat forever
+get random (11)
+if it is not vari285 then exit repeat
+end repeat
+put it into vari285
+put vari285 into line (5) of card field "HuszonnyolcK11" of cd id 10486
+put line (vari285) of card field "HuszonnyolcK05" of card id 10486 after last char of card field "OtK02" of card id 4360
+
+put return after last char of card field "OtK02" of card id 4360
+put lineFeed after last char of card field "OtK02" of card id 4360
+delete last char of card field "OtK02" of card id 4360
+
+
+
+put line (6) of card field "HuszonnyolcK11" of card id 10486 into vari286
+repeat forever
+get random (40)
+if it is not vari286 then exit repeat
+end repeat
+put it into vari286
+put vari286 into line (6) of card field "HuszonnyolcK11" of cd id 10486
+put line (vari286) of card field "HuszonnyolcK06" of card id 10486 after last char of card field "OtK02" of card id 4360
+
+
+put line (7) of card field "HuszonnyolcK11" of card id 10486 into vari287
+if vari286 < 11 then
+repeat forever
+get random (10)
+if it is not vari287 then exit repeat
+end repeat
+
+put it into vari287
+put vari287 into line (7) of card field "HuszonnyolcK11" of cd id 10486
+put line (vari287) of card field "HuszonnyolcK07" of card id 10486 after last char of card field "OtK02" of card id 4360
+else
+end if
+
+
+--put line (8) of card field "HuszonnyolcK11" of card id 10486 into vari288
+--repeat forever
+--get random (30)
+--if it is not vari288 then exit repeat
+--end repeat
+--put it into vari288
+--put vari288 into line (8) of card field "HuszonnyolcK11" of cd id 10486
+--put line (vari288) of card field "HuszonnyolcK08" of card id 10486 after last char of card field "OtK02" of card id 4360
+
+
+put line (9) of card field "HuszonnyolcK11" of card id 10486 into vari289
+repeat forever
+get random (10)
+if it is not vari289 then exit repeat
+end repeat
+put it into vari289
+put vari289 into line (9) of card field "HuszonnyolcK11" of cd id 10486
+put line (vari289) of card field "HuszonnyolcK09" of card id 10486 after last char of card field "OtK02" of card id 4360
+
+
+put line (10) of card field "HuszonnyolcK11" of card id 10486 into vari2810
+repeat forever
+get random (15)
+if it is not vari2810 then exit repeat
+end repeat
+put it into vari2810
+put vari2810 into line (10) of card field "HuszonnyolcK11" of cd id 10486
+put line (vari2810) of card field "HuszonnyolcK10" of card id 10486 after last char of card field "OtK02" of card id 4360
+
+
+
+end mouseUp
+
+===== STRING 0268 =====
+Itt
+Áll
+Vár
+Hív
+Csíp
+Tép
+Sír
+Húz
+Zúz
+Vág
+
+
+
+Száll
+Jár
+Csíp
+Tép
+Fél
+Lép
+Leng
+Csüng
+Füst
+
+===== STRING 0269 =====
+ a halál!
+ a nyomor!
+ a magány!
+ a remény!
+ a hiány!
+ a hideg!
+ a csömör!
+ a pokol!
+ a világ!
+ a közöny!
+ a csalás!
+ a varázs!
+
+
+
+ a robot!
+ a pogány!
+ a gonosz!
+ a bolond!
+ a vagány!
+ a mocsár!
+ a penész!
+ a család!
+ az apád!
+
+===== STRING 0270 =====
+ Honi tájak
+ Menedékünk
+ Honi kertek
+ Magyarország
+ Tavirózsák
+ Szûz kertek
+ Puha ország
+ Honi földek
+ Kicsi ország
+ Laza ország
+ Operettünk
+ 
+
+ Sima tájak
+ Tunya tájak
+ Bujaságunk
+ Tudományunk
+ Vereségünkˇ¸
+
+===== STRING 0271 =====
+ szépségét
+ drámáját
+ tempóját
+ fekvését
+ termését
+ romlását
+ balsorsát
+ rémületét
+ kedv-ficamát
+ jókedvét
+ tartását
+ tûrését
+ 
+
+ vérképét
+ golyvájátˇ˚
+
+===== STRING 0272 =====
+ keretezni...
+ kibogozni...
+ befogadni...
+ kifigyelni...
+ puhatolni...
+ kitalálni...
+ levezetni...
+ lefülelni...
+ kinevetni... 
+ renoválni...
+ szavatolni...
+
+ megugatni...
+ levizelni...ˇ˙
+
+===== STRING 0273 =====
+most a te
+lenne a
+volna a
+íme a
+ez lesz a
+lesz ma a
+tudd, ez a
+lásd, ez a
+làm, ez a
+ez ma a
+most a kereszted, lám!
+lenne kereszted most.
+íme, kereszted most.
+ez ma a tennivalód!
+ennyi a tennivalód!
+ez ma a gondod-ügyed.
+ez ma a terhed még!
+ez van a válladon... ó!
+ennyi a munkád most!
+semmit elébb ne csinálj!
+ennyit akarj! ezt tedd!
+ennyi a gondod-ügyed.
+ennyi a terhed még!
+ennyi a terhed most!
+ennyire  légyen erød!
+szánj rá egy kis idøt!
+tedd rá életedet!
+tedd rá lelkedet is!
+tedd rá mindenedet!
+csak türelemmel tedd!
+csak szerelembøl megy!
+ezt tedd! egyre csak ezt!
+most ezt tedd, ha tudod!
+most tedd ezt, ha tudod!
+ez ma a szent robotod!
+ennyi a szent  robotod!
+részegen is robotolj!
+végezd tennivalód!
+végezd szent robotod!
+øsi szokás! Tedd hát! 
+
+
+
+
+ez ma a
+ennyi a
+ˇ˘
+
+===== STRING 0274 =====
+ tennivalód.
+ gondod-ügyed.
+ terhed még.
+ sorsod?! az ám!
+ válladon... ó!
+ munkád még!
+ szent robotod!
+ téged ölø!
+ rád kiszabott!
+ rád kivetett!
+ 
+
+
+ húznivalód.
+ dolgod!
+ munkád!
+ terhed!ˇ˜
+
+===== STRING 0275 =====
+ Zúzd be a
+ Vard be a
+ Verd ki a
+ Kösd el a
+ Kösd be a
+ Gyûrd le a
+ Fogd le a
+ Nyeld le a
+ Nyögd ki a
+ Tárd ki a
+
+ Hányd ki a
+ Csípd meg a
+ Nyúzd meg a
+ Nyisd föl a
+ Törd be a
+ Vard el a
+ Vágd el a
+ Gyûrd el aˇˆ
+
+===== STRING 0276 =====
+z álmaidat!
+ bánatodat!
+z isteneket! 
+ szellemeket!
+z asszonyokat!
+ bér-ciciket!
+ szex aranyát!
+z életedet!
+ foltjaidat!
+ fürtjeidet!
+ gondjaidat!
+ kételyedet!
+ kedv aranyát!
+ kedv erejét!
+ szex örömét!
+ 
+ lelkedet! Úgy!
+ jármaidat!
+ bûnösöket!
+ szex-Janikat!
+ szex-Miciket!
+ pásztorokat!
+
+
+
+===== STRING 0277 =====
+A10  12   11   12   11  10   10 (30)   10   15
+3 397 680 000
+
+===== STRING 0278 =====
+on mouseUp
+
+put line (1) of card field "HuszonkilencK10" of card id 10632 into vari291
+repeat forever
+get random (14)
+if it is not vari291 then exit repeat
+end repeat
+
+put it into vari291
+put vari291 into line (1) of card field "HuszonkilencK10" of cd id 10632
+put line (vari291) of card field "HuszonkilencK01" of card id 10632 after last char of card field "OtK02" of card id 4360
+
+put line (2) of card field "HuszonkilencK10" of card id 10632 into vari292
+repeat forever
+get random (11)
+if it is not vari292 then exit repeat
+end repeat
+
+put it into vari292
+put vari292 into line (2) of card field "HuszonkilencK10" of cd id 10632
+put line (vari292) of card field "HuszonkilencK02" of card id 10632 after last char of card field "OtK02" of card id 4360
+
+put line (3) of card field "HuszonkilencK10" of card id 10632 into vari293
+repeat forever
+get random (18)
+if it is not vari293 then exit repeat
+end repeat
+
+put it into vari293
+put vari293 into line (3) of card field "HuszonkilencK10" of cd id 10632
+put line (vari293) of card field "HuszonkilencK03" of card id 10632 after last char of card field "OtK02" of card id 4360
+
+
+put line (4) of card field "HuszonkilencK10" of card id 10632 into vari294
+repeat forever
+get random (10)
+if it is not vari294 then exit repeat
+end repeat
+
+put it into vari294
+put vari294 into line (4) of card field "HuszonkilencK10" of cd id 10632
+
+put line (vari294) of card field "HuszonkilencK04" of card id 10632 after last char of card field "OtK02" of card id 4360
+
+
+
+
+put line (5) of card field "HuszonkilencK10" of card id 10632 into vari295
+repeat forever
+get random (12)
+if it is not vari295 then exit repeat
+end repeat
+put it into vari295
+put vari295 into line (5) of card field "HuszonkilencK10" of cd id 10632
+put line (vari295) of card field "HuszonkilencK05" of card id 10632 after last char of card field "OtK02" of card id 4360
+
+put return after last char of card field "OtK02" of card id 4360
+put lineFeed after last char of card field "OtK02" of card id 4360
+delete last char of card field "OtK02" of card id 4360
+
+
+put line (6) of card field "HuszonkilencK10" of card id 10632 into vari296
+repeat forever
+get random (20)
+if it is not vari296 then exit repeat
+end repeat
+
+put it into vari296
+put vari296 into line (6) of card field "HuszonkilencK10" of cd id 10632
+put line (vari296) of card field "HuszonkilencK06" of card id 10632 after last char of card field "OtK02" of card id 4360
+
+put line (7) of card field "HuszonkilencK10" of card id 10632 into vari297
+repeat forever
+get random (14)
+if it is not vari297 then exit repeat
+end repeat
+
+put it into vari297
+put vari297 into line (7) of card field "HuszonkilencK10" of cd id 10632
+put line (vari297) of card field "HuszonkilencK07" of card id 10632 after last char of card field "OtK02" of card id 4360
+
+put line (8) of card field "HuszonkilencK10" of card id 10632 into vari298
+repeat forever
+get random (11)
+if it is not vari298 then exit repeat
+end repeat
+
+put it into vari298
+put vari298 into line (8) of card field "HuszonkilencK10" of cd id 10632
+put line (vari298) of card field "HuszonkilencK08" of card id 10632 after last char of card field "OtK02" of card id 4360
+
+put line (9) of card field "HuszonkilencK10" of card id 10632 into vari299
+
+if vari298 < 6 then
+repeat forever
+get random (13)
+if it is not vari299 then exit repeat
+end repeat
+put it into vari299
+end if
+
+
+if vari298 > 5 and vari298 < 7 then
+repeat forever
+get random (13)
+if it is not vari299 then exit repeat
+end repeat
+put it into vari299
+add 4 to vari299
+end if
+
+if vari298 > 6 and vari298 < 11 then
+repeat forever
+get random (13)
+if it is not vari299 then exit repeat
+end repeat
+put it into vari299
+add 13 to vari299
+end if
+
+
+if vari298 > 10 then
+repeat forever
+get random (13)
+if it is not vari299 then exit repeat
+end repeat
+put it into vari299
+add 17 to vari299
+end if
+
+put vari299 into line (9) of card field "HuszonkilencK10" of cd id 10632
+put line (vari299) of card field "HuszonkilencK09" of card id 10632 after last char of card field "OtK02" of card id 4360
+
+
+
+
+
+end mouseUp
+
+===== STRING 0279 =====
+Lám heves
+Mily buja
+Mily tüzes
+Mily csacsi
+Kis csacsi
+Kis buja
+Oly puha
+Oly buja
+Oly csacsi
+Oly mulya
+Lám, mulya
+Mily mulya
+Mily heves
+Mily szagos
+ˇ˛
+
+===== STRING 0280 =====
+ és virgonc
+ és rázós
+ és szuka is
+ és szívós
+ és buta is
+ és baba is
+ és szeretø
+ és csöcsös is
+ és kapatos
+, ölbevaló
+ és aranyosˇ˝
+
+===== STRING 0281 =====
+ örömében a
+ Szodomában a
+ táncában a
+ jöttében a
+ Budapesten a
+ Zágrábban a
+, ha mosakszik a
+, ha lefekszik a
+, ha veszekszik a
+, ha tolakszik a
+, ha leguggol a
+, ha lecsüccsen a
+, ha becsápol a
+, ha ebédel a
+, ha virágzik a
+ Miskolcon a
+ Pelsøcön a
+ Párizsban a
+ futtában a
+ mégében a
+, ha becsöppen a
+, ha bezörget a
+, ha becsönget a
+
+===== STRING 0282 =====
+ mennyei
+ szombati
+ holnapi
+ tegnapi
+ templomi
+ csárdai
+z isteni
+ pénteki
+ szerdai
+ színpadi
+
+ 
+
+ zárdai
+ gyermeki
+ kétlakiˇ˚
+
+===== STRING 0283 =====
+ tündér
+ szépség
+ nøcske!
+ asszony!
+ lányka!
+ bálvány!
+ báj-hölgy!
+ szép hölgy!
+ szép lány!
+ fruska!
+ nagylány!
+ szûzlány!
+
+===== STRING 0284 =====
+Búja hevét
+Bája tüzét
+Ajka hevét
+Bája hevét
+Lendületét
+Gondolatát
+Ajka tüzét
+Bánatait
+Búja tüzét
+Bája tüzét
+Szíve hevét
+Szíve tüzét
+Lelki tüzét
+Lelki hevét
+Testi tüzét
+Testi hevét
+Láza okát
+Láza tüzét
+Láza fokát
+Búja fokát
+
+
+szex-mezejét
+nagy szemeit
+Szárnya hegyétˇ˘
+
+===== STRING 0285 =====
+ kényes
+ levegøs
+ szabatos
+ elegyes
+ tolatós
+ szirupos
+ remegø
+ cselezø
+ legyezø
+ lobogó
+ veretes
+ zamatos
+ szutykos
+ csevegø
+
+ pacuhán
+ remekül
+
+
+
+===== STRING 0286 =====
+ mozdulatok
+ árnyalatok
+ gondolatok
+ mondolatok
+ szó-cafatok
+ révületek
+ kéjelgés
+ gôzölgés
+ høzöngés
+ költekezés
+ mámorodás
+
+
+ mondat-edény
+ mámor-övébe
+ mondat-övébe
+ száj-üregébe
+ mell-üregébeˇ˜
+
+===== STRING 0287 =====
+ba szövi.
+ba öli.
+ba fedi.
+ba lepi.
+ fedezik.
+ felezik.
+ terelik.
+ perelik.
+ vizezik.
+ szerelik.
+ keresik.
+ kövezik.
+ lövelik.
+be szövi.
+be öli.
+be fedi.
+be lepi.
+ fedezi.
+ övezi.
+ öleli.
+ erezi.
+ pereli.
+ vizezi.
+ tereli.
+ löveli.
+ felezi.
+ba szövi.
+ba öli.
+ba fedi.
+ba lepi.
+
+
+
+ nyögi.
+ feji.
+ köpi.
+ falaz.
+ helyez.
+ teker.
+ takar.
+ kever.
+ zavar.
+ lövi.
+ cseszi.
+ veszi.
+ döfi.
+ eszi.
+ böki.
+ löki.
+
+===== STRING 0288 =====
+A14  11  21  10  12  20  14  11   13
+15 538 723 200HuszonkilencK
+
+===== STRING 0289 =====
+Ñ 	RÄá¿Ñ 	RÄÑ Ñ 	RÄÑ É‡	RÄÑ Ä 	RÄÑ Ä@	RÄÉ¿ÉÄ	
+
+===== STRING 0290 =====
+Fáj
+Gyúl
+Ég
+Szúr
+Vág
+Sújt
+Hût
+Kér
+Lø
+Rúg
+Rág
+Peng
+Kong
+
+
+
+===== STRING 0291 =====
+ a szemed.
+ a karod.
+
+
+
+
+
+
+
+===== STRING 0292 =====
+=FˇÙBgHnˇHnˇ¯Hnˇ¯®™
+
+===== STRING 0293 =====
+'Cushing-HBookItalic
+
+===== STRING 0294 =====
+
+1
+8
+19
+15
+4
+6
+18
+20
+23
+13
+3
+10
+5
+22
+2
+14
+7
+9
+12
+21
+11
+24
+17
+16
+ˇ˝
+
+===== STRING 0295 =====
+
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+
+
+===== STRING 0296 =====
+on mouseUp
+
+hide menuBar
+
+global r
+global lassito
+
+
+put empty into cd field "NegyK04" of card id 4162
+
+put lineFeed after last char of card field "NegyK04" of card id 4162
+repeat with i=1 to 24
+put i into sorsz
+put (sorsz) after the last line of cd field "NegyK04" of card id 4162
+put return after last char of card field "NegyK04" of card id 4162
+put lineFeed after last char of card field "NegyK04" of card id 4162
+end repeat
+
+put empty into cd field "NegyK05" of card id 4162
+
+repeat with h=1 to 24
+put (25-h) into veletlen
+get random (veletlen)
+put it into ezsor
+put line (ezsor) of cd field "NegyK04" of cd id 4162 after the last char of cd field "NegyK05" of card id 4162
+put return after last char of card field "NegyK05" of card id 4162
+delete line (ezsor) of cd field "NegyK04" of card id 4162
+end repeat
+
+put empty into r
+
+
+repeat forever
+
+put empty into card field "OtK03" of card id 4360
+
+put empty into card field "OtK02" of card id 4360
+put empty into card field "OtK01" of card id 4360
+
+put line (1) of card field "NegyK02" of card id 4162 into hanyadik
+put (hanyadik + 1) into kiirszam
+put empty into card field "NegyK02" of card id 4162
+put kiirszam into card field "NegyK02" of card id 4162
+put kiirszam into cd field "OtK01" of card id 4360
+put ". DISZTICHON" after last char of card field "OtK01" of card id 4360
+
+put (r+1) into r
+
+put line (r) of card field "NegyK05" of card id 4162 into szam01
+
+put empty into card field "OtK03" of card id 4360
+put (r) after last line of card field "OtK03" of card id 4360
+put szam01 after last line of card field "OtK03" of card id 4360
+
+
+
+if szam01 = "
+1" then send mouseUp to card button "GHatK01" of card id 4812
+if szam01 = "
+2" then send mouseUp to card button "GHetK01" of card id 5092
+if szam01 = "
+3" then send mouseUp to card button "GNyolcK01" of card id 5252
+if szam01 = "
+4" then send mouseUp to card button "GKilencK01" of card id 5436
+if szam01 = "
+5" then send mouseUp to card button "GTizK01" of card id 5806
+if szam01 = "
+6" then send mouseUp to card button "GTizenegyK01" of card id 5921
+if szam01 = "
+7" then send mouseUp to card button "GTizenkettoK01" of card id 6318
+if szam01 = "
+8" then send mouseUp to card button "GTizenharomK01" of card id 6543
+if szam01 = "
+9" then send mouseUp to card button "GTizennegyK01" of card id 6749
+if szam01 = "
+10" then send mouseUp to card button "GTizenotK01" of card id 6975
+if szam01 = "
+11" then send mouseUp to card button "GTizenhatK01" of card id 7215
+if szam01 = "
+12" then send mouseUp to card button "GTizenhetK01" of card id 7426
+if szam01 = "
+13" then send mouseUp to card button "GTizennyolcK01" of card id 7789
+if szam01 = "
+14" then send mouseUp to card button "GTizenkilencK01" of card id 8035
+if szam01 = "
+15" then send mouseUp to card button "GHuszK01" of card id 8318
+if szam01 = "
+16" then send mouseUp to card button "GHuszonegyK01" of card id 8701
+if szam01 = "
+17" then send mouseUp to card button "GHuszonkettoK01" of card id 8952
+if szam01 = "
+18" then send mouseUp to card button "GKilencK01" of card id 5436        --"GHuszonharomK01" of card id 9069
+if szam01 = "
+19" then send mouseUp to card button "GHuszonnegyK01" of card id 9223
+if szam01 = "
+20" then send mouseUp to card button "GHuszonotK01" of card id 9591
+if szam01 = "
+21" then send mouseUp to card button "GHuszonhatK01" of card id 9912
+if szam01 = "
+22" then send mouseUp to card button "GHuszonhetK01" of card id 10156
+if szam01 = "
+23" then send mouseUp to card button "GHuszonnyolcK01" of card id 10486
+if szam01 = "
+24" then send mouseUp to card button "GHuszonkilencK01" of card id 10632
+
+put line (1) of card field "KettoK02" of cd id 3607 into lassito
+
+
+wait lassito second
+
+if the mouse is down then exit repeat
+
+
+
+
+if r=24 then put empty into r
+
+end repeat
+put empty into cd field 1
+put empty into card field "OtK02" of card id 4360
+
+
+visual effect dissolve
+go card id 3607
+
+
+
+
+end mouseUp
+
+===== STRING 0297 =====
+on mouseUp
+
+go card id 3607
+end mouseUp
+
+===== STRING 0298 =====
+$Ha meg akarja állítani a programot, 
+a helyørrel (kézzel) nyomja le a „• gombot”ˇ˙
+
+===== STRING 0299 =====
+Hnkéntes szûzlány, fönt hintázik a fán.OtK
+
+===== STRING 0300 =====
+Free Object    ˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇ¿
+
+===== STRING 0301 =====
+ˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇ
+
+===== STRING 0302 =====
+ˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇ˛
+
+===== STRING 0303 =====
+ˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇ
+
+===== STRING 0304 =====
+ˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇÄ
+
+===== STRING 0305 =====
+ˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇ¯
+
+===== STRING 0306 =====
+ˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇ˛
+
+===== STRING 0307 =====
+ˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇ˛ˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇ
+
+===== STRING 0308 =====
+ˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇÄ?ˇˇˇˇˇˇˇˇ¸
+
+===== STRING 0309 =====
+ˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇ¯
+
+===== STRING 0310 =====
+ˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇ
+
+===== STRING 0311 =====
+Separator & Utilitaires
+
+===== STRING 0312 =====
+Adobe Illustrator™ 5.0
